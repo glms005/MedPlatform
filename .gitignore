@@ -1,0 +1,45 @@
+# Dependencies
+node_modules/
+
+# Next.js / build outputs
+.next/
+out/
+dist/
+build/
+*.tsbuildinfo
+
+# Env & secrets (never commit)
+.env
+.env.*
+!.env.example
+
+# Debug / logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Testing / coverage
+coverage/
+.nyc_output/
+
+# Vercel
+.vercel
+
+# Turbopack (optional)
+.turbo/
+
+# Misc cache
+.cache/
+eslintcache/
