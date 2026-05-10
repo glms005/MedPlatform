@@ -1,56 +1,39 @@
+"use client";
+
 import { Card } from "@/components/ui/Card";
 import { Container } from "@/components/ui/Container";
 import { Icon } from "@/components/ui/Icon";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { useLocale } from "@/components/providers/LocaleProvider";
 
-const items = [
-  {
-    icon: "warning" as const,
-    title: "Filters replace facts",
-    description:
-      "People end up relying on curated Instagram content instead of structured evidence.",
-  },
-  {
-    icon: "shield" as const,
-    title: "Fake or unclear reviews",
-    description:
-      "It’s hard to tell what’s real, what’s sponsored, and what’s missing.",
-  },
-  {
-    icon: "compare" as const,
-    title: "No apples-to-apples comparison",
-    description:
-      "Qualifications, scope, aftercare, and outcomes aren’t presented consistently.",
-  },
-  {
-    icon: "search" as const,
-    title: "Complications are under-discussed",
-    description:
-      "Recovery realities and red flags are rarely captured in an organized way.",
-  },
-];
+const iconByKey = {
+  filters: "warning",
+  reviews: "shield",
+  compare: "compare",
+  complications: "search",
+} as const;
 
 export function Problem() {
+  const { t } = useLocale();
+
   return (
-    <section className="bg-brand-cream py-14 sm:py-18">
+    <section className="bg-gradient-to-b from-brand-cream to-brand-surface/30 py-16 sm:py-20 lg:py-24">
       <Container>
         <SectionHeading
-          eyebrow="Why this exists"
-          title="Surgery decisions deserve better information"
-          subtitle="This platform is built to reduce ambiguity—not to market procedures."
+          eyebrow={t.problem.eyebrow}
+          title={t.problem.title}
+          subtitle={t.problem.subtitle}
         />
 
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {items.map((it) => (
-            <Card key={it.title} className="p-5">
+          {t.problem.cards.map((it) => (
+            <Card key={it.key} className="p-5">
               <div className="flex items-start gap-3">
                 <div className="rounded-2xl bg-brand-cream p-2 ring-1 ring-brand-outline">
-                  <Icon variant={it.icon} />
+                  <Icon variant={iconByKey[it.key as keyof typeof iconByKey]} />
                 </div>
                 <div>
-                  <p className="text-sm font-semibold text-brand-ink">
-                    {it.title}
-                  </p>
+                  <p className="text-sm font-semibold text-brand-ink">{it.title}</p>
                   <p className="mt-1 text-sm leading-6 text-brand-muted">
                     {it.description}
                   </p>
@@ -63,4 +46,3 @@ export function Problem() {
     </section>
   );
 }
-

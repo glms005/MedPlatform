@@ -19,7 +19,7 @@ export function Badge({
   return (
     <span
       className={[
-        "inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ring-1",
+        "inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors duration-200",
         toneClass,
       ].join(" ")}
     >

@@ -18,14 +18,29 @@ const config: Config = {
           muted: "#6B4E4E",
           accent: "#D98A84",
           accentDark: "#C86D69",
+          /** PRD: soft blue accents for trust / links */
+          blue: {
+            light: "#E8F1F6",
+            DEFAULT: "#5B8FA8",
+            dark: "#3d6b80",
+          },
         },
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
         display: ["var(--font-display)", ...defaultTheme.fontFamily.serif],
+        georgian: [
+          "var(--font-ka)",
+          "var(--font-sans)",
+          ...defaultTheme.fontFamily.sans,
+        ],
       },
       boxShadow: {
         soft: "0 10px 30px rgba(63, 42, 42, 0.08)",
+        lift: "0 16px 40px rgba(63, 42, 42, 0.1)",
+      },
+      transitionDuration: {
+        DEFAULT: "200ms",
       },
     }
   },

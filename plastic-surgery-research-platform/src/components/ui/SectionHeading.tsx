@@ -1,3 +1,6 @@
+"use client";
+
+import { useLocale } from "@/components/providers/LocaleProvider";
 import type { ReactNode } from "react";
 
 export function SectionHeading({
@@ -11,6 +14,8 @@ export function SectionHeading({
   subtitle?: string;
   right?: ReactNode;
 }) {
+  const { locale } = useLocale();
+
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div className="max-w-2xl">
@@ -19,11 +24,17 @@ export function SectionHeading({
             {eyebrow}
           </p>
         ) : null}
-        <h2 className="mt-2 font-display text-2xl font-semibold tracking-tight text-brand-ink sm:text-3xl">
+        <h2
+          className={
+            locale === "ka"
+              ? "mt-2 text-2xl font-semibold tracking-tight text-brand-ink sm:text-3xl"
+              : "mt-2 font-display text-2xl font-semibold tracking-tight text-brand-ink sm:text-3xl"
+          }
+        >
           {title}
         </h2>
         {subtitle ? (
-          <p className="mt-3 text-sm leading-6 text-brand-muted sm:text-base">
+          <p className="mt-3 max-w-prose text-sm leading-relaxed text-brand-muted sm:text-base">
             {subtitle}
           </p>
         ) : null}
@@ -32,4 +43,3 @@ export function SectionHeading({
     </div>
   );
 }
-

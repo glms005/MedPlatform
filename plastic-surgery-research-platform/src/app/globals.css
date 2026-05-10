@@ -8,5 +8,23 @@
 
 html {
   text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+::selection {
+  background-color: rgba(217, 138, 132, 0.28);
+  color: inherit;
+}
+
+@layer base {
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-brand-accent;
+  }
 }
 
