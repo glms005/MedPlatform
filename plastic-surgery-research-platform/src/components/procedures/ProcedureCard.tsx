@@ -5,7 +5,7 @@ import type { Procedure } from "@/types/domain";
 export function ProcedureCard({ procedure }: { procedure: Procedure }) {
   return (
     <Card className="flex h-full flex-col p-6">
-      <h2 className="font-display text-lg font-semibold text-brand-ink">
+      <h2 className="text-lg font-semibold tracking-tight text-brand-ink">
         {procedure.name}
       </h2>
       <p className="mt-2 line-clamp-3 text-sm leading-relaxed text-brand-muted">

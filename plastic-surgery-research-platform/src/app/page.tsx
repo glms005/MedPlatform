@@ -1,36 +1,29 @@
-import { CommunityPreview } from "@/components/landing/CommunityPreview";
-import { Disclaimer } from "@/components/landing/Disclaimer";
-import { Features } from "@/components/landing/Features";
-import { FinalCta } from "@/components/landing/FinalCta";
-import { Footer } from "@/components/landing/Footer";
-import { Hero } from "@/components/landing/Hero";
-import { HowItWorks } from "@/components/landing/HowItWorks";
-import { Problem } from "@/components/landing/Problem";
-import { ProcedureCategories } from "@/components/landing/ProcedureCategories";
-import { ProcedureGuidePreview } from "@/components/landing/ProcedureGuidePreview";
-import { ReviewsPreview } from "@/components/landing/ReviewsPreview";
-import { ShareExperience } from "@/components/landing/ShareExperience";
-import { SurgeonPreview } from "@/components/landing/SurgeonPreview";
-import { EarlyAccess } from "@/components/landing/EarlyAccess";
+import { CinematicHero } from "@/components/editorial/CinematicHero";
+import { CommunitySection } from "@/components/editorial/CommunitySection";
+import { EditorialStatementSection } from "@/components/editorial/EditorialStatementSection";
+import { EditorialFooter } from "@/components/editorial/EditorialFooter";
+import { FeaturedSurgeonsSection } from "@/components/editorial/FeaturedSurgeonsSection";
+import { FinalCtaSection } from "@/components/editorial/FinalCtaSection";
+import { MedicalDisclaimerSection } from "@/components/editorial/MedicalDisclaimerSection";
+import { PlatformPromiseSection } from "@/components/editorial/PlatformPromiseSection";
+import { ProblemSection } from "@/components/editorial/ProblemSection";
+import { ProcedureDiscoverySection } from "@/components/editorial/ProcedureDiscoverySection";
+import { ResearchJourneySection } from "@/components/editorial/ResearchJourneySection";
 
 export default function Page() {
   return (
-    <main id="top" className="relative min-h-screen bg-brand-cream text-brand-ink">
-      <Hero />
-      <Problem />
-      <HowItWorks />
-      <Features />
-      <ProcedureCategories />
-      <SurgeonPreview />
-      <CommunityPreview />
-      <ReviewsPreview />
-      <ShareExperience />
-      <ProcedureGuidePreview />
-      <EarlyAccess />
-      <Disclaimer />
-      <FinalCta />
-      <Footer />
+    <main id="top" className="relative min-h-screen bg-brand-ivory text-brand-ink">
+      <CinematicHero />
+      <EditorialStatementSection />
+      <ProblemSection />
+      <ResearchJourneySection />
+      <PlatformPromiseSection />
+      <FeaturedSurgeonsSection />
+      <ProcedureDiscoverySection />
+      <CommunitySection />
+      <MedicalDisclaimerSection />
+      <FinalCtaSection />
+      <EditorialFooter />
     </main>
   );
 }
-

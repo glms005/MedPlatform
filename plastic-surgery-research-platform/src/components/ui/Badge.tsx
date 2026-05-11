@@ -9,17 +9,17 @@ export function Badge({
 }) {
   const toneClass =
     tone === "brand"
-      ? "bg-brand-cream text-brand-ink ring-brand-outline"
+      ? "bg-slate-100 text-slate-800 ring-slate-200"
       : tone === "success"
-        ? "bg-emerald-50 text-emerald-800 ring-emerald-100"
+        ? "bg-emerald-50 text-emerald-900 ring-emerald-200"
         : tone === "warning"
-          ? "bg-amber-50 text-amber-900 ring-amber-100"
-          : "bg-brand-surface text-brand-muted ring-brand-outline";
+          ? "bg-amber-50 text-amber-950 ring-amber-200"
+          : "bg-white text-brand-muted ring-brand-outline";
 
   return (
     <span
       className={[
-        "inline-flex items-center gap-2 rounded-full px-3 py-1 text-xs font-medium ring-1 transition-colors duration-200",
+        "inline-flex items-center gap-2 rounded-md px-2.5 py-1 text-xs font-medium leading-snug ring-1",
         toneClass,
       ].join(" ")}
     >
@@ -27,4 +27,3 @@ export function Badge({
     </span>
   );
 }
-

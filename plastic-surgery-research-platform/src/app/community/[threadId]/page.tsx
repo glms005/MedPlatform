@@ -23,7 +23,7 @@ export default async function ThreadPage({ params }: Props) {
   const created = new Date(thread.createdAt).toLocaleString();
 
   return (
-    <div className="min-h-screen bg-brand-cream py-10 sm:py-14">
+    <div className="min-h-screen bg-brand-ivory py-10 sm:py-14">
       <Container>
         <Link
           href="/community"
@@ -32,7 +32,7 @@ export default async function ThreadPage({ params }: Props) {
           ← All discussions
         </Link>
         <article className="mt-6 max-w-3xl">
-          <span className="inline-block rounded-full bg-brand-blue/15 px-2 py-0.5 text-xs font-medium text-brand-blue">
+          <span className="inline-block rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-brand-blue">
             {thread.category}
           </span>
           <h1 className="mt-4 font-display text-3xl font-semibold text-brand-ink">

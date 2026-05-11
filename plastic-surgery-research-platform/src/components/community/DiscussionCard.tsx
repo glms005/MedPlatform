@@ -13,10 +13,10 @@ export function DiscussionCard({ thread }: { thread: DiscussionThread }) {
     <Card className="p-5">
       <div className="flex flex-wrap items-start justify-between gap-2">
         <div>
-          <span className="inline-block rounded-full bg-brand-blue/15 px-2 py-0.5 text-xs font-medium text-brand-blue">
+          <span className="inline-block rounded-md bg-slate-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-brand-blue">
             {thread.category}
           </span>
-          <h2 className="mt-2 font-display text-lg font-semibold text-brand-ink">
+          <h2 className="mt-2 text-lg font-semibold tracking-tight text-brand-ink">
             <Link
               href={`/community/${thread.id}`}
               className="hover:text-brand-blue hover:underline"

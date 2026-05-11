@@ -65,7 +65,7 @@ export function SearchFiltersBar({
   setVerifiedOnly,
 }: ReturnType<typeof useSurgeonFilter>) {
   return (
-    <div className="space-y-4 rounded-3xl border border-brand-outline bg-brand-surface p-4 shadow-soft sm:p-6">
+    <div className="space-y-4 rounded-2xl border border-brand-outline bg-white p-4 shadow-sm sm:p-6">
       <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <label className="block text-sm">
           <span className="mb-1 block font-medium text-brand-ink">Search</span>

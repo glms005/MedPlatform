@@ -22,7 +22,7 @@ export default async function SurgeonProfilePage({ params }: Props) {
   const reviewList = getReviewsForSurgeon(surgeon.id);
 
   return (
-    <div className="min-h-screen bg-brand-cream py-10 sm:py-14">
+    <div className="min-h-screen bg-brand-ivory py-10 sm:py-14">
       <Container>
         <Link
           href="/surgeons"
@@ -32,7 +32,7 @@ export default async function SurgeonProfilePage({ params }: Props) {
         </Link>
 
         <header className="mt-6 flex flex-col gap-6 border-b border-brand-outline/40 pb-10 sm:flex-row sm:items-start">
-          <div className="h-28 w-28 shrink-0 rounded-3xl bg-gradient-to-br from-brand-blue/25 to-brand-cream ring-1 ring-brand-outline" />
+          <div className="h-28 w-28 shrink-0 rounded-2xl bg-slate-100 ring-1 ring-brand-outline" />
           <div className="min-w-0 flex-1">
             <div className="flex flex-wrap items-center gap-2">
               <h1 className="font-display text-3xl font-semibold text-brand-ink sm:text-4xl">

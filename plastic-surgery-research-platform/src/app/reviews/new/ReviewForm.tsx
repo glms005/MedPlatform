@@ -16,7 +16,7 @@ export function ReviewForm() {
   if (status === "done") {
     return (
       <Card className="border-brand-blue/30 p-8 text-center ring-1 ring-brand-blue/20">
-        <p className="font-display text-xl font-semibold text-brand-ink">
+        <p className="text-xl font-semibold tracking-tight text-brand-ink">
           Thank you — this is a frontend MVP
         </p>
         <p className="mt-2 text-sm text-brand-muted">
@@ -130,7 +130,7 @@ export function ReviewForm() {
         </label>
         <button
           type="submit"
-          className="w-full rounded-full bg-brand-accent py-3 text-sm font-semibold text-white shadow-soft transition hover:bg-brand-accentDark sm:w-auto sm:px-10"
+          className="w-full rounded-lg bg-brand-ink py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-brand-accentDark sm:w-auto sm:px-10"
         >
           Submit (mock)
         </button>

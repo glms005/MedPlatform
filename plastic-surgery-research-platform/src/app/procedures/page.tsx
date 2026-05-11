@@ -4,7 +4,7 @@ import { procedures } from "@/lib/mock-data/procedures";
 
 export default function ProceduresPage() {
   return (
-    <div className="min-h-screen bg-brand-cream py-12 sm:py-16">
+    <div className="min-h-screen bg-brand-ivory py-12 sm:py-16">
       <Container>
         <header className="mb-10">
           <p className="text-xs font-semibold uppercase tracking-wide text-brand-blue">

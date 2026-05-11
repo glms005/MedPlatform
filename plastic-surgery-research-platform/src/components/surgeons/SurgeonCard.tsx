@@ -9,10 +9,10 @@ export function SurgeonCard({ surgeon }: { surgeon: Surgeon }) {
   return (
     <Card className="flex flex-col p-6">
       <div className="flex gap-4">
-        <div className="h-16 w-16 shrink-0 rounded-3xl bg-gradient-to-br from-brand-blue/20 to-brand-cream ring-1 ring-brand-outline" />
+        <div className="h-16 w-16 shrink-0 rounded-xl bg-slate-100 ring-1 ring-brand-outline" />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <p className="truncate font-display text-base font-semibold text-brand-ink">
+            <p className="truncate text-base font-semibold tracking-tight text-brand-ink">
               {surgeon.name}
             </p>
             <VerificationBadge verified={surgeon.verified} />
