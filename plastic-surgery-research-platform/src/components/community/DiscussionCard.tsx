@@ -18,7 +18,7 @@ export function DiscussionCard({ thread }: { thread: DiscussionThread }) {
           </span>
           <h2 className="mt-2 text-lg font-semibold tracking-tight text-brand-ink">
             <Link
-              href={`/community/${thread.id}`}
+              href={`/forum/${thread.id}`}
               className="hover:text-brand-blue hover:underline"
             >
               {thread.title}
@@ -32,7 +32,7 @@ export function DiscussionCard({ thread }: { thread: DiscussionThread }) {
       </p>
       <div className="mt-4 flex flex-wrap items-center justify-between gap-2 text-xs text-brand-muted">
         <span>{thread.author}</span>
-        <span>{thread.replyCount} replies</span>
+        <span>{thread.commentsCount} replies</span>
       </div>
     </Card>
   );

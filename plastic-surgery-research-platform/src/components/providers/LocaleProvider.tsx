@@ -40,7 +40,8 @@ export function LocaleProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     if (typeof document === "undefined") return;
-    document.documentElement.lang = locale === "ka" ? "ka" : "en";
+    document.documentElement.lang =
+      locale === "ka" ? "ka" : locale === "ru" ? "ru" : "en";
     document.title = dictionary[locale].meta.title;
   }, [locale]);
 

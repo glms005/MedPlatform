@@ -1,4 +1,6 @@
 import { Card } from "@/components/ui/Card";
+import { ModerationBadge } from "@/components/reviews/ModerationBadge";
+import { ReportButton } from "@/components/shared/ReportButton";
 import type { Review } from "@/types/domain";
 import { getProcedureById } from "@/lib/mock-data/procedures";
 
@@ -10,9 +12,10 @@ export function ReviewCard({ review }: { review: Review }) {
         <p className="text-sm font-semibold text-brand-ink">
           {review.authorDisplay}
         </p>
-        <p className="text-xs text-brand-muted">
-          Surgery year: {review.surgeryYear}
-        </p>
+        <div className="flex items-center gap-2">
+          <ModerationBadge status={review.status} />
+          <p className="text-xs text-brand-muted">Year: {review.surgeryYear}</p>
+        </div>
       </div>
       {proc ? (
         <p className="mt-1 text-xs font-medium text-brand-blue">
@@ -39,6 +42,9 @@ export function ReviewCard({ review }: { review: Review }) {
           {review.wouldRecommend ? "Yes" : "No"}
         </span>
       </p>
+      <div className="mt-3">
+        <ReportButton targetType="review" targetId={review.id} />
+      </div>
     </Card>
   );
 }

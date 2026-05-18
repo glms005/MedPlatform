@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/Card";
 import { Badge } from "@/components/ui/Badge";
 import { VerificationBadge } from "@/components/surgeons/VerificationBadge";
 import { ReviewCard } from "@/components/reviews/ReviewCard";
+import { getClinicById } from "@/lib/mock-data/clinics";
 import { getReviewsForSurgeon, getSurgeonById, surgeons } from "@/lib/mock-data";
 import { procedureLabelFromSlug } from "@/lib/procedure-label";
 
@@ -19,7 +20,8 @@ export default async function SurgeonProfilePage({ params }: Props) {
   const surgeon = getSurgeonById(id);
   if (!surgeon) notFound();
 
-  const reviewList = getReviewsForSurgeon(surgeon.id);
+  const reviewList = getReviewsForSurgeon(surgeon.id, true);
+  const clinic = getClinicById(surgeon.clinicId);
 
   return (
     <div className="min-h-screen bg-brand-ivory py-10 sm:py-14">
@@ -42,7 +44,17 @@ export default async function SurgeonProfilePage({ params }: Props) {
             </div>
             <p className="mt-2 text-lg text-brand-muted">{surgeon.specialty}</p>
             <p className="mt-1 text-sm text-brand-muted">
-              {surgeon.city} · {surgeon.clinic}
+              {surgeon.city}
+              {clinic ? (
+                <>
+                  {" · "}
+                  <Link href={`/clinics/${clinic.id}`} className="text-brand-blue hover:underline">
+                    {clinic.name}
+                  </Link>
+                </>
+              ) : (
+                <> · {surgeon.clinic}</>
+              )}
             </p>
             <div className="mt-4 flex flex-wrap gap-2">
               {surgeon.procedures.map((slug) => (
@@ -165,8 +177,8 @@ export default async function SurgeonProfilePage({ params }: Props) {
             Structured reviews (sample)
           </h2>
           <p className="mt-2 max-w-2xl text-sm text-brand-muted">
-            Moderation and verification are not active in this MVP. Content is fictional
-            for UI validation.
+            Only <strong>approved</strong> reviews appear publicly. Submissions enter a
+            moderation queue (pending → approved / rejected / flagged).
           </p>
           <div className="mt-6 space-y-4">
             {reviewList.length > 0 ? (

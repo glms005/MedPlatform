@@ -1,10 +1,25 @@
 import type { Review } from "@/types/domain";
 
-/** Fictional reviews for UI only — not verified claims about real people. */
+const base = (
+  partial: Omit<Review, "reviewText" | "rating" | "status" | "createdAt"> & {
+    status?: Review["status"];
+    createdAt?: string;
+  },
+): Review => ({
+  ...partial,
+  reviewText: partial.comment,
+  rating: partial.satisfactionScore,
+  status: partial.status ?? "approved",
+  createdAt: partial.createdAt ?? "2024-06-01T12:00:00Z",
+});
+
+/** Fictional reviews — not verified claims about real people. */
 export const reviews: Review[] = [
-  {
+  base({
     id: "r1",
     surgeonId: "s1",
+    clinicId: "c-akhaldaba",
+    userId: "u1",
     procedureId: "p-rhino",
     surgeryYear: 2023,
     satisfactionScore: 5,
@@ -19,10 +34,13 @@ export const reviews: Review[] = [
     comment:
       "Consult was detailed; consent form had risks in plain language. No outcome guarantees discussed—which I appreciated.",
     authorDisplay: "ResearchPatient_47",
-  },
-  {
+    status: "approved",
+  }),
+  base({
     id: "r2",
     surgeonId: "s1",
+    clinicId: "c-akhaldaba",
+    userId: "u2",
     procedureId: "p-rhino",
     surgeryYear: 2022,
     satisfactionScore: 4,
@@ -36,10 +54,13 @@ export const reviews: Review[] = [
     comment:
       "Felt like a research discussion, not a sales pitch. Wish after-hours line was clearer.",
     authorDisplay: "TB_Reviewer",
-  },
-  {
+    status: "approved",
+  }),
+  base({
     id: "r3",
     surgeonId: "s6",
+    clinicId: "c-mtatsminda",
+    userId: null,
     procedureId: "p-rhino",
     surgeryYear: 2024,
     satisfactionScore: 4,
@@ -53,10 +74,13 @@ export const reviews: Review[] = [
     comment:
       "Price breakdown could be clearer earlier, but overall transparency on risks was strong.",
     authorDisplay: "Anon_Rhino_019",
-  },
-  {
+    status: "approved",
+  }),
+  base({
     id: "r4",
     surgeonId: "s3",
+    clinicId: "c-riverbank",
+    userId: "u3",
     procedureId: "p-ba",
     surgeryYear: 2023,
     satisfactionScore: 5,
@@ -69,10 +93,13 @@ export const reviews: Review[] = [
     recoveryNotes: "Posted recovery checklist matched my experience closely.",
     comment: "Structured fields in the portal matched what the surgeon said in person.",
     authorDisplay: "BatumiTraveler",
-  },
-  {
+    status: "approved",
+  }),
+  base({
     id: "r5",
     surgeonId: "s4",
+    clinicId: "c-blacksea",
+    userId: "u1",
     procedureId: "p-lipo",
     surgeryYear: 2023,
     satisfactionScore: 3,
@@ -87,10 +114,13 @@ export const reviews: Review[] = [
     comment:
       "Posting for transparency: not malpractice claims—just logistic friction.",
     authorDisplay: "CoastalUser22",
-  },
-  {
+    status: "approved",
+  }),
+  base({
     id: "r6",
     surgeonId: "s8",
+    clinicId: null,
+    userId: "u2",
     procedureId: "p-abdo",
     surgeryYear: 2022,
     satisfactionScore: 5,
@@ -103,10 +133,13 @@ export const reviews: Review[] = [
     recoveryNotes: "DVT prevention explained with written sheet; ER criteria highlighted.",
     comment: "Felt medically responsible tone throughout.",
     authorDisplay: "RecoveryLogger",
-  },
-  {
+    status: "approved",
+  }),
+  base({
     id: "r7",
     surgeonId: "s11",
+    clinicId: "c-saburtalo",
+    userId: "u1",
     procedureId: "p-revision",
     surgeryYear: 2024,
     satisfactionScore: 4,
@@ -120,10 +153,13 @@ export const reviews: Review[] = [
     comment:
       "Useful compare-and-contrast with imaging from prior surgeon (with my permission).",
     authorDisplay: "RevisionRead_88",
-  },
-  {
+    status: "approved",
+  }),
+  base({
     id: "r8",
     surgeonId: "s5",
+    clinicId: "c-liberty",
+    userId: null,
     procedureId: "p-bleph",
     surgeryYear: 2023,
     satisfactionScore: 5,
@@ -136,9 +172,56 @@ export const reviews: Review[] = [
     recoveryNotes: "Dry eye checklist was helpful pre-op.",
     comment: "Appreciated neutral language—no fear-based marketing.",
     authorDisplay: "LidLiftCurious",
-  },
+    status: "approved",
+  }),
+  base({
+    id: "r-pending",
+    surgeonId: "s2",
+    clinicId: "c-vake",
+    userId: "u3",
+    procedureId: "p-face",
+    surgeryYear: 2025,
+    satisfactionScore: 4,
+    communicationScore: 4,
+    aftercareScore: 4,
+    clinicCleanlinessScore: 4,
+    hadComplications: false,
+    complicationDetails: null,
+    wouldRecommend: true,
+    recoveryNotes: "Submitted for moderation demo.",
+    comment: "This review is pending approval and should not appear on public profiles.",
+    authorDisplay: "PendingDemo",
+    status: "pending",
+    createdAt: "2025-05-01T09:00:00Z",
+  }),
+  base({
+    id: "r-flagged",
+    surgeonId: "s4",
+    clinicId: "c-blacksea",
+    userId: null,
+    procedureId: "p-lipo",
+    surgeryYear: 2024,
+    satisfactionScore: 1,
+    communicationScore: 1,
+    aftercareScore: 1,
+    clinicCleanlinessScore: 2,
+    hadComplications: true,
+    complicationDetails: "Flagged for moderator review (fictional).",
+    wouldRecommend: false,
+    recoveryNotes: "Held from public view.",
+    comment: "Example flagged content — not visible publicly.",
+    authorDisplay: "FlaggedSample",
+    status: "flagged",
+  }),
 ];
 
-export function getReviewsForSurgeon(surgeonId: string): Review[] {
-  return reviews.filter((r) => r.surgeonId === surgeonId);
+export function getReviewsForSurgeon(surgeonId: string, approvedOnly = true): Review[] {
+  return reviews.filter(
+    (r) =>
+      r.surgeonId === surgeonId && (!approvedOnly || r.status === "approved"),
+  );
+}
+
+export function getApprovedReviews(): Review[] {
+  return reviews.filter((r) => r.status === "approved");
 }

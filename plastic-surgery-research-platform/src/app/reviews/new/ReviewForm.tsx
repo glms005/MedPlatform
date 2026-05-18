@@ -17,10 +17,11 @@ export function ReviewForm() {
     return (
       <Card className="border-brand-blue/30 p-8 text-center ring-1 ring-brand-blue/20">
         <p className="text-xl font-semibold tracking-tight text-brand-ink">
-          Thank you — this is a frontend MVP
+          Review submitted for moderation
         </p>
         <p className="mt-2 text-sm text-brand-muted">
-          No data was saved. Backend and moderation will be added later.
+          In production, your review would stay <strong>pending</strong> until a
+          moderator approves it. Nothing was saved in this MVP demo.
         </p>
       </Card>
     );

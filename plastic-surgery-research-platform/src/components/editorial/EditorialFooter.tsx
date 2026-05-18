@@ -3,10 +3,13 @@ import Link from "next/link";
 const links = [
   { label: "About", href: "/#introduction" },
   { label: "Surgeons", href: "/surgeons" },
+  { label: "Clinics", href: "/clinics" },
   { label: "Procedures", href: "/procedures" },
-  { label: "Community", href: "/community" },
+  { label: "Forum", href: "/forum" },
+  { label: "Rules", href: "/rules" },
+  { label: "Pricing", href: "/pricing" },
   { label: "Privacy", href: "/#privacy" },
-  { label: "Medical Disclaimer", href: "/#medical-disclaimer" },
+  { label: "Disclaimer", href: "/#medical-disclaimer" },
 ] as const;
 
 export function EditorialFooter() {

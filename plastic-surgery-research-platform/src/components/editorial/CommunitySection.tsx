@@ -24,7 +24,7 @@ export function CommunitySection() {
             boundaries. This is not a substitute for medical care.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 lg:gap-5">
-            <EditorialLink href="/community" variant="solid">
+            <EditorialLink href="/forum" variant="solid">
               Open discussions
             </EditorialLink>
             <EditorialLink href="/reviews/new" variant="outline">

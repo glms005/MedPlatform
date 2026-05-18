@@ -6,6 +6,10 @@ import {
   getProcedureBySlug,
   procedures,
 } from "@/lib/mock-data/procedures";
+import {
+  PROCEDURE_CATEGORY_DEFAULT,
+  PROCEDURE_EXPECTATIONS_DEFAULT,
+} from "@/types/domain";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -29,7 +33,7 @@ export default async function ProcedureGuidePage({ params }: Props) {
         </Link>
         <article className="prose prose-sm mt-6 max-w-3xl text-brand-ink">
           <p className="text-xs font-semibold uppercase tracking-wide text-brand-blue">
-            Procedure guide
+            {p.category ?? PROCEDURE_CATEGORY_DEFAULT} · Procedure guide
           </p>
           <h1 className="mt-2 font-display text-3xl font-semibold sm:text-4xl">
             {p.name}
@@ -50,6 +54,12 @@ export default async function ProcedureGuidePage({ params }: Props) {
             <h2 className="font-display text-xl font-semibold">Revision risk</h2>
             <p className="mt-3 text-sm leading-relaxed text-brand-muted">
               {p.revisionRisk}
+            </p>
+          </Card>
+          <Card className="p-6 lg:col-span-2">
+            <h2 className="font-display text-xl font-semibold">Realistic expectations</h2>
+            <p className="mt-3 text-sm leading-relaxed text-brand-muted">
+              {p.realisticExpectations ?? PROCEDURE_EXPECTATIONS_DEFAULT}
             </p>
           </Card>
         </div>
