@@ -20,10 +20,19 @@ const config: Config = {
           muted: "#5f6764",
           accent: "#2c4f4c",
           accentDark: "#1f3836",
+          teal: {
+            light: "#e8f2f1",
+            DEFAULT: "#3d6b66",
+            dark: "#2c4f4c",
+          },
+          navy: {
+            DEFAULT: "#1a2f3d",
+            light: "#2a4455",
+          },
           blue: {
-            light: "#e8f0f4",
-            DEFAULT: "#4a7c9e",
-            dark: "#3a6380",
+            light: "#e8eef2",
+            DEFAULT: "#5a7d94",
+            dark: "#3d5f73",
           },
         },
       },

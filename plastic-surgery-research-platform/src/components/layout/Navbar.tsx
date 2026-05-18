@@ -9,32 +9,46 @@ import type { Locale } from "@/lib/i18n";
 
 const localeLabels: Record<Locale, string> = { en: "EN", ka: "KA", ru: "RU" };
 
+const mainLinks = [
+  { href: "/surgeons", key: "surgeons" as const },
+  { href: "/procedures", key: "procedures" as const },
+  { href: "/clinics", key: "clinics" as const },
+  { href: "/forum", key: "community" as const },
+  { href: "/#reviews", key: "reviews" as const },
+  { href: "/#recovery", key: "recoveryStories" as const },
+] as const;
+
 function NavLink({
   href,
   children,
   solid,
+  onNavigate,
 }: {
   href: string;
   children: React.ReactNode;
   solid: boolean;
+  onNavigate?: () => void;
 }) {
   const pathname = usePathname();
   const active =
-    href === "/"
-      ? pathname === "/"
-      : pathname === href || pathname.startsWith(`${href}/`);
+    href.startsWith("/#")
+      ? false
+      : href === "/"
+        ? pathname === "/"
+        : pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <Link
       href={href}
+      onClick={onNavigate}
       className={
         active
           ? solid
-            ? "rounded-md bg-brand-blue/14 px-2.5 py-2 text-sm font-semibold text-brand-ink"
-            : "rounded-md bg-white/65 px-2.5 py-2 text-sm font-semibold text-brand-ink backdrop-blur-sm ring-1 ring-brand-outline/50"
+            ? "rounded-lg bg-brand-teal/12 px-3 py-2.5 text-sm font-semibold text-brand-ink"
+            : "rounded-lg bg-white/70 px-3 py-2.5 text-sm font-semibold text-brand-ink ring-1 ring-brand-outline/50"
           : solid
-            ? "rounded-md px-2.5 py-2 text-sm font-medium text-brand-muted transition-colors hover:bg-brand-sand/65 hover:text-brand-ink"
-            : "rounded-md px-2.5 py-2 text-sm font-medium text-brand-ink/80 transition-colors hover:bg-white/50 hover:text-brand-ink hover:backdrop-blur-sm"
+            ? "rounded-lg px-3 py-2.5 text-sm font-medium text-brand-muted transition-colors hover:bg-brand-sand/80 hover:text-brand-ink"
+            : "rounded-lg px-3 py-2.5 text-sm font-medium text-brand-ink/85 transition-colors hover:bg-white/55 hover:text-brand-ink"
       }
     >
       {children}
@@ -47,17 +61,22 @@ export function Navbar() {
   const isHome = pathname === "/";
   const { locale, setLocale, t } = useLocale();
   const [solidBar, setSolidBar] = useState(!isHome);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!isHome) {
       setSolidBar(true);
       return;
     }
-    const onScroll = () => setSolidBar(window.scrollY > 40);
+    const onScroll = () => setSolidBar(window.scrollY > 32);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, [isHome]);
+
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   const langSwitcher = (className: string) => (
     <div className={className} aria-label={t.nav.language}>
@@ -69,10 +88,8 @@ export function Navbar() {
           aria-pressed={locale === code}
           className={
             locale === code
-              ? "rounded-md bg-brand-ink px-2 py-1.5 text-xs font-semibold text-white sm:px-2.5 sm:text-sm"
-              : solidBar
-                ? "rounded-md px-2 py-1.5 text-xs font-medium text-brand-muted hover:bg-brand-sand/65 hover:text-brand-ink sm:px-2.5 sm:text-sm"
-                : "rounded-md px-2 py-1.5 text-xs font-medium text-brand-muted hover:bg-white/55 hover:text-brand-ink sm:px-2.5 sm:text-sm"
+              ? "min-h-[2.25rem] min-w-[2.25rem] rounded-lg bg-brand-navy px-2.5 text-xs font-semibold text-white sm:text-sm"
+              : "min-h-[2.25rem] min-w-[2.25rem] rounded-lg px-2.5 text-xs font-medium text-brand-muted hover:bg-brand-sand/80 hover:text-brand-ink sm:text-sm"
           }
         >
           {localeLabels[code]}
@@ -81,62 +98,104 @@ export function Navbar() {
     </div>
   );
 
+  const closeMenu = () => setMenuOpen(false);
+
   return (
     <header
       className={`fixed top-0 z-50 w-full transition-[background,border-color,box-shadow] duration-500 motion-reduce:transition-none ${
         solidBar
-          ? "border-b border-brand-outline/55 bg-brand-ivory/[0.94] shadow-soft backdrop-blur-xl supports-[backdrop-filter]:bg-brand-ivory/90"
-          : "border-b border-transparent bg-brand-ivory/[0.35] backdrop-blur-md supports-[backdrop-filter]:bg-brand-ivory/[0.28]"
+          ? "border-b border-brand-outline/55 bg-brand-ivory/[0.96] shadow-soft backdrop-blur-xl"
+          : "border-b border-transparent bg-brand-ivory/40 backdrop-blur-md"
       }`}
     >
       <Container>
-        <div className="flex min-h-[3.25rem] flex-col gap-2 py-2.5 sm:min-h-14 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:py-2">
-          <div className="flex items-center justify-between gap-3">
-            <Link
-              href="/"
-              className="font-display text-[1.06rem] font-medium tracking-[0.01em] text-brand-ink transition-colors hover:text-brand-blue sm:text-[1.12rem]"
-            >
-              {t.nav.brand}
-            </Link>
-            {langSwitcher("flex items-center gap-0.5 sm:hidden")}
-          </div>
+        <div className="flex min-h-[3.5rem] items-center justify-between gap-3 py-2">
+          <Link
+            href="/"
+            className="shrink-0 font-display text-[1.05rem] font-medium tracking-tight text-brand-ink sm:text-[1.12rem]"
+          >
+            {t.nav.brand}
+          </Link>
 
           <nav
-            className="flex flex-wrap items-center gap-0.5 overflow-x-auto pb-0.5"
+            className="hidden items-center gap-0.5 lg:flex"
             aria-label="Main"
           >
-            <NavLink href="/surgeons" solid={solidBar}>
-              {t.nav.surgeons}
-            </NavLink>
-            <NavLink href="/clinics" solid={solidBar}>
-              {t.nav.clinics}
-            </NavLink>
-            <NavLink href="/procedures" solid={solidBar}>
-              {t.nav.procedures}
-            </NavLink>
-            <NavLink href="/forum" solid={solidBar}>
-              {t.nav.forum}
-            </NavLink>
-            <NavLink href="/rules" solid={solidBar}>
-              {t.nav.rules}
-            </NavLink>
-            <NavLink href="/login" solid={solidBar}>
-              {t.nav.login}
-            </NavLink>
+            {mainLinks.map((link) => (
+              <NavLink key={link.href} href={link.href} solid={solidBar}>
+                {t.nav[link.key]}
+              </NavLink>
+            ))}
             <Link
-              href="/reviews/new"
-              className={`ml-0.5 shrink-0 rounded-md px-2.5 py-2 text-sm font-semibold transition-colors ${
-                solidBar
-                  ? "border border-brand-outline/85 bg-white/95 text-brand-ink shadow-sm hover:border-brand-blue/35"
-                  : "border border-brand-outline/60 bg-white/55 text-brand-ink backdrop-blur-sm hover:bg-white/80"
-              }`}
+              href="/early-access"
+              className="ml-1 rounded-lg px-3 py-2.5 text-sm font-medium text-brand-muted hover:text-brand-ink"
             >
-              {t.nav.writeReview}
+              {t.nav.earlyAccess}
             </Link>
           </nav>
 
-          {langSwitcher("hidden items-center gap-0.5 sm:flex")}
+          <div className="flex items-center gap-2">
+            {langSwitcher("hidden sm:flex items-center gap-0.5")}
+            <Link
+              href="/reviews/new"
+              className="hidden min-h-[2.75rem] items-center rounded-lg bg-brand-teal px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-teal-dark sm:inline-flex"
+            >
+              {t.nav.writeReview}
+            </Link>
+            <button
+              type="button"
+              className="inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-lg border border-brand-outline/80 bg-white lg:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+              onClick={() => setMenuOpen((o) => !o)}
+            >
+              <span className="sr-only">Menu</span>
+              <span className="flex flex-col gap-1.5" aria-hidden>
+                <span
+                  className={`block h-0.5 w-5 bg-brand-ink transition-transform ${menuOpen ? "translate-y-2 rotate-45" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 w-5 bg-brand-ink transition-opacity ${menuOpen ? "opacity-0" : ""}`}
+                />
+                <span
+                  className={`block h-0.5 w-5 bg-brand-ink transition-transform ${menuOpen ? "-translate-y-2 -rotate-45" : ""}`}
+                />
+              </span>
+            </button>
+          </div>
         </div>
+
+        {menuOpen ? (
+          <nav
+            id="mobile-nav"
+            className="border-t border-brand-outline/50 py-4 lg:hidden"
+            aria-label="Mobile"
+          >
+            <div className="flex flex-col gap-1">
+              {mainLinks.map((link) => (
+                <NavLink
+                  key={link.href}
+                  href={link.href}
+                  solid={solidBar}
+                  onNavigate={closeMenu}
+                >
+                  {t.nav[link.key]}
+                </NavLink>
+              ))}
+              <NavLink href="/early-access" solid={solidBar} onNavigate={closeMenu}>
+                {t.nav.earlyAccess}
+              </NavLink>
+              <Link
+                href="/reviews/new"
+                onClick={closeMenu}
+                className="mt-2 flex min-h-[3rem] items-center justify-center rounded-lg bg-brand-teal text-sm font-semibold text-white"
+              >
+                {t.nav.writeReview}
+              </Link>
+            </div>
+            {langSwitcher("mt-4 flex items-center gap-1 sm:hidden")}
+          </nav>
+        ) : null}
       </Container>
     </header>
   );

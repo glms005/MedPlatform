@@ -7,7 +7,7 @@ export function MedicalDisclaimerSection() {
   return (
     <SectionShell
       id="medical-disclaimer"
-      className="border-t border-brand-outline/60 bg-brand-sand/25 py-20 sm:py-24"
+      className="border-t border-brand-outline/60 bg-brand-sand/25 py-12 sm:py-14"
     >
       <Reveal>
         <div className="mx-auto max-w-3xl rounded-sm border border-brand-outline/80 bg-white/90 p-8 shadow-sm backdrop-blur-sm sm:p-10">

@@ -52,4 +52,39 @@ html {
     mix-blend-mode: multiply;
     pointer-events: none;
   }
+
+  .product-chrome {
+    box-shadow:
+      0 0 0 1px rgb(229 224 216 / 0.9),
+      0 24px 48px -28px rgb(28 34 32 / 0.22),
+      0 8px 16px -12px rgb(28 34 32 / 0.08);
+  }
+
+  .ecosystem-panel {
+    background: linear-gradient(
+      165deg,
+      rgb(255 255 255 / 0.96) 0%,
+      rgb(250 249 246 / 0.98) 45%,
+      rgb(244 239 229 / 0.92) 100%
+    );
+  }
+
+  .activity-marquee {
+    animation: activity-marquee 42s linear infinite;
+  }
+
+  @keyframes activity-marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .activity-marquee {
+      animation: none;
+    }
+  }
 }

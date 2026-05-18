@@ -15,8 +15,11 @@ export type Dictionary = {
     procedures: string;
     forum: string;
     community: string;
+    reviews: string;
+    recoveryStories: string;
     rules: string;
     pricing: string;
+    earlyAccess: string;
     login: string;
     messages: string;
     writeReview: string;
@@ -74,9 +77,12 @@ export const dictionary: Record<Locale, Dictionary> = {
       clinics: "Clinics",
       procedures: "Procedures",
       forum: "Forum",
-      community: "Forum",
+      community: "Community",
+      reviews: "Reviews",
+      recoveryStories: "Recovery Stories",
       rules: "Rules",
       pricing: "Pricing",
+      earlyAccess: "Early access",
       login: "Sign in",
       messages: "Messages",
       writeReview: "Write a review",
@@ -132,9 +138,12 @@ export const dictionary: Record<Locale, Dictionary> = {
       clinics: "კლინიკები",
       procedures: "ოპერაციები",
       forum: "ფორუმი",
-      community: "ფორუმი",
+      community: "საზოგადოება",
+      reviews: "შეფასებები",
+      recoveryStories: "აღდგენა",
       rules: "წესები",
       pricing: "ფასები",
+      earlyAccess: "ადრეული წვდომა",
       login: "შესვლა",
       messages: "შეტყობინებები",
       writeReview: "შეფასება",
@@ -189,9 +198,12 @@ export const dictionary: Record<Locale, Dictionary> = {
       clinics: "Клиники",
       procedures: "Процедуры",
       forum: "Форум",
-      community: "Форум",
+      community: "Сообщество",
+      reviews: "Отзывы",
+      recoveryStories: "Восстановление",
       rules: "Правила",
       pricing: "Тарифы",
+      earlyAccess: "Ранний доступ",
       login: "Вход",
       messages: "Сообщения",
       writeReview: "Отзыв",
