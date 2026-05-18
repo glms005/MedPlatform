@@ -161,7 +161,7 @@ export function Navbar() {
             ) : !authLoading ? (
               <Link
                 href="/login"
-                className="hidden min-h-[2.75rem] items-center rounded-lg border border-brand-outline px-4 py-2 text-sm font-semibold text-brand-ink hover:bg-brand-sand sm:inline-flex"
+                className="inline-flex min-h-[2.75rem] items-center rounded-lg border border-brand-outline px-3 py-2 text-sm font-semibold text-brand-ink hover:bg-brand-sand sm:px-4"
               >
                 {t.nav.login}
               </Link>

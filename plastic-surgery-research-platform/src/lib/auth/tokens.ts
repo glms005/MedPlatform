@@ -114,6 +114,9 @@ export const authCookies = {
   sessionMaxAge: SESSION_TTL_MS / 1000,
 } as const;
 
+/** Show OTP in UI until a real SMS provider is configured (MVP). */
 export function isDevOtpExposed(): boolean {
-  return process.env.NODE_ENV !== "production" || process.env.EXPOSE_DEV_OTP === "true";
+  if (process.env.SMS_PROVIDER) return false;
+  if (process.env.EXPOSE_DEV_OTP === "false") return false;
+  return true;
 }
