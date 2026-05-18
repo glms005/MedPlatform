@@ -6,6 +6,7 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
+import { AuthProvider } from "@/components/providers/AuthProvider";
 import { LocaleProvider } from "@/components/providers/LocaleProvider";
 import "./globals.css";
 
@@ -54,9 +55,11 @@ export default function RootLayout({
     >
       <body className="bg-brand-ivory font-sans text-brand-ink antialiased">
         <LocaleProvider>
-          <Navbar />
-          {/* Fixed navbar offset — see Navbar.tsx */}
-          <div className="pt-14">{children}</div>
+          <AuthProvider>
+            <Navbar />
+            {/* Fixed navbar offset — see Navbar.tsx */}
+            <div className="pt-14">{children}</div>
+          </AuthProvider>
         </LocaleProvider>
       </body>
     </html>

@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
+import { useAuth } from "@/components/providers/AuthProvider";
 import { useLocale } from "@/components/providers/LocaleProvider";
 import type { Locale } from "@/lib/i18n";
 
@@ -60,8 +61,13 @@ export function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const { locale, setLocale, t } = useLocale();
+  const { user, loading: authLoading, signOut } = useAuth();
   const [solidBar, setSolidBar] = useState(!isHome);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const displayLabel = user
+    ? user.anonymousName ?? user.displayName
+    : null;
 
   useEffect(() => {
     if (!isHome) {
@@ -136,6 +142,30 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             {langSwitcher("hidden sm:flex items-center gap-0.5")}
+            {!authLoading && user ? (
+              <div className="hidden items-center gap-2 sm:flex">
+                <span
+                  className="max-w-[8rem] truncate rounded-lg bg-brand-teal/10 px-2.5 py-2 text-xs font-semibold text-brand-teal"
+                  title={displayLabel ?? undefined}
+                >
+                  {displayLabel}
+                </span>
+                <button
+                  type="button"
+                  onClick={() => void signOut()}
+                  className="min-h-[2.75rem] rounded-lg px-3 py-2 text-sm font-medium text-brand-muted hover:bg-brand-sand hover:text-brand-ink"
+                >
+                  {t.nav.signOut}
+                </button>
+              </div>
+            ) : !authLoading ? (
+              <Link
+                href="/login"
+                className="hidden min-h-[2.75rem] items-center rounded-lg border border-brand-outline px-4 py-2 text-sm font-semibold text-brand-ink hover:bg-brand-sand sm:inline-flex"
+              >
+                {t.nav.login}
+              </Link>
+            ) : null}
             <Link
               href="/reviews/new"
               className="hidden min-h-[2.75rem] items-center rounded-lg bg-brand-teal px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-teal-dark sm:inline-flex"
@@ -185,6 +215,27 @@ export function Navbar() {
               <NavLink href="/early-access" solid={solidBar} onNavigate={closeMenu}>
                 {t.nav.earlyAccess}
               </NavLink>
+              {user ? (
+                <>
+                  <p className="px-3 py-2 text-sm font-semibold text-brand-teal">
+                    {displayLabel}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      void signOut();
+                      closeMenu();
+                    }}
+                    className="rounded-lg px-3 py-2.5 text-left text-sm font-medium text-brand-muted hover:bg-brand-sand"
+                  >
+                    {t.nav.signOut}
+                  </button>
+                </>
+              ) : (
+                <NavLink href="/login" solid={solidBar} onNavigate={closeMenu}>
+                  {t.nav.login}
+                </NavLink>
+              )}
               <Link
                 href="/reviews/new"
                 onClick={closeMenu}

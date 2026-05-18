@@ -9,7 +9,7 @@ export default function LoginPage() {
         <div className="mx-auto max-w-md">
           <PageHeader
             title="Sign in"
-            description="Phone verification UI mockup. Real OTP via Supabase Auth is planned for Phase 1."
+            description="Verify your Georgian mobile number with a one-time code. Sessions stay on this device until you sign out."
           />
           <LoginForm />
         </div>

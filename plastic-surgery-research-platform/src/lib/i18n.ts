@@ -21,6 +21,8 @@ export type Dictionary = {
     pricing: string;
     earlyAccess: string;
     login: string;
+    signOut: string;
+    account: string;
     messages: string;
     writeReview: string;
   };
@@ -50,11 +52,26 @@ export type Dictionary = {
   };
   login: {
     title: string;
+    subtitle: string;
     phone: string;
+    phoneHint: string;
     code: string;
+    codeSentTo: string;
     sendCode: string;
     verify: string;
     anonymous: string;
+    nickname: string;
+    nicknamePlaceholder: string;
+    resend: string;
+    resendIn: string;
+    changePhone: string;
+    loading: string;
+    errorGeneric: string;
+    devCodeLabel: string;
+    successTitle: string;
+    successBody: string;
+    goCommunity: string;
+    goHome: string;
   };
   pricing: {
     title: string;
@@ -84,6 +101,8 @@ export const dictionary: Record<Locale, Dictionary> = {
       pricing: "Pricing",
       earlyAccess: "Early access",
       login: "Sign in",
+      signOut: "Sign out",
+      account: "Account",
       messages: "Messages",
       writeReview: "Write a review",
     },
@@ -112,12 +131,27 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     rules: { title: "Community rules" },
     login: {
-      title: "Sign in",
+      title: "Sign in with phone",
+      subtitle: "We send a one-time code to verify your number. No password required.",
       phone: "Phone number",
+      phoneHint: "Georgian mobile numbers only. Standard SMS rates may apply when SMS is enabled.",
       code: "Verification code",
-      sendCode: "Send code",
-      verify: "Verify",
-      anonymous: "Continue with anonymous nickname",
+      codeSentTo: "Code sent to",
+      sendCode: "Send verification code",
+      verify: "Verify & sign in",
+      anonymous: "Post with an anonymous nickname",
+      nickname: "Nickname (optional)",
+      nicknamePlaceholder: "e.g. HealingNotebook",
+      resend: "Resend code",
+      resendIn: "Resend in {s}s",
+      changePhone: "Use a different number",
+      loading: "Please wait…",
+      errorGeneric: "Something went wrong. Try again.",
+      devCodeLabel: "Dev code (preview only)",
+      successTitle: "You're signed in",
+      successBody: "Your session is active on this device. SMS delivery uses a demo code until a provider is connected.",
+      goCommunity: "Go to community",
+      goHome: "Back to home",
     },
     pricing: {
       title: "Plans",
@@ -145,6 +179,8 @@ export const dictionary: Record<Locale, Dictionary> = {
       pricing: "ფასები",
       earlyAccess: "ადრეული წვდომა",
       login: "შესვლა",
+      signOut: "გასვლა",
+      account: "ანგარიში",
       messages: "შეტყობინებები",
       writeReview: "შეფასება",
     },
@@ -172,12 +208,27 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     rules: { title: "საზოგადოების წესები" },
     login: {
-      title: "შესვლა",
-      phone: "ტელეფონი",
-      code: "კოდი",
+      title: "შესვლა ტელეფონით",
+      subtitle: "გამოგიგზავნით ერთჯერად კოდს. პაროლი არ სჭირდება.",
+      phone: "ტელეფონის ნომერი",
+      phoneHint: "მხოლოდ ქართული მობილური ნომრები.",
+      code: "დამადასტურებელი კოდი",
+      codeSentTo: "კოდი გაგზავნილია",
       sendCode: "კოდის გაგზავნა",
-      verify: "დადასტურება",
-      anonymous: "ანონიმურად გაგრძელება",
+      verify: "დადასტურება და შესვლა",
+      anonymous: "ანონიმური ფსევდონიმით",
+      nickname: "ფსევდონიმი (არასავალდებულო)",
+      nicknamePlaceholder: "მაგ. HealingNotebook",
+      resend: "კოდის ხელახლა გაგზავნა",
+      resendIn: "ხელახლა {s} წამში",
+      changePhone: "სხვა ნომერი",
+      loading: "მიმდინარეობს…",
+      errorGeneric: "დაფიქსირდა შეცდომა. სცადეთ ხელახლა.",
+      devCodeLabel: "დევ კოდი",
+      successTitle: "წარმატებით შეხვედით",
+      successBody: "სესია აქტიურია ამ მოწყობილობაზე.",
+      goCommunity: "ფორუმზე",
+      goHome: "მთავარზე",
     },
     pricing: {
       title: "გეგმები",
@@ -205,6 +256,8 @@ export const dictionary: Record<Locale, Dictionary> = {
       pricing: "Тарифы",
       earlyAccess: "Ранний доступ",
       login: "Вход",
+      signOut: "Выйти",
+      account: "Аккаунт",
       messages: "Сообщения",
       writeReview: "Отзыв",
     },
@@ -232,12 +285,27 @@ export const dictionary: Record<Locale, Dictionary> = {
     },
     rules: { title: "Правила сообщества" },
     login: {
-      title: "Вход",
-      phone: "Телефон",
-      code: "Код",
+      title: "Вход по телефону",
+      subtitle: "Отправим одноразовый код. Пароль не нужен.",
+      phone: "Номер телефона",
+      phoneHint: "Только грузинские мобильные номера.",
+      code: "Код подтверждения",
+      codeSentTo: "Код отправлен на",
       sendCode: "Отправить код",
-      verify: "Подтвердить",
-      anonymous: "Продолжить анонимно",
+      verify: "Подтвердить и войти",
+      anonymous: "Публиковать анонимно",
+      nickname: "Псевдоним (необязательно)",
+      nicknamePlaceholder: "напр. HealingNotebook",
+      resend: "Отправить снова",
+      resendIn: "Повтор через {s} с",
+      changePhone: "Другой номер",
+      loading: "Подождите…",
+      errorGeneric: "Ошибка. Попробуйте снова.",
+      devCodeLabel: "Код для разработки",
+      successTitle: "Вы вошли",
+      successBody: "Сессия активна на этом устройстве.",
+      goCommunity: "В сообщество",
+      goHome: "На главную",
     },
     pricing: {
       title: "Тарифы",
