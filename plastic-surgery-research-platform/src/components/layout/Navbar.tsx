@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { Container } from "@/components/ui/Container";
 import { useAuth } from "@/components/providers/AuthProvider";
 import { useLocale } from "@/components/providers/LocaleProvider";
@@ -53,12 +54,7 @@ export function Navbar() {
     <header className="warm-navbar fixed top-0 z-50 w-full">
       <Container>
         <div className="flex min-h-[3.5rem] items-center gap-2 py-2 sm:gap-3">
-          <Link
-            href="/"
-            className="shrink-0 rounded-xl bg-gradient-to-br from-brand-teal-light/80 to-amber-50/90 px-2.5 py-1.5 font-display text-[1rem] font-medium tracking-tight text-brand-ink ring-1 ring-white/80 sm:text-[1.12rem]"
-          >
-            {t.nav.brand}
-          </Link>
+          <BrandLogo name={t.nav.brand} compact />
 
           <div className="flex min-w-0 flex-1 items-center justify-end gap-1 sm:gap-2">
             <nav

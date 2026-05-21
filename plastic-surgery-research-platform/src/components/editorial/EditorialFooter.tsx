@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { BrandLogo } from "@/components/layout/BrandLogo";
 import { useLocale } from "@/components/providers/LocaleProvider";
 
 export function EditorialFooter() {
@@ -21,10 +22,8 @@ export function EditorialFooter() {
       <div className="mx-auto max-w-[1400px] px-4 py-14 sm:px-8 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <div>
-            <p className="font-display text-2xl font-medium tracking-tight text-brand-ink">
-              {t.nav.brand}
-            </p>
-            <p className="mt-3 max-w-md text-sm leading-relaxed text-brand-muted">
+            <BrandLogo name={t.nav.brand} href="/" className="bg-white/80" />
+            <p className="mt-4 max-w-md text-sm leading-relaxed text-brand-muted">
               A trust-first research community for plastic surgery in Georgia. Compare
               surgeons, clinics, procedures, and patient experiences—with moderation and
               clear boundaries.

@@ -10,7 +10,7 @@ export default function RulesPage() {
       <Container>
         <PageHeader
           title="Community rules"
-          description="Everyone using MedPlatform agrees to these standards. Violations may result in content removal or account restrictions when moderation is live."
+          description="Everyone using ShareWell agrees to these standards. Violations may result in content removal or account restrictions when moderation is live."
         />
         <div className="grid gap-4 md:grid-cols-2">
           {communityRules.map((rule) => (

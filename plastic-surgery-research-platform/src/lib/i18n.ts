@@ -2,7 +2,7 @@ export type Locale = "en" | "ka" | "ru";
 
 export const locales: Locale[] = ["en", "ka", "ru"];
 
-export const LOCALE_STORAGE_KEY = "medplatform-locale";
+export const LOCALE_STORAGE_KEY = "sharewell-locale";
 
 export type Dictionary = {
   meta: { title: string; description: string };
@@ -108,13 +108,13 @@ export type Dictionary = {
 export const dictionary: Record<Locale, Dictionary> = {
   en: {
     meta: {
-      title: "Plastic Surgery Research Platform",
+      title: "ShareWell — Plastic Surgery Research",
       description:
-        "Trust-focused research for plastic surgery in Georgia — surgeons, clinics, procedures, reviews, and community.",
+        "ShareWell is a trust-focused community for plastic surgery research in Georgia — surgeons, clinics, procedures, reviews, and discussion.",
     },
     nav: {
       language: "Language",
-      brand: "MedPlatform",
+      brand: "ShareWell",
       home: "Home",
       plasticSurgeons: "Plastic Surgeons",
       estheticians: "Estheticians",
@@ -237,13 +237,13 @@ export const dictionary: Record<Locale, Dictionary> = {
   },
   ka: {
     meta: {
-      title: "პლასტიკური ქირურგიის კვლევითი პლატფორმა",
+      title: "ShareWell — პლასტიკური ქირურგიის კვლევა",
       description:
-        "სანდო კვლევა პლასტიკური ქირურგიისთვის საქართველოში — ქირურგები, კლინიკები, პროცედურები და საზოგადოება.",
+        "ShareWell არის სანდო სივრცე პლასტიკური ქირურგიის კვლევისთვის საქართველოში — ქირურგები, კლინიკები, პროცედურები და საზოგადოება.",
     },
     nav: {
       language: "ენა",
-      brand: "MedPlatform",
+      brand: "ShareWell",
       home: "მთავარი",
       plasticSurgeons: "პლასტიკური ქირურგები",
       estheticians: "ესთეტისტები",
@@ -365,13 +365,13 @@ export const dictionary: Record<Locale, Dictionary> = {
   },
   ru: {
     meta: {
-      title: "Платформа исследования пластической хирургии",
+      title: "ShareWell — исследование пластической хирургии",
       description:
-        "Платформа для изучения пластической хирургии в Грузии — хирурги, клиники, процедуры и сообщество.",
+        "ShareWell — сообщество для изучения пластической хирургии в Грузии: хирурги, клиники, процедуры и обсуждения.",
     },
     nav: {
       language: "Язык",
-      brand: "MedPlatform",
+      brand: "ShareWell",
       home: "Главная",
       plasticSurgeons: "Пластические хирурги",
       estheticians: "Эстетисты",

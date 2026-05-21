@@ -38,9 +38,16 @@ const fontKa = Noto_Sans_Georgian({
 });
 
 export const metadata: Metadata = {
-  title: "Plastic Surgery Research Platform",
+  title: {
+    default: "ShareWell",
+    template: "%s · ShareWell",
+  },
   description:
-    "A transparency-first research platform for plastic surgery decisions — surgeons, procedures, recovery, and discussion.",
+    "ShareWell — a trust-focused community for plastic surgery research, experiences, and informed decisions.",
+  icons: {
+    icon: "/images/sharewell-logo.png",
+    apple: "/images/sharewell-logo.png",
+  },
 };
 
 export default function RootLayout({
