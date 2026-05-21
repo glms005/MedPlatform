@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
 import { Container } from "@/components/ui/Container";
 import { useAuth } from "@/components/providers/AuthProvider";
 import { useLocale } from "@/components/providers/LocaleProvider";
@@ -21,11 +20,9 @@ const navLinks = [
 function NavLink({
   href,
   children,
-  solid,
 }: {
   href: string;
   children: React.ReactNode;
-  solid: boolean;
 }) {
   const pathname = usePathname();
   const active = pathname === href || pathname.startsWith(`${href}/`);
@@ -33,15 +30,11 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={
+      className={`warm-nav-pill shrink-0 whitespace-nowrap px-2 py-1.5 text-[10px] font-medium sm:px-3 sm:py-2 sm:text-xs lg:text-sm ${
         active
-          ? solid
-            ? "shrink-0 rounded-lg bg-brand-teal/12 px-1.5 py-1.5 text-[10px] font-semibold text-brand-ink whitespace-nowrap sm:px-2 sm:py-2 sm:text-xs lg:text-sm"
-            : "shrink-0 rounded-lg bg-white/70 px-1.5 py-1.5 text-[10px] font-semibold text-brand-ink ring-1 ring-brand-outline/50 whitespace-nowrap sm:px-2 sm:py-2 sm:text-xs lg:text-sm"
-          : solid
-            ? "shrink-0 rounded-lg px-1.5 py-1.5 text-[10px] font-medium text-brand-muted transition-colors hover:bg-brand-sand/80 hover:text-brand-ink whitespace-nowrap sm:px-2 sm:py-2 sm:text-xs lg:text-sm"
-            : "shrink-0 rounded-lg px-1.5 py-1.5 text-[10px] font-medium text-brand-ink/85 transition-colors hover:bg-white/55 hover:text-brand-ink whitespace-nowrap sm:px-2 sm:py-2 sm:text-xs lg:text-sm"
-      }
+          ? "warm-nav-pill--active text-brand-ink"
+          : "text-brand-muted hover:text-brand-ink"
+      }`}
     >
       {children}
     </Link>
@@ -49,40 +42,20 @@ function NavLink({
 }
 
 export function Navbar() {
-  const pathname = usePathname();
-  const isHome = pathname === "/";
   const { locale, setLocale, t } = useLocale();
   const { user, loading: authLoading, signOut } = useAuth();
-  const [solidBar, setSolidBar] = useState(!isHome);
 
   const displayLabel = user
     ? user.anonymousName ?? user.displayName
     : null;
 
-  useEffect(() => {
-    if (!isHome) {
-      setSolidBar(true);
-      return;
-    }
-    const onScroll = () => setSolidBar(window.scrollY > 32);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, [isHome]);
-
   return (
-    <header
-      className={`fixed top-0 z-50 w-full transition-[background,border-color,box-shadow] duration-500 motion-reduce:transition-none ${
-        solidBar
-          ? "border-b border-brand-outline/55 bg-brand-ivory/[0.96] shadow-soft backdrop-blur-xl"
-          : "border-b border-transparent bg-brand-ivory/40 backdrop-blur-md"
-      }`}
-    >
+    <header className="warm-navbar fixed top-0 z-50 w-full">
       <Container>
         <div className="flex min-h-[3.5rem] items-center gap-2 py-2 sm:gap-3">
           <Link
             href="/"
-            className="shrink-0 font-display text-[1rem] font-medium tracking-tight text-brand-ink sm:text-[1.12rem]"
+            className="shrink-0 rounded-xl bg-gradient-to-br from-brand-teal-light/80 to-amber-50/90 px-2.5 py-1.5 font-display text-[1rem] font-medium tracking-tight text-brand-ink ring-1 ring-white/80 sm:text-[1.12rem]"
           >
             {t.nav.brand}
           </Link>
@@ -93,14 +66,14 @@ export function Navbar() {
               aria-label="Sections"
             >
               {navLinks.map((link) => (
-                <NavLink key={link.href} href={link.href} solid={solidBar}>
+                <NavLink key={link.href} href={link.href}>
                   {t.nav[link.key]}
                 </NavLink>
               ))}
             </nav>
 
             <div
-              className="flex shrink-0 items-center gap-0.5 border-l border-brand-outline/40 pl-1 sm:pl-2"
+              className="flex shrink-0 items-center gap-0.5 rounded-full border border-brand-outline/40 bg-white/60 p-0.5 pl-1 sm:pl-1.5"
               aria-label={t.nav.language}
             >
               {(["en", "ka", "ru"] as const satisfies readonly Locale[]).map((code) => (
@@ -111,8 +84,8 @@ export function Navbar() {
                   aria-pressed={locale === code}
                   className={
                     locale === code
-                      ? "min-h-[2rem] min-w-[2rem] rounded-lg bg-brand-navy px-2 text-[10px] font-semibold text-white sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
-                      : "min-h-[2rem] min-w-[2rem] rounded-lg px-2 text-[10px] font-medium text-brand-muted hover:bg-brand-sand/80 hover:text-brand-ink sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
+                      ? "min-h-[2rem] min-w-[2rem] rounded-full bg-brand-teal px-2 text-[10px] font-semibold text-white sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
+                      : "warm-nav-pill min-h-[2rem] min-w-[2rem] px-2 text-[10px] font-medium text-brand-muted sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
                   }
                 >
                   {localeLabels[code]}
@@ -123,7 +96,7 @@ export function Navbar() {
             {!authLoading && user ? (
               <div className="flex shrink-0 items-center gap-1 sm:gap-2">
                 <span
-                  className="max-w-[5rem] truncate rounded-lg bg-brand-teal/10 px-2 py-1.5 text-[10px] font-semibold text-brand-teal sm:max-w-[8rem] sm:py-2 sm:text-xs"
+                  className="max-w-[5rem] truncate rounded-full bg-brand-teal/10 px-2.5 py-1.5 text-[10px] font-semibold text-brand-teal sm:max-w-[8rem] sm:text-xs"
                   title={displayLabel ?? undefined}
                 >
                   {displayLabel}
@@ -131,16 +104,13 @@ export function Navbar() {
                 <button
                   type="button"
                   onClick={() => void signOut()}
-                  className="min-h-[2.5rem] rounded-lg px-2 py-1.5 text-[10px] font-medium text-brand-muted hover:bg-brand-sand hover:text-brand-ink sm:min-h-[2.75rem] sm:px-3 sm:py-2 sm:text-sm"
+                  className="warm-nav-pill min-h-[2.5rem] px-2 py-1.5 text-[10px] font-medium text-brand-muted sm:min-h-[2.75rem] sm:px-3 sm:py-2 sm:text-sm"
                 >
                   {t.nav.signOut}
                 </button>
               </div>
             ) : !authLoading ? (
-              <Link
-                href="/login"
-                className="inline-flex min-h-[2.5rem] shrink-0 items-center rounded-lg border border-brand-outline px-2 py-1.5 text-[10px] font-semibold text-brand-ink hover:bg-brand-sand sm:min-h-[2.75rem] sm:px-4 sm:py-2 sm:text-sm"
-              >
+              <Link href="/login" className="warm-btn-primary min-h-[2.5rem] px-4 py-2 text-[10px] sm:min-h-[2.75rem] sm:text-sm">
                 {t.nav.login}
               </Link>
             ) : null}

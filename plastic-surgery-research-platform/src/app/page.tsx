@@ -6,7 +6,7 @@ import { MedicalDisclaimerSection } from "@/components/editorial/MedicalDisclaim
 
 export default function Page() {
   return (
-    <main id="top" className="relative min-h-screen bg-brand-ivory text-brand-ink">
+    <main id="top" className="warm-page relative min-h-screen text-brand-ink">
       <HomeIntroSection />
       <HomeExploreSection />
       <WhyTrustUs />

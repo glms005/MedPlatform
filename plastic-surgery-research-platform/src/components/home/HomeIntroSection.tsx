@@ -183,17 +183,11 @@ export function HomeIntroSection() {
             </div>
 
             <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center sm:gap-4">
-              <Link
-                href="/forum"
-                className="inline-flex min-h-[3rem] items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-teal to-brand-teal-dark px-7 py-3 text-sm font-semibold text-white shadow-md transition-all hover:-translate-y-0.5 hover:shadow-lift"
-              >
+              <Link href="/forum" className="warm-btn-primary gap-2">
                 <span aria-hidden>💬</span>
                 {intro.ctaCommunity}
               </Link>
-              <Link
-                href="/rules"
-                className="inline-flex min-h-[3rem] items-center justify-center rounded-full border border-brand-outline/80 bg-white/90 px-7 py-3 text-sm font-semibold text-brand-ink transition-all hover:-translate-y-0.5 hover:bg-amber-50/80 hover:shadow-soft"
-              >
+              <Link href="/rules" className="warm-btn-secondary">
                 {intro.ctaRules}
               </Link>
             </div>

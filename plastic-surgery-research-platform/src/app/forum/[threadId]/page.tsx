@@ -30,7 +30,7 @@ export default async function ForumThreadPage({ params }: Props) {
   const surgeon = thread.surgeonId ? getSurgeonById(thread.surgeonId) : null;
 
   return (
-    <div className="min-h-screen bg-brand-ivory py-10 sm:py-14">
+    <div className="min-h-screen warm-page py-10 sm:py-14">
       <Container>
         <Link href="/forum" className="text-sm font-medium text-brand-blue hover:underline">
           ← Forum

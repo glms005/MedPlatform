@@ -25,14 +25,14 @@ export function ForumPageClient({ initialThreads }: { initialThreads: ForumThrea
         title={t.forum.title}
         description={t.forum.subtitle}
       />
-      <div className="mb-6 flex gap-2">
+      <div className="mb-6 flex flex-wrap gap-2">
         <button
           type="button"
           onClick={() => setSort("recent")}
           className={
             sort === "recent"
-              ? "rounded-md bg-brand-ink px-4 py-2 text-sm font-semibold text-white"
-              : "rounded-md border border-brand-outline px-4 py-2 text-sm font-medium text-brand-muted hover:text-brand-ink"
+              ? "warm-nav-pill warm-nav-pill--active px-4 py-2 text-sm"
+              : "warm-nav-pill border border-brand-outline/60 bg-white/80 px-4 py-2 text-sm font-medium text-brand-muted"
           }
         >
           {t.forum.sortRecent}
@@ -42,8 +42,8 @@ export function ForumPageClient({ initialThreads }: { initialThreads: ForumThrea
           onClick={() => setSort("top")}
           className={
             sort === "top"
-              ? "rounded-md bg-brand-ink px-4 py-2 text-sm font-semibold text-white"
-              : "rounded-md border border-brand-outline px-4 py-2 text-sm font-medium text-brand-muted hover:text-brand-ink"
+              ? "warm-nav-pill warm-nav-pill--active px-4 py-2 text-sm"
+              : "warm-nav-pill border border-brand-outline/60 bg-white/80 px-4 py-2 text-sm font-medium text-brand-muted"
           }
         >
           {t.forum.sortTop}

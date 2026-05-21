@@ -6,17 +6,13 @@ type Props = {
 
 export function PageHeader({ eyebrow, title, description }: Props) {
   return (
-    <header className="mb-10">
-      {eyebrow ? (
-        <p className="text-xs font-semibold uppercase tracking-wide text-brand-blue">
-          {eyebrow}
-        </p>
-      ) : null}
-      <h1 className="mt-2 font-display text-3xl font-semibold text-brand-ink sm:text-4xl">
-        {title}
-      </h1>
+    <header className="warm-panel mb-10 p-6 sm:p-8">
+      {eyebrow ? <p className="warm-eyebrow">{eyebrow}</p> : null}
+      <h1 className="warm-title mt-3 text-3xl sm:text-4xl">{title}</h1>
       {description ? (
-        <p className="mt-3 max-w-2xl text-brand-muted">{description}</p>
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-brand-muted">
+          {description}
+        </p>
       ) : null}
     </header>
   );

@@ -22,7 +22,7 @@ export default async function ClinicProfilePage({ params }: Props) {
   const clinicSurgeons = surgeons.filter((s) => clinic.surgeonIds.includes(s.id));
 
   return (
-    <div className="min-h-screen bg-brand-ivory py-10 sm:py-14">
+    <div className="min-h-screen warm-page py-10 sm:py-14">
       <Container>
         <Link href="/clinics" className="text-sm font-medium text-brand-blue hover:underline">
           ← Clinics

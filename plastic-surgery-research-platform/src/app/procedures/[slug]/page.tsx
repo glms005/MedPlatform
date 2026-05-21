@@ -23,7 +23,7 @@ export default async function ProcedureGuidePage({ params }: Props) {
   if (!p) notFound();
 
   return (
-    <div className="min-h-screen bg-brand-ivory py-10 sm:py-14">
+    <div className="min-h-screen warm-page py-10 sm:py-14">
       <Container>
         <Link
           href="/procedures"

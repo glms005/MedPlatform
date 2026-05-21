@@ -3,7 +3,7 @@ import { ReviewForm } from "./ReviewForm";
 
 export default function NewReviewPage() {
   return (
-    <div className="min-h-screen bg-brand-ivory py-12 sm:py-16">
+    <div className="min-h-screen warm-page py-12 sm:py-16">
       <Container>
         <header className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-wide text-brand-blue">

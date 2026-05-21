@@ -24,7 +24,7 @@ export default async function SurgeonProfilePage({ params }: Props) {
   const clinic = getClinicById(surgeon.clinicId);
 
   return (
-    <div className="min-h-screen bg-brand-ivory py-10 sm:py-14">
+    <div className="min-h-screen warm-page py-10 sm:py-14">
       <Container>
         <Link
           href="/surgeons"
