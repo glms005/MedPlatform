@@ -81,6 +81,16 @@ export type Dictionary = {
     title: string;
     subtitle: string;
   };
+  home: {
+    eyebrow: string;
+    title: string;
+    subtitle: string;
+    explore: string;
+    categories: Record<
+      "plasticSurgeons" | "estheticians" | "plasticSurgery" | "estheticProcedures",
+      { eyebrow: string; description: string }
+    >;
+  };
 };
 
 export const dictionary: Record<Locale, Dictionary> = {
@@ -165,6 +175,35 @@ export const dictionary: Record<Locale, Dictionary> = {
       title: "Plans",
       subtitle: "Subscription payments are not active in this MVP.",
     },
+    home: {
+      eyebrow: "Explore the platform",
+      title: "Research with clarity",
+      subtitle:
+        "Compare surgeons, estheticians, and procedures in one trust-first space—built for informed decisions, not sales pressure.",
+      explore: "Explore",
+      categories: {
+        plasticSurgeons: {
+          eyebrow: "Verified directory",
+          description:
+            "Credentials, reviews, and procedure focus—compare plastic surgeons side by side.",
+        },
+        estheticians: {
+          eyebrow: "Skin & med-spa",
+          description:
+            "Licensed estheticians and non-surgical providers for consultations and skin health.",
+        },
+        plasticSurgery: {
+          eyebrow: "Surgical procedures",
+          description:
+            "Rhinoplasty, body contouring, and more—with risks, timelines, and recovery context.",
+        },
+        estheticProcedures: {
+          eyebrow: "Non-surgical care",
+          description:
+            "Peels, lasers, injectables education—product-neutral guides for realistic expectations.",
+        },
+      },
+    },
   },
   ka: {
     meta: {
@@ -246,6 +285,35 @@ export const dictionary: Record<Locale, Dictionary> = {
       title: "გეგმები",
       subtitle: "გადახდები ამ MVP-ში არ არის აქტიური.",
     },
+    home: {
+      eyebrow: "გამოიკვლიეთ პლატფორმა",
+      title: "კვლევა გამჭვირვალობით",
+      subtitle:
+        "შეადარეთ ქირურგები, ესთეტისტები და პროცედურები ერთ სანდო სივრცეში — გადაწყვეტილებისთვის, არა გაყიდვებისთვის.",
+      explore: "ნახვა",
+      categories: {
+        plasticSurgeons: {
+          eyebrow: "დირექტორია",
+          description:
+            "კვალიფიკაცია, შეფასებები და სპეციალიზაცია — პლასტიკური ქირურგების შედარება.",
+        },
+        estheticians: {
+          eyebrow: "კანა და მედ-სპა",
+          description:
+            "ლიცენზირებული ესთეტისტები და არაქირურგიული მომსახურება კონსულტაციებისთვის.",
+        },
+        plasticSurgery: {
+          eyebrow: "ქირურგიული პროცედურები",
+          description:
+            "რინოპლასტიკა, კონტურინგი და სხვა — რისკები, ვადები და აღდგენა.",
+        },
+        estheticProcedures: {
+          eyebrow: "არაქირურგიული მოვლა",
+          description:
+            "პილინგები, ლაზერი, ინექციები — ნეიტრალური საგანმანათლებლო მიმოხილვები.",
+        },
+      },
+    },
   },
   ru: {
     meta: {
@@ -326,6 +394,35 @@ export const dictionary: Record<Locale, Dictionary> = {
     pricing: {
       title: "Тарифы",
       subtitle: "Оплата в этом MVP не подключена.",
+    },
+    home: {
+      eyebrow: "Исследуйте платформу",
+      title: "Исследуйте с ясностью",
+      subtitle:
+        "Сравнивайте хирургов, эстетистов и процедуры в одном пространстве — для осознанных решений, а не продаж.",
+      explore: "Открыть",
+      categories: {
+        plasticSurgeons: {
+          eyebrow: "Каталог",
+          description:
+            "Квалификация, отзывы и специализация — сравнение пластических хирургов.",
+        },
+        estheticians: {
+          eyebrow: "Кожа и мед-спа",
+          description:
+            "Лицензированные эстетисты и нехирургические услуги для консультаций.",
+        },
+        plasticSurgery: {
+          eyebrow: "Хирургические процедуры",
+          description:
+            "Ринопластика, контуринг тела и др. — риски, сроки и восстановление.",
+        },
+        estheticProcedures: {
+          eyebrow: "Без операции",
+          description:
+            "Пилинги, лазеры, инъекции — нейтральные образовательные материалы.",
+        },
+      },
     },
   },
 };
