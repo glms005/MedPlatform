@@ -86,6 +86,17 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     explore: string;
+    intro: {
+      eyebrow: string;
+      title: string;
+      lead: string;
+      body: string[];
+      guidelinesTitle: string;
+      guidelines: string;
+      closing: string;
+      ctaCommunity: string;
+      ctaRules: string;
+    };
     categories: Record<
       "plasticSurgeons" | "estheticians" | "plasticSurgery" | "estheticProcedures",
       { eyebrow: string; description: string }
@@ -181,6 +192,23 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle:
         "Compare surgeons, estheticians, and procedures in one trust-first space—built for informed decisions, not sales pressure.",
       explore: "Explore",
+      intro: {
+        eyebrow: "Welcome",
+        title: "A place to research, ask, and share—together",
+        lead:
+          "We created this platform so that people considering plastic surgery have a space where they can share real experiences, questions, and helpful information.",
+        body: [
+          "We know that reaching such a decision is not easy—often we need others' experiences, honest advice, and a safe environment where we can freely ask questions or tell our own story.",
+          "Our goal is for this space to be friendly, confidential, and grounded in respect. You can share your experience, ask questions, read others' stories, and find information about doctors, clinics, and procedures.",
+        ],
+        guidelinesTitle: "So everyone feels safe",
+        guidelines:
+          "It is important to follow basic rules: speak with respect, do not spread unverified information, do not share others' personal data, and remember that the platform does not replace a doctor's consultation.",
+        closing:
+          "This is a place where we help each other make more informed and calm decisions.",
+        ctaCommunity: "Join the community",
+        ctaRules: "Community rules",
+      },
       categories: {
         plasticSurgeons: {
           eyebrow: "Verified directory",
@@ -291,6 +319,23 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle:
         "შეადარეთ ქირურგები, ესთეტისტები და პროცედურები ერთ სანდო სივრცეში — გადაწყვეტილებისთვის, არა გაყიდვებისთვის.",
       explore: "ნახვა",
+      intro: {
+        eyebrow: "მოგესალმებით",
+        title: "სივრცე, სადაც თქვენი გამოცდილება მნიშვნელოვანია",
+        lead:
+          "ჩვენ შევქმენით ეს პლატფორმა იმისთვის, რომ ადამიანებს, რომლებიც პლასტიკურ ოპერაციაზე ფიქრობენ, ჰქონდეთ სივრცე, სადაც შეძლებენ რეალური გამოცდილების, კითხვების და სასარგებლო ინფორმაციის გაზიარებას.",
+        body: [
+          "ვიცით, რომ ასეთ გადაწყვეტილებამდე მისვლა მარტივი არ არის — ხშირად გვჭირდება სხვისი გამოცდილება, გულწრფელი რჩევა და უსაფრთხო გარემო, სადაც თავისუფლად შეგვიძლია კითხვა ან საკუთარი ისტორიის მოყოლა.",
+          "ჩვენი მიზანია, ეს სივრცე იყოს მეგობრული, კონფიდენციალური და პატივისცემაზე დაფუძნებული. შეგიძლიათ გააზიაროთ თქვენი გამოცდილება, დასვათ კითხვები, წაიკითხოთ სხვების ისტორიები და მიიღოთ ინფორმაცია ექიმებზე, კლინიკებსა და პროცედურებზე.",
+        ],
+        guidelinesTitle: "რომ ყველამ თავი უსაფრთხოდ იგრძნოს",
+        guidelines:
+          "მნიშვნელოვანია დავიცვათ ძირითადი წესები: ვისაუბროთ პატივისცემით, არ გავავრცელოთ გადაუმოწმებელი ინფორმაცია, არ შევეხოთ სხვის პირად მონაცემებს და გვახსოვდეს, რომ პლატფორმა არ ცვლის ექიმის კონსულტაციას.",
+        closing:
+          "ეს არის ადგილი, სადაც ერთმანეთს ვეხმარებით უფრო ინფორმირებული და მშვიდი გადაწყვეტილების მიღებაში.",
+        ctaCommunity: "ფორუმში გაწევრიანება",
+        ctaRules: "საზოგადოების წესები",
+      },
       categories: {
         plasticSurgeons: {
           eyebrow: "დირექტორია",
@@ -401,6 +446,23 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle:
         "Сравнивайте хирургов, эстетистов и процедуры в одном пространстве — для осознанных решений, а не продаж.",
       explore: "Открыть",
+      intro: {
+        eyebrow: "Добро пожаловать",
+        title: "Пространство, где важен ваш опыт",
+        lead:
+          "Мы создали эту платформу для людей, которые думают о пластической операции, — чтобы у них было место, где можно делиться реальным опытом, вопросами и полезной информацией.",
+        body: [
+          "Мы знаем, что принять такое решение нелегко — часто нужен чужой опыт, честный совет и безопасная среда, где можно свободно задать вопрос или рассказать свою историю.",
+          "Наша цель — чтобы это пространство было дружелюбным, конфиденциальным и основанным на уважении. Вы можете поделиться опытом, задать вопросы, читать истории других и находить информацию о врачах, клиниках и процедурах.",
+        ],
+        guidelinesTitle: "Чтобы всем было спокойно и безопасно",
+        guidelines:
+          "Важно соблюдать основные правила: говорить с уважением, не распространять непроверенную информацию, не затрагивать личные данные других и помнить, что платформа не заменяет консультацию врача.",
+        closing:
+          "Это место, где мы помогаем друг другу принимать более осознанные и спокойные решения.",
+        ctaCommunity: "Перейти в сообщество",
+        ctaRules: "Правила сообщества",
+      },
       categories: {
         plasticSurgeons: {
           eyebrow: "Каталог",

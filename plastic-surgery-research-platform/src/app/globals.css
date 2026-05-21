@@ -76,6 +76,12 @@ html {
     transform: translateY(-4px);
   }
 
+  .home-intro-panel {
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.65),
+      0 16px 40px -24px rgb(61 107 102 / 0.12);
+  }
+
   .portal-card-media {
     overflow: hidden;
   }

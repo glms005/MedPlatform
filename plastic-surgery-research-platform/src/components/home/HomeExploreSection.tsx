@@ -19,12 +19,12 @@ export function HomeExploreSection() {
           <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-teal">
             {t.home.eyebrow}
           </p>
-          <h1
+          <h2
             id="explore-heading"
             className="mt-3 font-display text-[clamp(1.75rem,4vw,2.75rem)] font-medium leading-tight tracking-tight text-brand-ink"
           >
             {t.home.title}
-          </h1>
+          </h2>
           <p className="mt-4 text-sm leading-relaxed text-brand-muted sm:text-base">
             {t.home.subtitle}
           </p>
