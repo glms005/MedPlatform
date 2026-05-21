@@ -10,7 +10,7 @@ export function WhyTrustUs() {
       eyebrow="Platform principles"
       title="Why Users Trust Us"
       description="Built for informed consent and transparency—not conversion funnels or glam marketing."
-      className="bg-brand-navy text-white"
+      className="border-t-0 bg-brand-navy text-white"
     >
       <StaggerReveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {whyTrustUs.map((card) => (

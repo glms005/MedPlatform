@@ -10,8 +10,7 @@ import type { Locale } from "@/lib/i18n";
 
 const localeLabels: Record<Locale, string> = { en: "EN", ka: "KA", ru: "RU" };
 
-const mainLinks = [
-  { href: "/", key: "home" as const },
+const navLinks = [
   { href: "/surgeons", key: "plasticSurgeons" as const },
   { href: "/estheticians", key: "estheticians" as const },
   { href: "/plastic-surgery", key: "plasticSurgery" as const },
@@ -31,12 +30,7 @@ function NavLink({
   onNavigate?: () => void;
 }) {
   const pathname = usePathname();
-  const active =
-    href.startsWith("/#")
-      ? false
-      : href === "/"
-        ? pathname === "/"
-        : pathname === href || pathname.startsWith(`${href}/`);
+  const active = pathname === href || pathname.startsWith(`${href}/`);
 
   return (
     <Link
@@ -45,11 +39,11 @@ function NavLink({
       className={
         active
           ? solid
-            ? "rounded-lg bg-brand-teal/12 px-2 py-2 text-xs font-semibold text-brand-ink lg:px-2.5 lg:text-sm"
-            : "rounded-lg bg-white/70 px-2 py-2 text-xs font-semibold text-brand-ink ring-1 ring-brand-outline/50 lg:px-2.5 lg:text-sm"
+            ? "rounded-lg bg-brand-teal/12 px-2 py-2 text-xs font-semibold text-brand-ink whitespace-nowrap lg:px-2.5 lg:text-sm"
+            : "rounded-lg bg-white/70 px-2 py-2 text-xs font-semibold text-brand-ink ring-1 ring-brand-outline/50 whitespace-nowrap lg:px-2.5 lg:text-sm"
           : solid
-            ? "rounded-lg px-2 py-2 text-xs font-medium text-brand-muted transition-colors hover:bg-brand-sand/80 hover:text-brand-ink lg:px-2.5 lg:text-sm"
-            : "rounded-lg px-2 py-2 text-xs font-medium text-brand-ink/85 transition-colors hover:bg-white/55 hover:text-brand-ink lg:px-2.5 lg:text-sm"
+            ? "rounded-lg px-2 py-2 text-xs font-medium text-brand-muted transition-colors hover:bg-brand-sand/80 hover:text-brand-ink whitespace-nowrap lg:px-2.5 lg:text-sm"
+            : "rounded-lg px-2 py-2 text-xs font-medium text-brand-ink/85 transition-colors hover:bg-white/55 hover:text-brand-ink whitespace-nowrap lg:px-2.5 lg:text-sm"
       }
     >
       {children}
@@ -123,21 +117,21 @@ export function Navbar() {
             {t.nav.brand}
           </Link>
 
-          <nav
-            className="hidden max-w-[52rem] flex-1 items-center justify-center gap-0.5 overflow-x-auto lg:flex"
-            aria-label="Main"
-          >
-            {mainLinks.map((link) => (
-              <NavLink key={link.href} href={link.href} solid={solidBar}>
-                {t.nav[link.key]}
-              </NavLink>
-            ))}
-          </nav>
+          <div className="flex min-w-0 flex-1 items-center justify-end gap-1 sm:gap-2">
+            <nav
+              className="hidden items-center gap-0.5 overflow-x-auto md:flex"
+              aria-label="Sections"
+            >
+              {navLinks.map((link) => (
+                <NavLink key={link.href} href={link.href} solid={solidBar}>
+                  {t.nav[link.key]}
+                </NavLink>
+              ))}
+            </nav>
 
-          <div className="flex items-center gap-2">
-            {langSwitcher("hidden sm:flex items-center gap-0.5")}
+            {langSwitcher("hidden sm:flex items-center gap-0.5 shrink-0")}
             {!authLoading && user ? (
-              <div className="hidden items-center gap-2 sm:flex">
+              <div className="hidden items-center gap-2 sm:flex shrink-0">
                 <span
                   className="max-w-[8rem] truncate rounded-lg bg-brand-teal/10 px-2.5 py-2 text-xs font-semibold text-brand-teal"
                   title={displayLabel ?? undefined}
@@ -155,14 +149,14 @@ export function Navbar() {
             ) : !authLoading ? (
               <Link
                 href="/login"
-                className="inline-flex min-h-[2.75rem] items-center rounded-lg border border-brand-outline px-3 py-2 text-sm font-semibold text-brand-ink hover:bg-brand-sand sm:px-4"
+                className="inline-flex min-h-[2.75rem] shrink-0 items-center rounded-lg border border-brand-outline px-3 py-2 text-sm font-semibold text-brand-ink hover:bg-brand-sand sm:px-4"
               >
                 {t.nav.login}
               </Link>
             ) : null}
             <button
               type="button"
-              className="inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-lg border border-brand-outline/80 bg-white lg:hidden"
+              className="inline-flex min-h-[2.75rem] min-w-[2.75rem] shrink-0 items-center justify-center rounded-lg border border-brand-outline/80 bg-white md:hidden"
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               onClick={() => setMenuOpen((o) => !o)}
@@ -186,11 +180,11 @@ export function Navbar() {
         {menuOpen ? (
           <nav
             id="mobile-nav"
-            className="border-t border-brand-outline/50 py-4 lg:hidden"
+            className="border-t border-brand-outline/50 py-4 md:hidden"
             aria-label="Mobile"
           >
             <div className="flex flex-col gap-1">
-              {mainLinks.map((link) => (
+              {navLinks.map((link) => (
                 <NavLink
                   key={link.href}
                   href={link.href}
