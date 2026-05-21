@@ -10,10 +10,14 @@ export type Dictionary = {
     language: string;
     brand: string;
     home: string;
+    plasticSurgeons: string;
+    estheticians: string;
+    plasticSurgery: string;
+    estheticProcedures: string;
+    forum: string;
     surgeons: string;
     clinics: string;
     procedures: string;
-    forum: string;
     community: string;
     reviews: string;
     recoveryStories: string;
@@ -90,10 +94,14 @@ export const dictionary: Record<Locale, Dictionary> = {
       language: "Language",
       brand: "MedPlatform",
       home: "Home",
+      plasticSurgeons: "Plastic Surgeons",
+      estheticians: "Estheticians",
+      plasticSurgery: "Plastic Surgery",
+      estheticProcedures: "Esthetic Procedures",
+      forum: "Forum",
       surgeons: "Surgeons",
       clinics: "Clinics",
       procedures: "Procedures",
-      forum: "Forum",
       community: "Community",
       reviews: "Reviews",
       recoveryStories: "Recovery Stories",
@@ -168,10 +176,14 @@ export const dictionary: Record<Locale, Dictionary> = {
       language: "ენა",
       brand: "MedPlatform",
       home: "მთავარი",
+      plasticSurgeons: "პლასტიკური ქირურგები",
+      estheticians: "ესთეტისტები",
+      plasticSurgery: "პლასტიკური ქირურგია",
+      estheticProcedures: "ესთეტიკური პროცედურები",
+      forum: "ფორუმი",
       surgeons: "ქირურგები",
       clinics: "კლინიკები",
       procedures: "ოპერაციები",
-      forum: "ფორუმი",
       community: "საზოგადოება",
       reviews: "შეფასებები",
       recoveryStories: "აღდგენა",
@@ -245,10 +257,14 @@ export const dictionary: Record<Locale, Dictionary> = {
       language: "Язык",
       brand: "MedPlatform",
       home: "Главная",
+      plasticSurgeons: "Пластические хирурги",
+      estheticians: "Эстетисты",
+      plasticSurgery: "Пластическая хирургия",
+      estheticProcedures: "Эстетические процедуры",
+      forum: "Форум",
       surgeons: "Хирурги",
       clinics: "Клиники",
       procedures: "Процедуры",
-      forum: "Форум",
       community: "Сообщество",
       reviews: "Отзывы",
       recoveryStories: "Восстановление",

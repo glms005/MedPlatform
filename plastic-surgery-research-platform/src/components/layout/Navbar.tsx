@@ -11,12 +11,12 @@ import type { Locale } from "@/lib/i18n";
 const localeLabels: Record<Locale, string> = { en: "EN", ka: "KA", ru: "RU" };
 
 const mainLinks = [
-  { href: "/surgeons", key: "surgeons" as const },
-  { href: "/procedures", key: "procedures" as const },
-  { href: "/clinics", key: "clinics" as const },
-  { href: "/forum", key: "community" as const },
-  { href: "/#reviews", key: "reviews" as const },
-  { href: "/#recovery", key: "recoveryStories" as const },
+  { href: "/", key: "home" as const },
+  { href: "/surgeons", key: "plasticSurgeons" as const },
+  { href: "/estheticians", key: "estheticians" as const },
+  { href: "/plastic-surgery", key: "plasticSurgery" as const },
+  { href: "/esthetic-procedures", key: "estheticProcedures" as const },
+  { href: "/forum", key: "forum" as const },
 ] as const;
 
 function NavLink({
@@ -45,11 +45,11 @@ function NavLink({
       className={
         active
           ? solid
-            ? "rounded-lg bg-brand-teal/12 px-3 py-2.5 text-sm font-semibold text-brand-ink"
-            : "rounded-lg bg-white/70 px-3 py-2.5 text-sm font-semibold text-brand-ink ring-1 ring-brand-outline/50"
+            ? "rounded-lg bg-brand-teal/12 px-2 py-2 text-xs font-semibold text-brand-ink lg:px-2.5 lg:text-sm"
+            : "rounded-lg bg-white/70 px-2 py-2 text-xs font-semibold text-brand-ink ring-1 ring-brand-outline/50 lg:px-2.5 lg:text-sm"
           : solid
-            ? "rounded-lg px-3 py-2.5 text-sm font-medium text-brand-muted transition-colors hover:bg-brand-sand/80 hover:text-brand-ink"
-            : "rounded-lg px-3 py-2.5 text-sm font-medium text-brand-ink/85 transition-colors hover:bg-white/55 hover:text-brand-ink"
+            ? "rounded-lg px-2 py-2 text-xs font-medium text-brand-muted transition-colors hover:bg-brand-sand/80 hover:text-brand-ink lg:px-2.5 lg:text-sm"
+            : "rounded-lg px-2 py-2 text-xs font-medium text-brand-ink/85 transition-colors hover:bg-white/55 hover:text-brand-ink lg:px-2.5 lg:text-sm"
       }
     >
       {children}
@@ -124,7 +124,7 @@ export function Navbar() {
           </Link>
 
           <nav
-            className="hidden items-center gap-0.5 lg:flex"
+            className="hidden max-w-[52rem] flex-1 items-center justify-center gap-0.5 overflow-x-auto lg:flex"
             aria-label="Main"
           >
             {mainLinks.map((link) => (
@@ -132,12 +132,6 @@ export function Navbar() {
                 {t.nav[link.key]}
               </NavLink>
             ))}
-            <Link
-              href="/early-access"
-              className="ml-1 rounded-lg px-3 py-2.5 text-sm font-medium text-brand-muted hover:text-brand-ink"
-            >
-              {t.nav.earlyAccess}
-            </Link>
           </nav>
 
           <div className="flex items-center gap-2">
@@ -166,12 +160,6 @@ export function Navbar() {
                 {t.nav.login}
               </Link>
             ) : null}
-            <Link
-              href="/reviews/new"
-              className="hidden min-h-[2.75rem] items-center rounded-lg bg-brand-teal px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-brand-teal-dark sm:inline-flex"
-            >
-              {t.nav.writeReview}
-            </Link>
             <button
               type="button"
               className="inline-flex min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-lg border border-brand-outline/80 bg-white lg:hidden"
@@ -212,9 +200,6 @@ export function Navbar() {
                   {t.nav[link.key]}
                 </NavLink>
               ))}
-              <NavLink href="/early-access" solid={solidBar} onNavigate={closeMenu}>
-                {t.nav.earlyAccess}
-              </NavLink>
               {user ? (
                 <>
                   <p className="px-3 py-2 text-sm font-semibold text-brand-teal">
@@ -236,13 +221,6 @@ export function Navbar() {
                   {t.nav.login}
                 </NavLink>
               )}
-              <Link
-                href="/reviews/new"
-                onClick={closeMenu}
-                className="mt-2 flex min-h-[3rem] items-center justify-center rounded-lg bg-brand-teal text-sm font-semibold text-white"
-              >
-                {t.nav.writeReview}
-              </Link>
             </div>
             {langSwitcher("mt-4 flex items-center gap-1 sm:hidden")}
           </nav>
