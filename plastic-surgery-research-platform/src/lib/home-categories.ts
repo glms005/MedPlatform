@@ -33,10 +33,9 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
   {
     id: "plasticSurgery",
     href: "/plastic-surgery",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&auto=format&fit=crop&q=85",
-    imageAlt: "Modern clinical environment",
-    overlay: "from-slate-800/75 via-brand-navy/30 to-brand-teal-dark/45",
+    image: "/images/home/plastic-surgery.png",
+    imageAlt: "Surgeons performing a procedure in a sterile operating room",
+    overlay: "from-brand-navy/55 via-brand-navy/15 to-brand-teal/30",
   },
   {
     id: "estheticProcedures",
