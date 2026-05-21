@@ -31,21 +31,23 @@ export function CategoryPortalCard({
       className="portal-card group relative flex aspect-[3/4] min-h-[280px] w-full flex-col overflow-hidden rounded-[1.75rem] sm:min-h-[300px] sm:rounded-[2rem] lg:aspect-[4/5] lg:min-h-[340px]"
       aria-label={`${exploreLabel}: ${title}`}
     >
-      <Image
-        src={config.image}
-        alt={config.imageAlt}
-        fill
-        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-        className="object-cover transition-transform duration-700 ease-editorial group-hover:scale-[1.06] motion-reduce:transition-none"
-        priority={index < 2}
-      />
+      <div className="portal-card-media absolute inset-0" aria-hidden>
+        <Image
+          src={config.image}
+          alt={config.imageAlt}
+          fill
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          className="portal-card-image object-cover"
+          priority={index < 2}
+        />
+      </div>
 
       <div
-        className={`pointer-events-none absolute inset-0 bg-gradient-to-t ${config.overlay}`}
+        className={`portal-card-overlay pointer-events-none absolute inset-0 bg-gradient-to-t ${config.overlay}`}
         aria-hidden
       />
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-brand-ink/20 opacity-80"
+        className="portal-card-overlay portal-card-overlay-sheen pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-brand-ink/20"
         aria-hidden
       />
 

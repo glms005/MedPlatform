@@ -76,6 +76,40 @@ html {
     transform: translateY(-4px);
   }
 
+  .portal-card-media {
+    overflow: hidden;
+  }
+
+  .portal-card-image {
+    transition:
+      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    filter: contrast(0.9) saturate(0.88) brightness(0.96);
+    transform: scale(1.02);
+  }
+
+  .portal-card:hover .portal-card-image {
+    filter: contrast(1.14) saturate(1.12) brightness(1.04);
+    transform: scale(1.08);
+  }
+
+  .portal-card-overlay {
+    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity: 0.92;
+  }
+
+  .portal-card-overlay-sheen {
+    opacity: 0.72;
+  }
+
+  .portal-card:hover .portal-card-overlay {
+    opacity: 0.48;
+  }
+
+  .portal-card:hover .portal-card-overlay-sheen {
+    opacity: 0.38;
+  }
+
   .portal-card-glass {
     margin: 0.75rem;
     border-radius: 1.25rem;
@@ -88,6 +122,15 @@ html {
 
   @media (prefers-reduced-motion: reduce) {
     .portal-card:hover {
+      transform: none;
+    }
+
+    .portal-card-image {
+      transform: none;
+      transition: filter 0.2s ease;
+    }
+
+    .portal-card:hover .portal-card-image {
       transform: none;
     }
   }
