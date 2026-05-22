@@ -25,9 +25,9 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
   {
     id: "estheticians",
     href: "/estheticians",
-    image:
-      "https://images.unsplash.com/photo-1515377907043-f1e22abfb26a?w=900&auto=format&fit=crop&q=85",
-    imageAlt: "Esthetician performing a facial treatment",
+    image: "/images/home/estheticians.png",
+    imageAlt:
+      "Licensed esthetician in clinical attire preparing gloves before a skincare treatment",
     overlay: "from-brand-slate/50 via-brand-blue/20 to-brand-aqua-bright/30",
   },
   {
