@@ -34,7 +34,8 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
     id: "plasticSurgery",
     href: "/plastic-surgery",
     image: "/images/home/plastic-surgery.png",
-    imageAlt: "Surgeons performing a procedure in a sterile operating room",
+    imageAlt:
+      "Clinical pre-operative consultation with surgical planning markings in a calm medical setting",
     overlay: "from-brand-slate/55 via-brand-navy/15 to-brand-blue/32",
   },
   {
