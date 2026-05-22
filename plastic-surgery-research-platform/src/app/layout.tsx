@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import {
   Cormorant_Garamond,
   IBM_Plex_Sans,
@@ -37,6 +37,11 @@ const fontKa = Noto_Sans_Georgian({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
   title: {
     default: "ShareWell",
@@ -68,7 +73,7 @@ export default function RootLayout({
           <AuthProvider>
             <Navbar />
             {/* Fixed navbar offset — see Navbar.tsx */}
-            <div className="pt-14">{children}</div>
+            <div className="site-main-offset">{children}</div>
           </AuthProvider>
         </LocaleProvider>
       </body>

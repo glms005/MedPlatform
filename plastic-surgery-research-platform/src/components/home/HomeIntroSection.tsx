@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { PageWidth } from "@/components/layout/PageWidth";
 import { Reveal, StaggerItem, StaggerReveal } from "@/components/motion";
 import { useLocale } from "@/components/providers/LocaleProvider";
 
@@ -76,70 +77,73 @@ export function HomeIntroSection() {
   return (
     <section
       id="welcome"
-      className="home-intro-section relative overflow-hidden border-b border-brand-outline/30 px-4 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
+      className="home-intro-section relative overflow-hidden border-b border-brand-outline/30 px-4 py-10 sm:px-6 sm:py-14 lg:px-8 lg:py-20"
       aria-labelledby="welcome-heading"
     >
       <div className="home-intro-glow home-intro-glow--warm pointer-events-none absolute -right-20 -top-16 h-72 w-72 rounded-full" aria-hidden />
       <div className="home-intro-glow home-intro-glow--soft pointer-events-none absolute -left-24 bottom-8 h-56 w-56 rounded-full" aria-hidden />
       <div
-        className="pointer-events-none absolute left-1/2 top-12 h-px w-[min(90%,36rem)] -translate-x-1/2 bg-gradient-to-r from-transparent via-brand-teal/20 to-transparent"
+        className="pointer-events-none absolute left-1/2 top-12 h-px w-[min(94%,48rem)] -translate-x-1/2 bg-gradient-to-r from-transparent via-brand-blue/25 to-transparent"
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-[860px]">
+      <PageWidth className="relative">
         <Reveal className="text-center">
           <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-blue">
             {intro.eyebrow}
           </p>
           <h1
             id="welcome-heading"
-            className="mt-4 font-display text-[clamp(1.9rem,4.8vw,3rem)] font-medium leading-[1.1] tracking-tight text-brand-slate"
+            className="mx-auto mt-4 max-w-[28ch] font-display text-[clamp(1.65rem,5vw,3rem)] font-medium leading-[1.12] tracking-tight text-brand-slate sm:max-w-none"
           >
             {intro.title}
           </h1>
-          <p className="mt-3 font-display text-base font-medium text-brand-teal-dark sm:text-lg">
+          <p className="mx-auto mt-3 max-w-[36ch] font-display text-base font-medium text-brand-teal-dark sm:max-w-2xl sm:text-lg">
             {t.home.tagline}
           </p>
         </Reveal>
 
-        <ul className="mt-8 flex flex-wrap items-center justify-center gap-2 sm:gap-3">
+        <ul className="mt-6 flex flex-wrap items-center justify-center gap-2 sm:mt-8 sm:gap-3">
           {intro.values.map((label, i) => (
-            <li key={label}>
-              <span className="home-intro-value-pill inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-semibold text-brand-ink sm:text-sm">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-brand-blue shadow-sm">
+            <li key={label} className="max-w-full">
+              <span className="home-intro-value-pill inline-flex max-w-full items-center gap-2 rounded-full px-3 py-2 text-xs font-semibold text-brand-ink sm:px-3.5 sm:text-sm">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/80 text-brand-blue shadow-sm">
                   {VALUE_ICONS[i]}
                 </span>
-                {label}
+                <span className="truncate sm:whitespace-normal">{label}</span>
               </span>
             </li>
           ))}
         </ul>
 
-        <Reveal delay={0.08} className="mt-8 sm:mt-10">
-          <div className="home-intro-panel relative overflow-hidden rounded-[2rem] p-6 sm:p-8 lg:p-10">
+        <Reveal delay={0.08} className="mt-6 sm:mt-8 lg:mt-10">
+          <div className="home-intro-panel relative w-full overflow-hidden rounded-2xl p-4 sm:rounded-[1.75rem] sm:p-6 lg:p-8 xl:p-10">
             <div
               className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-aqua/30 blur-2xl"
               aria-hidden
             />
 
-            <div className="home-intro-lead relative rounded-2xl border border-brand-aqua/50 bg-gradient-to-br from-brand-mint via-white/95 to-brand-aqua-light/80 px-5 py-5 sm:px-6 sm:py-6">
+            <div className="home-intro-lead relative rounded-xl border border-brand-aqua/50 bg-gradient-to-br from-brand-mint via-white/95 to-brand-aqua-light/80 px-4 py-4 sm:rounded-2xl sm:px-6 sm:py-6">
               <span
-                className="absolute -left-1 top-5 bottom-5 w-1 rounded-full bg-gradient-to-b from-brand-aqua via-brand-teal to-brand-teal/40"
+                className="absolute left-0 top-4 bottom-4 w-1 rounded-full bg-gradient-to-b from-brand-aqua via-brand-teal to-brand-teal/40 sm:left-0"
                 aria-hidden
               />
-              <p className="pl-3 text-base leading-[1.8] text-brand-ink sm:text-lg sm:leading-[1.85]">
+              <p className="pl-3 text-[0.95rem] leading-[1.75] text-brand-ink sm:text-base sm:leading-[1.85] lg:text-lg">
                 {intro.lead}
               </p>
             </div>
 
-            <StaggerReveal className="mt-6 space-y-4" stagger={0.07}>
+            <StaggerReveal
+              className="mt-5 grid gap-3 sm:mt-6 sm:gap-4 lg:grid-cols-2 lg:gap-5"
+              stagger={0.07}
+            >
               {intro.body.map((paragraph, i) => (
                 <StaggerItem key={paragraph.slice(0, 24)}>
-                  <div className="flex gap-3.5 rounded-2xl bg-white/55 px-4 py-4 ring-1 ring-white/70 sm:gap-4 sm:px-5 sm:py-4">
+                  <div className="flex h-full gap-3 rounded-xl bg-white/55 px-3.5 py-3.5 ring-1 ring-white/70 sm:gap-4 sm:rounded-2xl sm:px-5 sm:py-4">
                     <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-blue-light/90 text-brand-blue">
                       {BODY_ICONS[i]}
                     </span>
-                    <p className="text-[0.95rem] leading-[1.75] text-brand-muted sm:text-base sm:leading-[1.8]">
+                    <p className="min-w-0 flex-1 text-[0.9rem] leading-[1.7] text-brand-muted sm:text-[0.95rem] sm:leading-[1.75] lg:text-base">
                       {paragraph}
                     </p>
                   </div>
@@ -147,53 +151,53 @@ export function HomeIntroSection() {
               ))}
             </StaggerReveal>
 
-            <Reveal delay={0.12} className="mt-6">
+            <Reveal delay={0.12} className="mt-5 sm:mt-6">
               <aside
-                className="home-intro-guidelines rounded-2xl px-5 py-5 sm:px-6 sm:py-6"
+                className="home-intro-guidelines rounded-xl px-4 py-4 sm:rounded-2xl sm:px-6 sm:py-6"
                 aria-labelledby="welcome-guidelines"
               >
                 <h2
                   id="welcome-guidelines"
-                  className="flex items-center gap-2.5 text-sm font-semibold text-brand-teal-dark"
+                  className="flex flex-wrap items-center gap-2.5 text-sm font-semibold text-brand-teal-dark"
                 >
                   <span
-                    className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-base shadow-sm"
+                    className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-white/70 text-base shadow-sm"
                     aria-hidden
                   >
                     🤝
                   </span>
-                  {intro.guidelinesTitle}
+                  <span className="min-w-0">{intro.guidelinesTitle}</span>
                 </h2>
-                <p className="mt-3 text-sm leading-[1.75] text-brand-ink/85 sm:text-[0.95rem]">
+                <p className="mt-3 text-sm leading-[1.7] text-brand-ink/85 sm:text-[0.95rem] sm:leading-[1.75]">
                   {intro.guidelines}
                 </p>
               </aside>
             </Reveal>
 
-            <div className="home-intro-closing relative mt-8 overflow-hidden rounded-2xl px-5 py-6 text-center sm:px-8 sm:py-7">
+            <div className="home-intro-closing relative mt-5 overflow-hidden rounded-xl px-4 py-5 text-center sm:mt-6 sm:rounded-2xl sm:px-8 sm:py-7">
               <span
-                className="pointer-events-none absolute left-4 top-2 font-display text-5xl leading-none text-brand-blue/15 sm:left-6"
+                className="pointer-events-none absolute left-3 top-1 font-display text-4xl leading-none text-brand-blue/15 sm:left-6 sm:text-5xl"
                 aria-hidden
               >
                 “
               </span>
-              <p className="relative font-display text-lg font-medium leading-snug text-brand-slate sm:text-xl">
+              <p className="relative mx-auto max-w-3xl font-display text-base font-medium leading-snug text-brand-slate sm:text-lg lg:text-xl">
                 {intro.closing}
               </p>
             </div>
 
-            <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:justify-center sm:gap-4">
-              <Link href="/forum" className="warm-btn-primary gap-2">
+            <div className="mt-6 flex w-full flex-col gap-3 sm:mt-8 sm:flex-row sm:justify-center sm:gap-4">
+              <Link href="/forum" className="warm-btn-primary w-full justify-center gap-2 sm:w-auto">
                 <span aria-hidden>💬</span>
                 {intro.ctaCommunity}
               </Link>
-              <Link href="/rules" className="warm-btn-secondary">
+              <Link href="/rules" className="warm-btn-secondary w-full justify-center sm:w-auto">
                 {intro.ctaRules}
               </Link>
             </div>
           </div>
         </Reveal>
-      </div>
+      </PageWidth>
     </section>
   );
 }

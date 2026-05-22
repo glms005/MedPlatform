@@ -19,6 +19,20 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
+.site-main-offset {
+  padding-top: 5.75rem;
+}
+
+@media (min-width: 768px) {
+  .site-main-offset {
+    padding-top: 3.5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -166,7 +180,7 @@ html {
 
   .warm-btn-primary {
     display: inline-flex;
-    min-height: 3rem;
+    min-height: 2.75rem;
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
