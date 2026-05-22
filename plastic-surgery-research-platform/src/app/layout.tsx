@@ -60,7 +60,10 @@ export default function RootLayout({
       lang="en"
       className={`${fontSans.variable} ${fontSerif.variable} ${fontDisplay.variable} ${fontKa.variable}`}
     >
-      <body className="warm-page-bg font-sans text-brand-ink antialiased">
+      <body
+        className="warm-page-bg font-sans text-brand-ink antialiased"
+        data-build="clinical-v2"
+      >
         <LocaleProvider>
           <AuthProvider>
             <Navbar />

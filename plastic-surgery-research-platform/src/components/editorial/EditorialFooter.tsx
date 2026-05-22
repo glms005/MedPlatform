@@ -29,13 +29,21 @@ export function EditorialFooter() {
               clear boundaries.
             </p>
             <p className="warm-footer-panel mt-6">{t.common.disclaimer}</p>
+            {process.env.NEXT_PUBLIC_BUILD_ID ? (
+              <p
+                className="mt-3 font-mono text-[10px] tracking-wide text-brand-outline"
+                title="Deployment id — confirms you have the latest Vercel build"
+              >
+                Build {process.env.NEXT_PUBLIC_BUILD_ID}
+              </p>
+            ) : null}
           </div>
           <nav className="grid grid-cols-2 gap-x-6 gap-y-3 text-sm sm:grid-cols-2">
             {links.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="min-h-[2.25rem] rounded-lg py-1 font-medium text-brand-muted transition-colors hover:bg-white/50 hover:text-brand-teal"
+                className="min-h-[2.25rem] rounded-lg py-1 font-medium text-brand-muted transition-colors hover:bg-white/50 hover:text-brand-blue"
               >
                 {l.label}
               </Link>
