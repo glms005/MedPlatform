@@ -26,11 +26,11 @@ function readStoredLocale(): Locale | null {
 }
 
 export function LocaleProvider({ children }: { children: React.ReactNode }) {
-  const [locale, setLocaleState] = useState<Locale>("en");
+  const [locale, setLocaleState] = useState<Locale>("ka");
 
   useEffect(() => {
     const stored = readStoredLocale();
-    if (stored) setLocaleState(stored);
+    setLocaleState(stored ?? "ka");
   }, []);
 
   const setLocale = useCallback((next: Locale) => {

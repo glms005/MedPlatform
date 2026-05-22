@@ -57,7 +57,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="ka"
       className={`${fontSans.variable} ${fontSerif.variable} ${fontDisplay.variable} ${fontKa.variable}`}
     >
       <body

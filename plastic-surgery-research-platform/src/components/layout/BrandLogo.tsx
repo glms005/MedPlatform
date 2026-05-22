@@ -6,8 +6,8 @@ const ICON_SRC = "/images/sharewell-icon.png";
 type BrandLogoProps = {
   name: string;
   href?: string;
-  size?: "nav" | "footer";
   className?: string;
+  size?: "nav" | "footer";
 };
 
 export function BrandLogo({
@@ -29,27 +29,29 @@ export function BrandLogo({
   const content = (
     <>
       <span
-        className={`relative shrink-0 overflow-hidden rounded-xl bg-white/60 ring-1 ring-white/80 ${iconSize}`}
+        className={`brand-logo-icon relative shrink-0 overflow-hidden rounded-xl p-[2px] shadow-sm ${iconSize}`}
       >
-        <Image
-          src={ICON_SRC}
-          alt=""
-          width={112}
-          height={112}
-          quality={100}
-          className="h-full w-full object-contain object-center [mix-blend-mode:multiply]"
-          priority={size === "nav"}
-        />
+        <span className="flex h-full w-full items-center justify-center rounded-[0.6rem] bg-white/95">
+          <Image
+            src={ICON_SRC}
+            alt=""
+            width={112}
+            height={112}
+            quality={100}
+            className="h-[88%] w-[88%] object-contain object-center"
+            priority={size === "nav"}
+          />
+        </span>
       </span>
       <span
-        className={`font-display font-semibold tracking-tight text-brand-slate ${textClass}`}
+        className={`brand-logo-wordmark font-display font-semibold tracking-tight ${textClass}`}
       >
         {name}
       </span>
     </>
   );
 
-  const baseClass = `inline-flex shrink-0 items-center gap-2.5 sm:gap-3 transition-opacity hover:opacity-90 ${className}`;
+  const baseClass = `inline-flex shrink-0 items-center gap-2.5 transition-opacity hover:opacity-90 sm:gap-3 ${className}`;
 
   if (href) {
     return (

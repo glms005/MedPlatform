@@ -3,12 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandLogo } from "@/components/layout/BrandLogo";
+import { LanguageSwitcher } from "@/components/layout/LanguageSwitcher";
 import { Container } from "@/components/ui/Container";
 import { useAuth } from "@/components/providers/AuthProvider";
 import { useLocale } from "@/components/providers/LocaleProvider";
-import type { Locale } from "@/lib/i18n";
-
-const localeLabels: Record<Locale, string> = { en: "EN", ka: "KA", ru: "RU" };
 
 const navLinks = [
   { href: "/surgeons", key: "plasticSurgeons" as const },
@@ -43,7 +41,7 @@ function NavLink({
 }
 
 export function Navbar() {
-  const { locale, setLocale, t } = useLocale();
+  const { t } = useLocale();
   const { user, loading: authLoading, signOut } = useAuth();
 
   const displayLabel = user
@@ -68,26 +66,7 @@ export function Navbar() {
               ))}
             </nav>
 
-            <div
-              className="flex shrink-0 items-center gap-0.5 rounded-full border border-brand-outline/40 bg-white/60 p-0.5 pl-1 sm:pl-1.5"
-              aria-label={t.nav.language}
-            >
-              {(["en", "ka", "ru"] as const satisfies readonly Locale[]).map((code) => (
-                <button
-                  key={code}
-                  type="button"
-                  onClick={() => setLocale(code)}
-                  aria-pressed={locale === code}
-                  className={
-                    locale === code
-                      ? "min-h-[2rem] min-w-[2rem] rounded-full bg-brand-gradient px-2 text-[10px] font-semibold text-white shadow-sm sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
-                      : "warm-nav-pill min-h-[2rem] min-w-[2rem] px-2 text-[10px] font-medium text-brand-slate sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
-                  }
-                >
-                  {localeLabels[code]}
-                </button>
-              ))}
-            </div>
+            <LanguageSwitcher />
 
             {!authLoading && user ? (
               <div className="flex shrink-0 items-center gap-1 sm:gap-2">
