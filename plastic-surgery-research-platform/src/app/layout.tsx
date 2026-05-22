@@ -45,8 +45,8 @@ export const metadata: Metadata = {
   description:
     "ShareWell — a trust-focused community for plastic surgery research, experiences, and informed decisions.",
   icons: {
-    icon: "/images/sharewell-mark.svg",
-    apple: "/images/sharewell-mark.svg",
+    icon: "/images/sharewell-logo.png",
+    apple: "/images/sharewell-logo.png",
   },
 };
 

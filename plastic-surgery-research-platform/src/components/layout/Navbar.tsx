@@ -54,7 +54,7 @@ export function Navbar() {
     <header className="warm-navbar fixed top-0 z-50 w-full">
       <Container>
         <div className="flex min-h-[3.5rem] items-center gap-2 py-2 sm:gap-3">
-          <BrandLogo name={t.nav.brand} compact />
+          <BrandLogo name={t.nav.brand} compact size="nav" />
 
           <div className="flex min-w-0 flex-1 items-center justify-end gap-1 sm:gap-2">
             <nav
