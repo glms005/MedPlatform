@@ -1,14 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const LOGO_SRC = "/images/sharewell-logo.png";
+const ICON_SRC = "/images/sharewell-icon.png";
 
 type BrandLogoProps = {
   name: string;
   href?: string;
-  /** Smaller mark on very narrow screens (crops to icon area) */
-  compact?: boolean;
-  /** Footer / hero: slightly larger */
   size?: "nav" | "footer";
   className?: string;
 };
@@ -16,29 +13,43 @@ type BrandLogoProps = {
 export function BrandLogo({
   name,
   href = "/",
-  compact = false,
   size = "nav",
   className = "",
 }: BrandLogoProps) {
-  const heightClass =
+  const iconSize =
     size === "footer"
-      ? "h-14 w-auto max-w-[10rem] sm:h-16 sm:max-w-[11rem]"
-      : compact
-        ? "h-9 w-9 object-cover object-top sm:h-10 sm:w-10"
-        : "h-10 w-auto max-w-[8.5rem] object-contain sm:h-11 sm:max-w-[9.5rem]";
+      ? "h-12 w-12 sm:h-14 sm:w-14"
+      : "h-10 w-10 sm:h-11 sm:w-11";
+
+  const textClass =
+    size === "footer"
+      ? "text-xl sm:text-2xl"
+      : "text-[1.05rem] sm:text-[1.2rem]";
 
   const content = (
-    <Image
-      src={LOGO_SRC}
-      alt={name}
-      width={size === "footer" ? 180 : 152}
-      height={size === "footer" ? 72 : 60}
-      className={`shrink-0 ${heightClass} [mix-blend-mode:multiply]`}
-      priority={size === "nav"}
-    />
+    <>
+      <span
+        className={`relative shrink-0 overflow-hidden rounded-xl bg-white/60 ring-1 ring-white/80 ${iconSize}`}
+      >
+        <Image
+          src={ICON_SRC}
+          alt=""
+          width={112}
+          height={112}
+          quality={100}
+          className="h-full w-full object-contain object-center [mix-blend-mode:multiply]"
+          priority={size === "nav"}
+        />
+      </span>
+      <span
+        className={`font-display font-semibold tracking-tight text-[#3d5f73] ${textClass}`}
+      >
+        {name}
+      </span>
+    </>
   );
 
-  const baseClass = `inline-flex shrink-0 items-center transition-opacity hover:opacity-90 ${className}`;
+  const baseClass = `inline-flex shrink-0 items-center gap-2.5 sm:gap-3 transition-opacity hover:opacity-90 ${className}`;
 
   if (href) {
     return (
