@@ -26,10 +26,10 @@ export function EcosystemSection({
       <div className="mx-auto max-w-[1400px]">
         <Reveal className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-blue">
+            <p className="warm-eyebrow">
               {eyebrow}
             </p>
-            <h2 className="mt-3 font-display text-[clamp(1.75rem,3.5vw,2.65rem)] font-medium tracking-tight text-brand-ink">
+            <h2 className="warm-title mt-3 text-[clamp(1.75rem,3.5vw,2.65rem)]">
               {title}
             </h2>
             {description ? (

@@ -9,11 +9,11 @@ export function Badge({
 }) {
   const toneClass =
     tone === "brand"
-      ? "bg-brand-sand text-brand-ink ring-brand-outline"
+      ? "bg-slate-100 text-slate-800 ring-slate-200"
       : tone === "success"
         ? "bg-emerald-50 text-emerald-900 ring-emerald-200"
         : tone === "warning"
-          ? "bg-brand-mint text-brand-teal-dark ring-brand-outline"
+          ? "bg-brand-mint text-brand-teal-dark ring-brand-aqua/70"
           : "bg-white text-brand-muted ring-brand-outline";
 
   return (

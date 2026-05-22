@@ -6,7 +6,7 @@ export default function Loading() {
       aria-live="polite"
     >
       <div className="h-1 w-14 overflow-hidden rounded-full bg-brand-outline">
-        <div className="h-full w-1/2 animate-pulse rounded-full bg-brand-blue/50" />
+        <div className="h-full w-1/2 animate-pulse rounded-full bg-brand-teal/50" />
       </div>
       <p className="font-display text-base font-medium text-brand-ink">Loading…</p>
     </div>

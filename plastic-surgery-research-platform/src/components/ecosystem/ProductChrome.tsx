@@ -17,7 +17,7 @@ export function ProductChrome({
         <div className="flex items-center gap-2 border-b border-brand-outline/70 bg-brand-sand/50 px-3 py-2.5 sm:px-4">
           <span className="flex gap-1.5" aria-hidden>
             <span className="h-2.5 w-2.5 rounded-full bg-rose-300/90" />
-            <span className="h-2.5 w-2.5 rounded-full bg-brand-aqua" />
+            <span className="h-2.5 w-2.5 rounded-full bg-brand-aqua-bright/90" />
             <span className="h-2.5 w-2.5 rounded-full bg-emerald-300/90" />
           </span>
           <p className="min-w-0 flex-1 truncate text-center text-[10px] font-medium text-brand-muted sm:text-xs">

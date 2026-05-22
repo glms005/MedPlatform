@@ -44,7 +44,7 @@ export function ReviewPreviewCard({ review }: { review: Review }) {
         {review.comment}
       </p>
       {review.hadComplications && review.complicationDetails ? (
-        <p className="sw-notice mt-2 px-2 py-1.5 text-[10px]">
+        <p className="sw-caution mt-2 rounded-lg px-2 py-1.5 text-[10px]">
           Note: {review.complicationDetails}
         </p>
       ) : null}

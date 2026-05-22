@@ -47,12 +47,12 @@ export function CategoryPortalCard({
         aria-hidden
       />
       <div
-        className="portal-card-overlay portal-card-overlay-sheen pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-blue-light/20 via-transparent to-brand-ink/20"
+        className="portal-card-overlay portal-card-overlay-sheen pointer-events-none absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-brand-ink/20"
         aria-hidden
       />
 
       <span
-        className="portal-card-plus absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full text-lg font-light backdrop-blur-md transition-all duration-300 group-hover:scale-110 sm:right-4 sm:top-4 sm:h-10 sm:w-10"
+        className="portal-card-plus absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full text-lg font-light backdrop-blur-md transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow-teal sm:right-4 sm:top-4 sm:h-10 sm:w-10"
         aria-hidden
       >
         +

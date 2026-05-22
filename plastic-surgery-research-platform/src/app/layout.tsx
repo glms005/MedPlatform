@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     template: "%s · ShareWell",
   },
   description:
-    "ShareWell — Real experiences. Better decisions. A trusted space for sharing real health and beauty experiences.",
+    "ShareWell — a trust-focused community for plastic surgery research, experiences, and informed decisions.",
   icons: {
     icon: "/images/sharewell-icon.png",
     apple: "/images/sharewell-icon.png",

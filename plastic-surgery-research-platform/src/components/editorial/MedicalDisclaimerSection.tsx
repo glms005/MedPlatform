@@ -10,7 +10,7 @@ export function MedicalDisclaimerSection() {
   return (
     <SectionShell
       id="medical-disclaimer"
-      className="warm-section border-t border-brand-outline bg-gradient-to-b from-brand-ivory to-brand-beige/40 py-12 sm:py-14"
+      className="warm-section border-t border-brand-outline/40 bg-gradient-to-b from-brand-ivory to-brand-champagne/30 py-12 sm:py-14"
     >
       <Reveal>
         <div className="warm-panel mx-auto max-w-3xl p-8 sm:p-10">

@@ -193,7 +193,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       eyebrow: "Explore the platform",
       title: "Research with clarity",
       subtitle:
-        "A trusted space for sharing real health and beauty experiences—compare surgeons, estheticians, and procedures with confidence.",
+        "Compare surgeons, estheticians, and procedures in one trust-first space—built for informed decisions, not sales pressure.",
       explore: "Explore",
       intro: {
         eyebrow: "Welcome",
@@ -322,7 +322,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       eyebrow: "გამოიკვლიეთ პლატფორმა",
       title: "კვლევა გამჭვირვალობით",
       subtitle:
-        "სანდო სივრცე რეალური გამოცდილებების გასაზიარებლად — შეადარეთ ქირურგები, ესთეტისტები და პროცედურები თავდაჯერებით.",
+        "შეადარეთ ქირურგები, ესთეტისტები და პროცედურები ერთ სანდო სივრცეში — გადაწყვეტილებისთვის, არა გაყიდვებისთვის.",
       explore: "ნახვა",
       intro: {
         eyebrow: "მოგესალმებით",
@@ -451,7 +451,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       eyebrow: "Исследуйте платформу",
       title: "Исследуйте с ясностью",
       subtitle:
-        "Надёжное пространство для обмена реальным опытом — сравнивайте хирургов, эстетистов и процедуры уверенно.",
+        "Сравнивайте хирургов, эстетистов и процедуры в одном пространстве — для осознанных решений, а не продаж.",
       explore: "Открыть",
       intro: {
         eyebrow: "Добро пожаловать",

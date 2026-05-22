@@ -156,7 +156,7 @@ export function LoginForm() {
               <OtpInput value={code} onChange={setCode} disabled={loading} />
             </div>
             {devCode ? (
-              <p className="sw-notice px-3 py-2 text-center text-sm">
+              <p className="sw-caution rounded-lg px-3 py-2 text-center text-sm">
                 {t.login.devCodeLabel}: <strong className="font-mono">{devCode}</strong>
               </p>
             ) : null}
