@@ -161,8 +161,7 @@ body {
   }
 
   .hero-carousel-overlay {
-    mix-blend-mode: multiply;
-    opacity: 0.92;
+    opacity: 0.82;
   }
 
   .hero-carousel-arrow {

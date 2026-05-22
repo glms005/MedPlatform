@@ -47,11 +47,11 @@ export function HeroCarousel() {
       onFocusCapture={() => setPaused(true)}
       onBlurCapture={() => setPaused(false)}
     >
-      <div className="hero-carousel-stage relative min-h-[min(72vh,520px)] w-full sm:min-h-[min(76vh,600px)] lg:min-h-[min(80vh,680px)]">
-        <AnimatePresence>
+      <div className="hero-carousel-stage relative h-[min(72vh,520px)] w-full sm:h-[min(76vh,600px)] lg:h-[min(80vh,680px)]">
+        <AnimatePresence initial={false}>
           <motion.div
             key={slide.id}
-            className="absolute inset-0"
+            className="absolute inset-0 z-0"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -60,10 +60,10 @@ export function HeroCarousel() {
               ease: easeEditorial,
             }}
           >
-            <div className="hero-carousel-media absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden">
               <motion.div
-                className="relative h-full w-full"
-                initial={{ scale: reduceMotion ? 1 : 1.08 }}
+                className="absolute inset-0"
+                initial={{ scale: reduceMotion ? 1 : 1.06 }}
                 animate={{ scale: 1 }}
                 transition={{
                   duration: reduceMotion ? 0.01 : INTERVAL_MS / 1000,
@@ -74,7 +74,7 @@ export function HeroCarousel() {
                   src={slide.image}
                   alt={slide.imageAlt}
                   fill
-                  priority={active === 0}
+                  priority
                   sizes="100vw"
                   className="object-cover object-center"
                 />
@@ -82,17 +82,17 @@ export function HeroCarousel() {
             </div>
 
             <div
-              className={`hero-carousel-overlay pointer-events-none absolute inset-0 bg-gradient-to-r ${slide.overlay}`}
+              className={`hero-carousel-overlay pointer-events-none absolute inset-0 z-[1] bg-gradient-to-r ${slide.overlay}`}
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-brand-ivory/50 via-transparent to-white/10"
+              className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-brand-ivory/40 via-transparent to-white/5"
               aria-hidden
             />
           </motion.div>
         </AnimatePresence>
 
-        <div className="relative z-10 mx-auto flex h-full min-h-[inherit] w-full max-w-[1400px] items-end px-4 pb-10 pt-24 sm:px-6 sm:pb-12 sm:pt-28 lg:px-8 lg:pb-14">
+        <div className="relative z-10 mx-auto flex h-full w-full max-w-[1400px] items-end px-4 pb-10 pt-24 sm:px-6 sm:pb-12 sm:pt-28 lg:px-8 lg:pb-14">
           <AnimatePresence mode="wait">
             <motion.div
               key={`copy-${slide.id}`}
@@ -121,7 +121,7 @@ export function HeroCarousel() {
           </AnimatePresence>
         </div>
 
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/40 to-transparent sm:h-28" aria-hidden />
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-[2] h-24 bg-gradient-to-b from-white/40 to-transparent sm:h-28" aria-hidden />
       </div>
 
       <div className="hero-carousel-controls absolute bottom-4 left-0 right-0 z-20 mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-4 sm:bottom-5 sm:px-6 lg:px-8">
