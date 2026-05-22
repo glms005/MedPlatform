@@ -40,9 +40,9 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
   {
     id: "estheticProcedures",
     href: "/esthetic-procedures",
-    image:
-      "https://images.unsplash.com/photo-1570172619644-df3fc9ebc32a?w=900&auto=format&fit=crop&q=85",
-    imageAlt: "Non-surgical aesthetic skincare treatment",
+    image: "/images/home/esthetic-procedures.png",
+    imageAlt:
+      "Licensed esthetician performing a gentle facial treatment on a relaxed client in a bright spa setting",
     overlay: "from-brand-slate/48 via-brand-aqua-bright/18 to-brand-teal/28",
   },
 ];
