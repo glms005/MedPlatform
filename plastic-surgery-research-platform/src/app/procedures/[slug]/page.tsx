@@ -26,10 +26,10 @@ export default async function ProcedureGuidePage({ params }: Props) {
     <div className="min-h-screen warm-page py-10 sm:py-14">
       <Container>
         <Link
-          href="/procedures"
+          href="/plastic-surgery"
           className="text-sm font-medium text-brand-blue hover:underline"
         >
-          ← All procedures
+          ← Plastic surgery guides
         </Link>
         <article className="prose prose-sm mt-6 max-w-3xl text-brand-ink">
           <p className="text-xs font-semibold uppercase tracking-wide text-brand-blue">

@@ -113,6 +113,34 @@ export type Dictionary = {
       { eyebrow: string; description: string }
     >;
   };
+  plasticSurgeryPage: {
+    hero: {
+      eyebrow: string;
+      headline: string;
+      supporting: string;
+      cta: string;
+      ctaSecondary: string;
+    };
+    intro: {
+      eyebrow: string;
+      title: string;
+      subtitle: string;
+      lead: string;
+      body: string[];
+      values: string[];
+      disclaimerTitle: string;
+      disclaimer: string;
+      ctaGuides: string;
+      ctaForum: string;
+    };
+    guides: {
+      eyebrow: string;
+      title: string;
+      description: string;
+      cardEyebrow: string;
+      readGuide: string;
+    };
+  };
 };
 
 export const dictionary: Record<Locale, Dictionary> = {
@@ -273,6 +301,42 @@ export const dictionary: Record<Locale, Dictionary> = {
         },
       },
     },
+    plasticSurgeryPage: {
+      hero: {
+        eyebrow: "Surgical procedures",
+        headline: "Plastic surgery guides with clarity first",
+        supporting:
+          "Compare risks, recovery timelines, and questions to ask—before you speak with a surgeon. Educational only, never medical advice.",
+        cta: "Browse procedure guides",
+        ctaSecondary: "Find surgeons",
+      },
+      intro: {
+        eyebrow: "Research with care",
+        title: "Understand procedures before you decide",
+        subtitle:
+          "Each guide covers candidacy, recovery, risks, and revision context—in calm, neutral language.",
+        lead:
+          "Plastic surgery is deeply personal. These guides help you organize what to learn, what to compare, and what to discuss in consultation—without pressure or glam marketing.",
+        body: [
+          "Every procedure card links to a structured overview: realistic expectations, typical recovery phases, and risks worth discussing with a qualified surgeon.",
+          "Pair guides with community stories and surgeon profiles when you are ready—ShareWell is built for informed consent, not quick conversions.",
+        ],
+        values: ["Evidence-minded", "Recovery-aware", "Surgeon-ready"],
+        disclaimerTitle: "Educational content only",
+        disclaimer:
+          "Guides summarize publicly discussed topics and do not replace examination, imaging, or individualized medical advice. Always confirm plans with a licensed surgeon in Georgia or your jurisdiction.",
+        ctaGuides: "View all guides",
+        ctaForum: "Ask the community",
+      },
+      guides: {
+        eyebrow: "Procedure library",
+        title: "Explore surgical guides",
+        description:
+          "Tap a card to open risks, timelines, questions to ask, and revision context for each procedure.",
+        cardEyebrow: "Procedure guide",
+        readGuide: "Read guide",
+      },
+    },
   },
   ka: {
     meta: {
@@ -430,6 +494,42 @@ export const dictionary: Record<Locale, Dictionary> = {
         },
       },
     },
+    plasticSurgeryPage: {
+      hero: {
+        eyebrow: "ქირურგიული პროცედურები",
+        headline: "პლასტიკური ქირურგიის გზამკვლევები — ჯერ გაიგეთ, შემდეგ გადაწყვიტეთ",
+        supporting:
+          "შეადარეთ რისკები, აღდგენის ვადები და კითხვები, რაც ქირურგთან უნდა განვიხილოთ. მხოლოდ საგანმანათლებლო მასალა.",
+        cta: "გზამკვლევების ნახვა",
+        ctaSecondary: "ქირურგების ძებნა",
+      },
+      intro: {
+        eyebrow: "კვლევა ყურადღებით",
+        title: "გაიგეთ პროცედურა გადაწყვეტილებამდე",
+        subtitle:
+          "თითოეული გზამკვლევი მოიცავს კანდიდატურას, აღდგენას, რისკებს და რევიზიის კონტექსტს.",
+        lead:
+          "პლასტიკური ქირურგია პირადი არჩევანია. ეს გზამკვლევები გეხმარებათ დაალაგოთ რა უნდა გაიგოთ და რა უნდა განვიხილოთ კონსულტაციაზე — გაყიდვის ზეწოლის გარეშე.",
+        body: [
+          "ყოველი ბარათი ხსნის მოსალოდნელობებს, აღდგენის ეტაპებს და რისკებს, რაც კვალიფიციურ ქირურგთან უნდა განიხილოს.",
+          "დაუკავშირეთ გზამკვლევები ფორუმის ისტორიებსა და ქირურგების პროფილებს, როცა მზად ხართ — ShareWell ინფორმირებული თანხმობისთვისაა.",
+        ],
+        values: ["მტკიცებულებაზე დაფუძნებული", "აღდგენის ცნობიერება", "ქირურგთან მზად"],
+        disclaimerTitle: "მხოლოდ საგანმანათლებლო",
+        disclaimer:
+          "გზამკვლევები არ ცვლის გამოკვლეთას, გამოკვლევას ან ინდივიდუალურ რჩევას. გეგმები დაადასტურეთ ლიცენზირებულ ქირურგთან.",
+        ctaGuides: "ყველა გზამკვლევი",
+        ctaForum: "კითხვა ფორუმზე",
+      },
+      guides: {
+        eyebrow: "პროცედურების ბიბლიოთეკა",
+        title: "ქირურგიული გზამკვლევები",
+        description:
+          "აირჩიეთ ბარათი რისკების, ვადებისა და კითხვების სრული მიმოხილვისთვის.",
+        cardEyebrow: "გზამკვლევი",
+        readGuide: "წაიკითხე",
+      },
+    },
   },
   ru: {
     meta: {
@@ -585,6 +685,42 @@ export const dictionary: Record<Locale, Dictionary> = {
           description:
             "Пилинги, лазеры, инъекции — нейтральные образовательные материалы.",
         },
+      },
+    },
+    plasticSurgeryPage: {
+      hero: {
+        eyebrow: "Хирургические процедуры",
+        headline: "Гиды по пластической хирургии — сначала ясность",
+        supporting:
+          "Сравнивайте риски, сроки восстановления и вопросы для консультации. Только образовательный контент, не медицинский совет.",
+        cta: "Смотреть гиды",
+        ctaSecondary: "Найти хирургов",
+      },
+      intro: {
+        eyebrow: "Исследуйте осознанно",
+        title: "Поймите процедуру до решения",
+        subtitle:
+          "В каждом гиде — кандидаты, восстановление, риски и контекст ревизий в спокойном нейтральном тоне.",
+        lead:
+          "Пластическая операция — личный выбор. Эти материалы помогают структурировать, что изучить и что обсудить с хирургом — без давления и глянца.",
+        body: [
+          "Каждая карточка ведёт к обзору: ожидания, этапы восстановления и риски для обсуждения с квалифицированным хирургом.",
+          "Сочетайте гиды с историями сообщества и профилями хирургов, когда будете готовы — ShareWell для информированного согласия.",
+        ],
+        values: ["На фактах", "С учётом восстановления", "К консультации"],
+        disclaimerTitle: "Только для обучения",
+        disclaimer:
+          "Материалы не заменяют осмотр, обследование или индивидуальную консультацию. План подтверждайте с лицензированным хирургом.",
+        ctaGuides: "Все гиды",
+        ctaForum: "Спросить сообщество",
+      },
+      guides: {
+        eyebrow: "Библиотека процедур",
+        title: "Хирургические гиды",
+        description:
+          "Откройте карточку для рисков, сроков, вопросов хирургу и контекста ревизий.",
+        cardEyebrow: "Гид по процедуре",
+        readGuide: "Читать гид",
       },
     },
   },

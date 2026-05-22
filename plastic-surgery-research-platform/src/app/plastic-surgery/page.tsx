@@ -1,23 +1,19 @@
-import { PageHeader } from "@/components/shared/PageHeader";
-import { Container } from "@/components/ui/Container";
-import { ProcedureCard } from "@/components/procedures/ProcedureCard";
-import { procedures } from "@/lib/mock-data/procedures";
+import { WhyTrustUs } from "@/components/ecosystem/WhyTrustUs";
+import { EditorialFooter } from "@/components/editorial/EditorialFooter";
+import { MedicalDisclaimerSection } from "@/components/editorial/MedicalDisclaimerSection";
+import { PlasticSurgeryGuidesSection } from "@/components/plastic-surgery/PlasticSurgeryGuidesSection";
+import { PlasticSurgeryHero } from "@/components/plastic-surgery/PlasticSurgeryHero";
+import { PlasticSurgeryIntroSection } from "@/components/plastic-surgery/PlasticSurgeryIntroSection";
 
 export default function PlasticSurgeryPage() {
   return (
-    <div className="min-h-screen warm-page py-12 sm:py-16">
-      <Container>
-        <PageHeader
-          eyebrow="Surgical procedures"
-          title="Plastic Surgery"
-          description="Educational guides for surgical procedures — risks, recovery timelines, and questions to ask. Not medical advice."
-        />
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {procedures.map((p) => (
-            <ProcedureCard key={p.id} procedure={p} />
-          ))}
-        </div>
-      </Container>
-    </div>
+    <main className="warm-page relative min-h-screen text-brand-ink">
+      <PlasticSurgeryHero />
+      <PlasticSurgeryIntroSection />
+      <PlasticSurgeryGuidesSection />
+      <WhyTrustUs />
+      <MedicalDisclaimerSection />
+      <EditorialFooter />
+    </main>
   );
 }
