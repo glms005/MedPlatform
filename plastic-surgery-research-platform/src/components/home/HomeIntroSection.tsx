@@ -88,7 +88,7 @@ export function HomeIntroSection() {
 
       <div className="relative mx-auto max-w-[860px]">
         <Reveal className="text-center">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-teal">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-blue">
             {intro.eyebrow}
           </p>
           <h1
@@ -97,7 +97,7 @@ export function HomeIntroSection() {
           >
             {intro.title}
           </h1>
-          <p className="mt-3 font-display text-base font-medium text-brand-teal sm:text-lg">
+          <p className="mt-3 font-display text-base font-medium text-brand-teal-dark sm:text-lg">
             {t.home.tagline}
           </p>
         </Reveal>
@@ -106,7 +106,7 @@ export function HomeIntroSection() {
           {intro.values.map((label, i) => (
             <li key={label}>
               <span className="home-intro-value-pill inline-flex items-center gap-2 rounded-full px-3.5 py-2 text-xs font-semibold text-brand-ink sm:text-sm">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-brand-teal shadow-sm">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-brand-blue shadow-sm">
                   {VALUE_ICONS[i]}
                 </span>
                 {label}
@@ -136,7 +136,7 @@ export function HomeIntroSection() {
               {intro.body.map((paragraph, i) => (
                 <StaggerItem key={paragraph.slice(0, 24)}>
                   <div className="flex gap-3.5 rounded-2xl bg-white/55 px-4 py-4 ring-1 ring-white/70 sm:gap-4 sm:px-5 sm:py-4">
-                    <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-teal-light/80 text-brand-teal">
+                    <span className="mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-blue-light/90 text-brand-blue">
                       {BODY_ICONS[i]}
                     </span>
                     <p className="text-[0.95rem] leading-[1.75] text-brand-muted sm:text-base sm:leading-[1.8]">
@@ -172,7 +172,7 @@ export function HomeIntroSection() {
 
             <div className="home-intro-closing relative mt-8 overflow-hidden rounded-2xl px-5 py-6 text-center sm:px-8 sm:py-7">
               <span
-                className="pointer-events-none absolute left-4 top-2 font-display text-5xl leading-none text-brand-teal/15 sm:left-6"
+                className="pointer-events-none absolute left-4 top-2 font-display text-5xl leading-none text-brand-blue/15 sm:left-6"
                 aria-hidden
               >
                 “

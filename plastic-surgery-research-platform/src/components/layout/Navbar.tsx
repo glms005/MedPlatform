@@ -34,7 +34,7 @@ function NavLink({
       className={`warm-nav-pill shrink-0 whitespace-nowrap px-2 py-1.5 text-[10px] font-medium sm:px-3 sm:py-2 sm:text-xs lg:text-sm ${
         active
           ? "warm-nav-pill--active text-brand-slate"
-          : "text-brand-slate/80 hover:text-brand-teal"
+          : "text-brand-slate/80 hover:text-brand-blue"
       }`}
     >
       {children}

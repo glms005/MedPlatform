@@ -11,40 +11,40 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          ivory: "#f7fbfb",
-          mint: "#eef7f5",
-          champagne: "#e8f4f2",
-          sand: "#e3efec",
+          ivory: "#fafafa",
+          mint: "#f5f7f8",
+          champagne: "#f1f3f5",
+          sand: "#e8ecef",
           surface: "#ffffff",
-          outline: "#d4e6e2",
-          ink: "#2d4555",
-          muted: "#5c7280",
-          accent: "#4a8f86",
-          accentDark: "#3d6b66",
+          outline: "#d2d5d9",
+          ink: "#212326",
+          muted: "#616161",
+          accent: "#8ab9db",
+          accentDark: "#6a8eb8",
           teal: {
-            light: "#e5f3f1",
-            DEFAULT: "#5ba89e",
-            mid: "#4a8f86",
-            dark: "#3d6b66",
+            light: "#eef4f1",
+            DEFAULT: "#7d9b8f",
+            mid: "#6b8f82",
+            dark: "#4d6b62",
           },
           aqua: {
-            light: "#f0faf8",
-            DEFAULT: "#b8ddd6",
-            bright: "#8ec9c0",
+            light: "#f0f4fa",
+            DEFAULT: "#c5d4ea",
+            bright: "#a8b9db",
           },
           slate: {
-            DEFAULT: "#3d5f73",
-            light: "#5a7d94",
-            dark: "#2d4555",
+            DEFAULT: "#2a2b28",
+            light: "#4a4d52",
+            dark: "#1a1b18",
           },
           navy: {
-            DEFAULT: "#35586b",
-            light: "#4a7084",
+            DEFAULT: "#3d4a56",
+            light: "#5c6b78",
           },
           blue: {
-            light: "#e8f4f2",
-            DEFAULT: "#7eb8ae",
-            dark: "#3d5f73",
+            light: "#eef2f8",
+            DEFAULT: "#8ab9db",
+            dark: "#5a7a9e",
           },
         },
       },
@@ -59,10 +59,10 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        soft: "0 2px 10px -2px rgb(61 107 102 / 0.08), 0 8px 24px -8px rgb(61 107 102 / 0.06)",
-        lift: "0 12px 40px -12px rgb(61 107 102 / 0.14)",
-        glow: "0 0 0 1px rgb(212 230 226 / 0.8)",
-        "glow-teal": "0 0 24px -4px rgb(91 168 158 / 0.35)",
+        soft: "0 2px 10px -2px rgb(33 35 38 / 0.06), 0 8px 24px -8px rgb(33 35 38 / 0.05)",
+        lift: "0 12px 40px -12px rgb(33 35 38 / 0.1)",
+        glow: "0 0 0 1px rgb(210 213 217 / 0.85)",
+        "glow-teal": "0 0 24px -4px rgb(138 185 219 / 0.4)",
       },
       transitionTimingFunction: {
         editorial: "cubic-bezier(0.22, 1, 0.36, 1)",
@@ -76,7 +76,7 @@ const config: Config = {
       },
       fontSize: {
         "hero-display": [
-          "clamp(2.85rem,6.4vw,5rem)",
+          "clamp(2.85rem, 6.4vw, 5rem)",
           {
             lineHeight: "0.96",
             letterSpacing: "-0.03em",
@@ -85,9 +85,10 @@ const config: Config = {
         ],
       },
       backgroundImage: {
-        "brand-gradient": "linear-gradient(135deg, #5ba89e 0%, #8ec9c0 55%, #b8ddd6 100%)",
+        "brand-gradient":
+          "linear-gradient(135deg, #8ab9db 0%, #a8b9db 45%, #9eb5a8 100%)",
         "brand-gradient-soft":
-          "linear-gradient(180deg, #f7fbfb 0%, #eef7f5 45%, #e8f4f2 100%)",
+          "linear-gradient(180deg, #ffffff 0%, #fafafa 40%, #f5f7f8 100%)",
       },
     },
   },

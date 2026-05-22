@@ -24,7 +24,7 @@ export function WhyTrustUs() {
             <StaggerItem key={card.title}>
               <Link href={card.href} className="warm-trust-card group">
                 <span
-                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-teal-light/90 text-lg shadow-sm"
+                  className="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-blue-light/90 text-lg shadow-sm"
                   aria-hidden
                 >
                   {TRUST_ICONS[i]}
@@ -33,7 +33,7 @@ export function WhyTrustUs() {
                   {card.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-muted">{card.body}</p>
-                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-teal transition-colors group-hover:text-brand-teal-dark">
+                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-blue transition-colors group-hover:text-brand-blue-dark">
                   Learn more
                   <span aria-hidden>→</span>
                 </span>
