@@ -374,33 +374,15 @@ html {
   }
 
   .portal-card-image {
-    transition:
-      transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
-      filter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    filter: contrast(0.94) saturate(0.92) brightness(0.99);
-    transform: scale(1.02);
-  }
-
-  .portal-card:hover .portal-card-image {
-    filter: contrast(1.05) saturate(1.02) brightness(1.02);
-    transform: scale(1.08);
+    transform: none;
   }
 
   .portal-card-overlay {
-    transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
     opacity: 0.88;
   }
 
   .portal-card-overlay-sheen {
     opacity: 0.6;
-  }
-
-  .portal-card:hover .portal-card-overlay {
-    opacity: 0.52;
-  }
-
-  .portal-card:hover .portal-card-overlay-sheen {
-    opacity: 0.38;
   }
 
   .portal-card-glass {
@@ -481,10 +463,8 @@ html {
       transform: none;
     }
 
-    .portal-card-image,
-    .portal-card:hover .portal-card-image {
+    .portal-card-image {
       transform: none;
-      transition: filter 0.2s ease;
     }
 
     .activity-marquee {
