@@ -10,9 +10,9 @@ import { useLocale } from "@/components/providers/LocaleProvider";
 
 const navLinks = [
   { href: "/surgeons", key: "plasticSurgeons" as const },
-  { href: "/estheticians", key: "estheticians" as const },
+  { href: "/aestheticians", key: "aestheticians" as const },
   { href: "/plastic-surgery", key: "plasticSurgery" as const },
-  { href: "/esthetic-procedures", key: "estheticProcedures" as const },
+  { href: "/aesthetic-procedures", key: "aestheticProcedures" as const },
   { href: "/forum", key: "forum" as const },
 ] as const;
 

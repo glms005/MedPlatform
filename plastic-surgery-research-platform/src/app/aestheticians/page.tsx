@@ -22,15 +22,15 @@ const preview = [
   },
 ];
 
-export default function EstheticiansPage() {
+export default function AestheticiansPage() {
   return (
     <div className="min-h-screen warm-page py-12 sm:py-16">
       <Container>
         <PageHeader
-          title="Estheticians"
-          description="Licensed estheticians and med-spa providers for non-surgical care. Directory expands in a future release."
+          title="Aestheticians"
+          description="Licensed aestheticians and med-spa providers for non-surgical care. Directory expands in a future release."
         />
-        <ComingSoonBanner feature="Full esthetician profiles & booking" />
+        <ComingSoonBanner feature="Full aesthetician profiles & booking" />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {preview.map((e) => (
             <Card key={e.name} className="p-5">
@@ -46,8 +46,8 @@ export default function EstheticiansPage() {
             Plastic surgeons directory
           </Link>{" "}
           ·{" "}
-          <Link href="/esthetic-procedures" className="text-brand-blue hover:underline">
-            Esthetic procedures
+          <Link href="/aesthetic-procedures" className="text-brand-blue hover:underline">
+            Aesthetic procedures
           </Link>
         </p>
       </Container>

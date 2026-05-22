@@ -31,15 +31,15 @@ const procedures = [
   },
 ];
 
-export default function EstheticProceduresPage() {
+export default function AestheticProceduresPage() {
   return (
     <div className="min-h-screen warm-page py-12 sm:py-16">
       <Container>
         <PageHeader
-          title="Esthetic Procedures"
+          title="Aesthetic Procedures"
           description="Non-surgical and med-spa style treatments — educational overviews only."
         />
-        <ComingSoonBanner feature="Detailed esthetic procedure guides" />
+        <ComingSoonBanner feature="Detailed Aesthetic procedure guides" />
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {procedures.map((p) => (
             <Card key={p.name} className="p-5">

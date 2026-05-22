@@ -1,8 +1,8 @@
 export type HomeCategoryId =
   | "plasticSurgeons"
-  | "estheticians"
+  | "aestheticians"
   | "plasticSurgery"
-  | "estheticProcedures";
+  | "aestheticProcedures";
 
 export type HomeCategoryConfig = {
   id: HomeCategoryId;
@@ -23,11 +23,11 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
     overlay: "from-brand-slate/65 via-brand-navy/25 to-brand-blue/35",
   },
   {
-    id: "estheticians",
-    href: "/estheticians",
-    image: "/images/home/estheticians.png",
+    id: "aestheticians",
+    href: "/aestheticians",
+    image: "/images/home/aestheticians.png",
     imageAlt:
-      "Licensed esthetician in clinical attire preparing gloves before a skincare treatment",
+      "Licensed aesthetician in clinical attire preparing gloves before a skincare treatment",
     overlay: "from-brand-slate/50 via-brand-blue/20 to-brand-aqua-bright/30",
   },
   {
@@ -39,11 +39,11 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
     overlay: "from-brand-slate/55 via-brand-navy/15 to-brand-blue/32",
   },
   {
-    id: "estheticProcedures",
-    href: "/esthetic-procedures",
-    image: "/images/home/esthetic-procedures.png",
+    id: "aestheticProcedures",
+    href: "/aesthetic-procedures",
+    image: "/images/home/aesthetic-procedures.png",
     imageAlt:
-      "Licensed esthetician performing a gentle facial treatment on a relaxed client in a bright spa setting",
+      "Licensed aesthetician performing a gentle facial treatment on a relaxed client in a bright spa setting",
     overlay: "from-brand-slate/48 via-brand-aqua-bright/18 to-brand-teal/28",
   },
 ];

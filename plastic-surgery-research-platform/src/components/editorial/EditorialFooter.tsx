@@ -11,7 +11,7 @@ export function EditorialFooter() {
     { label: t.nav.home, href: "/" },
     { label: t.nav.plasticSurgeons, href: "/surgeons" },
     { label: t.nav.plasticSurgery, href: "/plastic-surgery" },
-    { label: t.nav.estheticians, href: "/estheticians" },
+    { label: t.nav.aestheticians, href: "/aestheticians" },
     { label: t.nav.forum, href: "/forum" },
     { label: t.nav.rules, href: "/rules" },
     { label: "Medical disclaimer", href: "/#medical-disclaimer" },

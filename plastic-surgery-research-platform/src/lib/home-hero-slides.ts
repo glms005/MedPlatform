@@ -11,7 +11,7 @@ export type HeroSlideConfig = {
 export const HERO_SLIDES: HeroSlideConfig[] = [
   {
     id: "wellness",
-    href: "/esthetic-procedures",
+    href: "/aesthetic-procedures",
     image:
       "https://images.unsplash.com/photo-1540555700478-4be289fbbe3f?w=1920&auto=format&fit=crop&q=85",
     imageAlt: "Calm spa wellness setting with soft towels and natural light",

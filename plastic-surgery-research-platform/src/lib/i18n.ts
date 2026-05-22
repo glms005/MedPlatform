@@ -11,9 +11,9 @@ export type Dictionary = {
     brand: string;
     home: string;
     plasticSurgeons: string;
-    estheticians: string;
+    aestheticians: string;
     plasticSurgery: string;
-    estheticProcedures: string;
+    aestheticProcedures: string;
     forum: string;
     surgeons: string;
     clinics: string;
@@ -109,7 +109,7 @@ export type Dictionary = {
       ctaRules: string;
     };
     categories: Record<
-      "plasticSurgeons" | "estheticians" | "plasticSurgery" | "estheticProcedures",
+      "plasticSurgeons" | "aestheticians" | "plasticSurgery" | "aestheticProcedures",
       { eyebrow: string; description: string }
     >;
   };
@@ -127,9 +127,9 @@ export const dictionary: Record<Locale, Dictionary> = {
       brand: "ShareWell",
       home: "Home",
       plasticSurgeons: "Plastic Surgeons",
-      estheticians: "Estheticians",
+      aestheticians: "Aestheticians",
       plasticSurgery: "Plastic Surgery",
-      estheticProcedures: "Esthetic Procedures",
+      aestheticProcedures: "Aesthetic Procedures",
       forum: "Forum",
       surgeons: "Surgeons",
       clinics: "Clinics",
@@ -202,7 +202,7 @@ export const dictionary: Record<Locale, Dictionary> = {
       eyebrow: "Explore the platform",
       title: "Research with clarity",
       subtitle:
-        "Compare surgeons, estheticians, and procedures in one trust-first space—built for informed decisions, not sales pressure.",
+        "Compare surgeons, aestheticians, and procedures in one trust-first space—built for informed decisions, not sales pressure.",
       explore: "Explore",
       hero: {
         label: "Featured highlights",
@@ -214,7 +214,7 @@ export const dictionary: Record<Locale, Dictionary> = {
             headline: "Care that feels calm, clear, and considered",
             supporting:
               "Explore non-surgical treatments and everyday skin health—with a premium, education-first tone.",
-            cta: "Explore esthetic care",
+            cta: "Explore Aesthetic care",
           },
           community: {
             eyebrow: "Real voices",
@@ -256,17 +256,17 @@ export const dictionary: Record<Locale, Dictionary> = {
           description:
             "Credentials, reviews, and procedure focus—compare plastic surgeons side by side.",
         },
-        estheticians: {
+        aestheticians: {
           eyebrow: "Skin & med-spa",
           description:
-            "Licensed estheticians and non-surgical providers for consultations and skin health.",
+            "Licensed aestheticians and non-surgical providers for consultations and skin health.",
         },
         plasticSurgery: {
           eyebrow: "Surgical procedures",
           description:
             "Rhinoplasty, body contouring, and more—with risks, timelines, and recovery context.",
         },
-        estheticProcedures: {
+        aestheticProcedures: {
           eyebrow: "Non-surgical care",
           description:
             "Peels, lasers, injectables education—product-neutral guides for realistic expectations.",
@@ -285,9 +285,9 @@ export const dictionary: Record<Locale, Dictionary> = {
       brand: "ShareWell",
       home: "მთავარი",
       plasticSurgeons: "პლასტიკური ქირურგები",
-      estheticians: "ესთეტისტები",
+      aestheticians: "ესთეტისტები",
       plasticSurgery: "პლასტიკური ქირურგია",
-      estheticProcedures: "ესთეტიკური პროცედურები",
+      aestheticProcedures: "ესთეტიკური პროცედურები",
       forum: "ფორუმი",
       surgeons: "ქირურგები",
       clinics: "კლინიკები",
@@ -413,7 +413,7 @@ export const dictionary: Record<Locale, Dictionary> = {
           description:
             "კვალიფიკაცია, შეფასებები და სპეციალიზაცია — პლასტიკური ქირურგების შედარება.",
         },
-        estheticians: {
+        aestheticians: {
           eyebrow: "კანა და მედ-სპა",
           description:
             "ლიცენზირებული ესთეტისტები და არაქირურგიული მომსახურება კონსულტაციებისთვის.",
@@ -423,7 +423,7 @@ export const dictionary: Record<Locale, Dictionary> = {
           description:
             "რინოპლასტიკა, კონტურინგი და სხვა — რისკები, ვადები და აღდგენა.",
         },
-        estheticProcedures: {
+        aestheticProcedures: {
           eyebrow: "არაქირურგიული მოვლა",
           description:
             "პილინგები, ლაზერი, ინექციები — ნეიტრალური საგანმანათლებლო მიმოხილვები.",
@@ -442,9 +442,9 @@ export const dictionary: Record<Locale, Dictionary> = {
       brand: "ShareWell",
       home: "Главная",
       plasticSurgeons: "Пластические хирурги",
-      estheticians: "Эстетисты",
+      aestheticians: "Эстетисты",
       plasticSurgery: "Пластическая хирургия",
-      estheticProcedures: "Эстетические процедуры",
+      aestheticProcedures: "Эстетические процедуры",
       forum: "Форум",
       surgeons: "Хирурги",
       clinics: "Клиники",
@@ -570,7 +570,7 @@ export const dictionary: Record<Locale, Dictionary> = {
           description:
             "Квалификация, отзывы и специализация — сравнение пластических хирургов.",
         },
-        estheticians: {
+        aestheticians: {
           eyebrow: "Кожа и мед-спа",
           description:
             "Лицензированные эстетисты и нехирургические услуги для консультаций.",
@@ -580,7 +580,7 @@ export const dictionary: Record<Locale, Dictionary> = {
           description:
             "Ринопластика, контуринг тела и др. — риски, сроки и восстановление.",
         },
-        estheticProcedures: {
+        aestheticProcedures: {
           eyebrow: "Без операции",
           description:
             "Пилинги, лазеры, инъекции — нейтральные образовательные материалы.",
