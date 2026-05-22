@@ -87,6 +87,15 @@ export type Dictionary = {
     title: string;
     subtitle: string;
     explore: string;
+    hero: {
+      label: string;
+      prev: string;
+      next: string;
+      slides: Record<
+        "wellness" | "community" | "research",
+        { eyebrow: string; headline: string; supporting: string; cta: string }
+      >;
+    };
     intro: {
       eyebrow: string;
       title: string;
@@ -195,6 +204,34 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle:
         "Compare surgeons, estheticians, and procedures in one trust-first space—built for informed decisions, not sales pressure.",
       explore: "Explore",
+      hero: {
+        label: "Featured highlights",
+        prev: "Previous slide",
+        next: "Next slide",
+        slides: {
+          wellness: {
+            eyebrow: "Skin wellness",
+            headline: "Care that feels calm, clear, and considered",
+            supporting:
+              "Explore non-surgical treatments and everyday skin health—with a premium, education-first tone.",
+            cta: "Explore esthetic care",
+          },
+          community: {
+            eyebrow: "Real voices",
+            headline: "Learn from experiences shared with respect",
+            supporting:
+              "Read honest stories, ask questions, and join a moderated space built for trust—not hype.",
+            cta: "Visit the forum",
+          },
+          research: {
+            eyebrow: "Informed choices",
+            headline: "Compare providers with transparency in mind",
+            supporting:
+              "Review surgeons, clinics, and procedures side by side before you decide what is right for you.",
+            cta: "Browse surgeons",
+          },
+        },
+      },
       intro: {
         eyebrow: "Welcome",
         title: "A place to research, ask, and share—together",
@@ -324,6 +361,34 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle:
         "შეადარეთ ქირურგები, ესთეტისტები და პროცედურები ერთ სანდო სივრცეში — გადაწყვეტილებისთვის, არა გაყიდვებისთვის.",
       explore: "ნახვა",
+      hero: {
+        label: "მთავარი სლაიდები",
+        prev: "წინა სლაიდი",
+        next: "შემდეგი სლაიდი",
+        slides: {
+          wellness: {
+            eyebrow: "კანის ჯანმრთელობა",
+            headline: "მოვლა, რომელიც მშვიდ, გამჭვირვალე და გააზრებულია",
+            supporting:
+              "გამოიკვლიეთ არაქირურგიული მკურნალობა და ყოველდღიური კანის ჯანმრთელობა — განათლებაზე ორიენტირებული ტონით.",
+            cta: "ესთეტიკური მოვლა",
+          },
+          community: {
+            eyebrow: "რეალური ხმები",
+            headline: "ისწავლეთ გამოცდილებებიდან, რომლებიც პატივისცემით იზიარება",
+            supporting:
+              "წაიკითხეთ გულწრფელი ისტორიები, დასვით კითხვები და შეუერთდით მოდერირებულ სივრცეს.",
+            cta: "ფორუმზე გადასვლა",
+          },
+          research: {
+            eyebrow: "გააზრებული არჩევანი",
+            headline: "შეადარეთ პროვაიდერები გამჭვირვალობით",
+            supporting:
+              "გაეცანით ქირურგებს, კლინიკებსა და პროცედურებს, სანამ გადაწყვეტილებას მიიღებთ.",
+            cta: "ქირურგების ნახვა",
+          },
+        },
+      },
       intro: {
         eyebrow: "მოგესალმებით",
         title: "სივრცე, სადაც თქვენი გამოცდილება მნიშვნელოვანია",
@@ -453,6 +518,34 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle:
         "Сравнивайте хирургов, эстетистов и процедуры в одном пространстве — для осознанных решений, а не продаж.",
       explore: "Открыть",
+      hero: {
+        label: "Главные слайды",
+        prev: "Предыдущий слайд",
+        next: "Следующий слайд",
+        slides: {
+          wellness: {
+            eyebrow: "Здоровье кожи",
+            headline: "Уход, который ощущается спокойным и продуманным",
+            supporting:
+              "Изучайте нехирургический уход и ежедневное здоровье кожи — в спокойном образовательном тоне.",
+            cta: "Эстетический уход",
+          },
+          community: {
+            eyebrow: "Реальные истории",
+            headline: "Учитесь на опыте, которым делятся с уважением",
+            supporting:
+              "Читайте честные истории, задавайте вопросы и присоединяйтесь к модерируемому пространству доверия.",
+            cta: "Перейти на форум",
+          },
+          research: {
+            eyebrow: "Осознанный выбор",
+            headline: "Сравнивайте специалистов с прозрачностью",
+            supporting:
+              "Изучайте хирургов, клиники и процедуры, прежде чем принять решение.",
+            cta: "Смотреть хирургов",
+          },
+        },
+      },
       intro: {
         eyebrow: "Добро пожаловать",
         title: "Пространство, где важен ваш опыт",
