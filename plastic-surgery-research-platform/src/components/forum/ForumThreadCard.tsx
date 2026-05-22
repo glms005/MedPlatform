@@ -20,7 +20,7 @@ export function ForumThreadCard({ thread }: { thread: ForumThread }) {
         <VoteControls upvotes={thread.upvotes} downvotes={thread.downvotes} />
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="rounded-full bg-brand-teal-light/90 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-teal">
+            <span className="rounded-full bg-brand-sage-light px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-brand-ink">
               {thread.postType}
             </span>
             <span className="text-[10px] font-medium uppercase text-brand-muted">
@@ -40,7 +40,7 @@ export function ForumThreadCard({ thread }: { thread: ForumThread }) {
             {thread.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-md bg-brand-champagne/80 px-2 py-0.5 text-[10px] font-medium text-brand-muted"
+                className="rounded-md bg-brand-sand px-2 py-0.5 text-[10px] font-medium text-brand-muted"
               >
                 #{tag}
               </span>

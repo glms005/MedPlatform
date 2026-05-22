@@ -47,7 +47,7 @@ export function CategoryPortalCard({
         aria-hidden
       />
       <div
-        className="portal-card-overlay portal-card-overlay-sheen pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-aqua-light/15 via-transparent to-brand-slate/25"
+        className="portal-card-overlay portal-card-overlay-sheen pointer-events-none absolute inset-0 bg-gradient-to-br from-brand-blue-light/20 via-transparent to-brand-ink/20"
         aria-hidden
       />
 

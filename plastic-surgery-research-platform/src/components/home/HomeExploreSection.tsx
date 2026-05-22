@@ -18,7 +18,7 @@ export function HomeExploreSection() {
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <div className="mb-8 flex justify-center">
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-aqua-light via-white to-brand-teal-light text-xl text-brand-teal shadow-soft ring-1 ring-brand-outline/60">
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-sage-light via-white to-brand-sand text-xl text-brand-teal-dark shadow-soft ring-1 ring-brand-outline">
               ✦
             </span>
           </div>

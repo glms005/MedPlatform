@@ -11,7 +11,7 @@ export function WhyTrustUs() {
       id="trust"
       className="warm-section warm-section--trust border-t-0 px-4 py-14 sm:px-8 sm:py-16 lg:px-12 lg:py-20"
     >
-      <div className="pointer-events-none absolute right-0 top-0 h-48 w-48 rounded-full bg-brand-aqua/25 blur-3xl" aria-hidden />
+      <div className="pointer-events-none absolute right-0 top-0 h-48 w-48 rounded-full bg-brand-sage/20 blur-3xl" aria-hidden />
       <div className="relative mx-auto max-w-[1400px]">
         <WarmSectionHeader
           eyebrow="Platform principles"
@@ -29,7 +29,7 @@ export function WhyTrustUs() {
                 >
                   {TRUST_ICONS[i]}
                 </span>
-                <h3 className="mt-4 font-display text-lg font-medium text-brand-slate">
+                <h3 className="mt-4 font-display text-lg font-medium text-brand-ink">
                   {card.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-brand-muted">{card.body}</p>

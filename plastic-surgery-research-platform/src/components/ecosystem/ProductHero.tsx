@@ -25,7 +25,7 @@ export function ProductHero() {
   return (
     <header
       id="introduction"
-      className="relative overflow-hidden border-b border-brand-outline/50 bg-gradient-to-b from-brand-mint via-brand-ivory to-brand-aqua-light pt-[3.25rem] sm:pt-14"
+      className="relative overflow-hidden border-b border-brand-outline bg-gradient-to-b from-brand-cream via-brand-ivory to-brand-sand pt-[3.25rem] sm:pt-14"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_75%_-5%,rgba(61,107,102,0.12),transparent_58%)]"

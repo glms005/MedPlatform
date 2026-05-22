@@ -82,13 +82,13 @@ export function HomeIntroSection() {
       <div className="home-intro-glow home-intro-glow--warm pointer-events-none absolute -right-20 -top-16 h-72 w-72 rounded-full" aria-hidden />
       <div className="home-intro-glow home-intro-glow--soft pointer-events-none absolute -left-24 bottom-8 h-56 w-56 rounded-full" aria-hidden />
       <div
-        className="pointer-events-none absolute left-1/2 top-12 h-px w-[min(90%,36rem)] -translate-x-1/2 bg-gradient-to-r from-transparent via-brand-teal/20 to-transparent"
+        className="pointer-events-none absolute left-1/2 top-12 h-px w-[min(90%,36rem)] -translate-x-1/2 bg-gradient-to-r from-transparent via-brand-sage/40 to-transparent"
         aria-hidden
       />
 
       <div className="relative mx-auto max-w-[860px]">
         <Reveal className="text-center">
-          <p className="text-sm font-medium tracking-wide text-brand-slate sm:text-base">
+          <p className="text-sm font-medium tracking-wide text-brand-muted sm:text-base">
             {t.home.tagline}
           </p>
           <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-teal">
@@ -96,7 +96,7 @@ export function HomeIntroSection() {
           </p>
           <h1
             id="welcome-heading"
-            className="mt-4 font-display text-[clamp(1.9rem,4.8vw,3rem)] font-medium leading-[1.1] tracking-tight text-brand-slate"
+            className="mt-4 font-display text-[clamp(1.9rem,4.8vw,3rem)] font-medium leading-[1.1] tracking-tight text-brand-ink"
           >
             {intro.title}
           </h1>
@@ -118,13 +118,13 @@ export function HomeIntroSection() {
         <Reveal delay={0.08} className="mt-8 sm:mt-10">
           <div className="home-intro-panel relative overflow-hidden rounded-[2rem] p-6 sm:p-8 lg:p-10">
             <div
-              className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-aqua/30 blur-2xl"
+              className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-sage/25 blur-2xl"
               aria-hidden
             />
 
-            <div className="home-intro-lead relative rounded-2xl border border-brand-outline/70 bg-gradient-to-br from-brand-mint/90 via-white/95 to-brand-aqua-light/40 px-5 py-5 sm:px-6 sm:py-6">
+            <div className="home-intro-lead relative rounded-2xl border border-brand-outline bg-gradient-to-br from-brand-cream via-white to-brand-sand/80 px-5 py-5 sm:px-6 sm:py-6">
               <span
-                className="absolute -left-1 top-5 bottom-5 w-1 rounded-full bg-gradient-to-b from-brand-aqua via-brand-teal to-brand-teal-dark/50"
+                className="absolute -left-1 top-5 bottom-5 w-1 rounded-full bg-gradient-to-b from-brand-sage via-brand-teal to-brand-blue/70"
                 aria-hidden
               />
               <p className="pl-3 text-base leading-[1.8] text-brand-ink sm:text-lg sm:leading-[1.85]">

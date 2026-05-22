@@ -9,7 +9,7 @@ export function Badge({
 }) {
   const toneClass =
     tone === "brand"
-      ? "bg-slate-100 text-slate-800 ring-slate-200"
+      ? "bg-brand-sand text-brand-ink ring-brand-outline"
       : tone === "success"
         ? "bg-emerald-50 text-emerald-900 ring-emerald-200"
         : tone === "warning"

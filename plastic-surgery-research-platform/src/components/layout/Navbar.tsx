@@ -33,8 +33,8 @@ function NavLink({
       href={href}
       className={`warm-nav-pill shrink-0 whitespace-nowrap px-2 py-1.5 text-[10px] font-medium sm:px-3 sm:py-2 sm:text-xs lg:text-sm ${
         active
-          ? "warm-nav-pill--active text-brand-teal-dark"
-          : "text-brand-slate hover:text-brand-teal-dark"
+          ? "warm-nav-pill--active text-brand-ink"
+          : "text-brand-ink/85 hover:text-brand-teal-dark"
       }`}
     >
       {children}
@@ -80,7 +80,7 @@ export function Navbar() {
                   aria-pressed={locale === code}
                   className={
                     locale === code
-                      ? "min-h-[2rem] min-w-[2rem] rounded-full bg-gradient-to-br from-brand-teal to-brand-blue px-2 text-[10px] font-semibold text-white shadow-sm sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
+                      ? "min-h-[2rem] min-w-[2rem] rounded-full bg-brand-ink px-2 text-[10px] font-semibold text-white shadow-sm sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
                       : "warm-nav-pill min-h-[2rem] min-w-[2rem] px-2 text-[10px] font-medium text-brand-muted sm:min-h-[2.25rem] sm:min-w-[2.25rem] sm:text-xs"
                   }
                 >
