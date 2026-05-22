@@ -17,9 +17,9 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
   {
     id: "plasticSurgeons",
     href: "/surgeons",
-    image:
-      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&auto=format&fit=crop&q=85",
-    imageAlt: "Professional surgeon in clinical setting",
+    image: "/images/home/plastic-surgeons.png",
+    imageAlt:
+      "Female plastic surgeon in blue scrubs, cap, mask, and sterile gloves in a clinical setting",
     overlay: "from-brand-slate/65 via-brand-navy/25 to-brand-blue/35",
   },
   {
