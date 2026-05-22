@@ -1,6 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 
+const MARK_SRC = "/images/sharewell-mark.svg";
+
 type BrandLogoProps = {
   name: string;
   href?: string;
@@ -17,16 +19,18 @@ export function BrandLogo({
 }: BrandLogoProps) {
   const content = (
     <>
-      <Image
-        src="/images/sharewell-logo.png"
-        alt=""
-        width={40}
-        height={40}
-        className="h-9 w-9 shrink-0 object-contain sm:h-10 sm:w-10"
-        priority
-      />
+      <span className="relative flex h-10 w-10 shrink-0 items-center justify-center sm:h-11 sm:w-11">
+        <Image
+          src={MARK_SRC}
+          alt=""
+          width={44}
+          height={44}
+          className="h-full w-full object-contain drop-shadow-sm"
+          priority
+        />
+      </span>
       <span
-        className={`font-display text-[1.05rem] font-semibold tracking-tight text-brand-ink sm:text-[1.15rem] ${
+        className={`bg-gradient-to-r from-brand-blue-dark to-brand-teal bg-clip-text font-display text-[1.05rem] font-semibold tracking-tight text-transparent sm:text-[1.15rem] ${
           compact ? "hidden min-[380px]:inline" : ""
         }`}
       >
@@ -35,7 +39,7 @@ export function BrandLogo({
     </>
   );
 
-  const baseClass = `inline-flex items-center gap-2 rounded-xl bg-white/70 px-2 py-1 ring-1 ring-white/90 shadow-sm transition-shadow hover:shadow-soft ${className}`;
+  const baseClass = `inline-flex items-center gap-2.5 rounded-xl px-1.5 py-1 transition-opacity hover:opacity-90 ${className}`;
 
   if (href) {
     return (
