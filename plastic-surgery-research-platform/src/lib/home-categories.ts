@@ -35,7 +35,7 @@ export const HOME_CATEGORIES: HomeCategoryConfig[] = [
     href: "/plastic-surgery",
     image: "/images/home/plastic-surgery.png",
     imageAlt:
-      "Clinical pre-operative consultation with surgical planning markings in a calm medical setting",
+      "Professional clinical consultation for breast aesthetics in a calm, neutral studio setting",
     overlay: "from-brand-slate/55 via-brand-navy/15 to-brand-blue/32",
   },
   {
