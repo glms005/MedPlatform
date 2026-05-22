@@ -33,7 +33,7 @@ export function TrustLayer() {
       eyebrow="Why researchers stay"
       title="Trust is the product"
       description="ShareWell is designed for informed consent—not conversion funnels."
-      className="bg-brand-ink text-white"
+      className="bg-brand-slate text-white"
     >
       <StaggerReveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {trustPoints.map((point) => (

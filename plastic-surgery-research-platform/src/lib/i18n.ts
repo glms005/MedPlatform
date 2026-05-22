@@ -82,6 +82,7 @@ export type Dictionary = {
     subtitle: string;
   };
   home: {
+    tagline: string;
     eyebrow: string;
     title: string;
     subtitle: string;
@@ -188,10 +189,11 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle: "Subscription payments are not active in this MVP.",
     },
     home: {
+      tagline: "Real experiences. Better decisions.",
       eyebrow: "Explore the platform",
       title: "Research with clarity",
       subtitle:
-        "Compare surgeons, estheticians, and procedures in one trust-first space—built for informed decisions, not sales pressure.",
+        "A trusted space for sharing real health and beauty experiences—compare surgeons, estheticians, and procedures with confidence.",
       explore: "Explore",
       intro: {
         eyebrow: "Welcome",
@@ -316,10 +318,11 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle: "გადახდები ამ MVP-ში არ არის აქტიური.",
     },
     home: {
+      tagline: "რეალური გამოცდილება. უკეთესი გადაწყვეტილებები.",
       eyebrow: "გამოიკვლიეთ პლატფორმა",
       title: "კვლევა გამჭვირვალობით",
       subtitle:
-        "შეადარეთ ქირურგები, ესთეტისტები და პროცედურები ერთ სანდო სივრცეში — გადაწყვეტილებისთვის, არა გაყიდვებისთვის.",
+        "სანდო სივრცე რეალური გამოცდილებების გასაზიარებლად — შეადარეთ ქირურგები, ესთეტისტები და პროცედურები თავდაჯერებით.",
       explore: "ნახვა",
       intro: {
         eyebrow: "მოგესალმებით",
@@ -444,10 +447,11 @@ export const dictionary: Record<Locale, Dictionary> = {
       subtitle: "Оплата в этом MVP не подключена.",
     },
     home: {
+      tagline: "Реальный опыт. Лучшие решения.",
       eyebrow: "Исследуйте платформу",
       title: "Исследуйте с ясностью",
       subtitle:
-        "Сравнивайте хирургов, эстетистов и процедуры в одном пространстве — для осознанных решений, а не продаж.",
+        "Надёжное пространство для обмена реальным опытом — сравнивайте хирургов, эстетистов и процедуры уверенно.",
       explore: "Открыть",
       intro: {
         eyebrow: "Добро пожаловать",

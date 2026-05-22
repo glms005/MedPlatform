@@ -18,14 +18,14 @@ export function HomeExploreSection() {
       <div className="mx-auto max-w-[1400px]">
         <Reveal>
           <div className="mb-8 flex justify-center">
-            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-teal-light via-white to-amber-100/80 text-xl shadow-soft ring-1 ring-white/80">
+            <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-brand-aqua-light via-white to-brand-teal-light text-xl text-brand-teal shadow-soft ring-1 ring-brand-outline/60">
               ✦
             </span>
           </div>
           <WarmSectionHeader
             eyebrow={t.home.eyebrow}
             title={t.home.title}
-            description={t.home.subtitle}
+            description={`${t.home.tagline} ${t.home.subtitle}`}
             centered
             as="h2"
             titleId="explore-heading"

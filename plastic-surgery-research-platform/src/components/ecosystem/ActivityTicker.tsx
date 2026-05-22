@@ -6,7 +6,7 @@ const toneDot: Record<(typeof liveActivity)[number]["tone"], string> = {
   forum: "bg-brand-blue",
   review: "bg-emerald-500",
   surgeon: "bg-violet-500",
-  moderation: "bg-amber-500",
+  moderation: "bg-brand-teal",
 };
 
 export function ActivityTicker() {
@@ -14,7 +14,7 @@ export function ActivityTicker() {
 
   return (
     <div
-      className="border-y border-brand-outline/60 bg-brand-ink py-2.5 text-white"
+      className="border-y border-brand-outline/60 bg-brand-slate py-2.5 text-white"
       aria-label="Recent platform activity"
     >
       <div className="overflow-hidden">

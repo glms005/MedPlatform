@@ -11,27 +11,37 @@ const config: Config = {
     extend: {
       colors: {
         brand: {
-          ivory: "#faf9f6",
-          champagne: "#f4efe5",
-          sand: "#f3efe6",
+          ivory: "#f7fbfb",
+          mint: "#eef6f5",
+          champagne: "#f0f7f6",
+          sand: "#e5f3f1",
           surface: "#ffffff",
-          outline: "#e5e0d8",
-          ink: "#1c2220",
-          muted: "#5f6764",
-          accent: "#2c4f4c",
-          accentDark: "#1f3836",
+          outline: "#d4e8e5",
+          ink: "#2d4a5c",
+          muted: "#5a7180",
+          accent: "#4a8f86",
+          accentDark: "#3d6b66",
+          aqua: {
+            light: "#e8f4f7",
+            DEFAULT: "#b8e0db",
+            bright: "#d4efeb",
+          },
           teal: {
-            light: "#e8f2f1",
-            DEFAULT: "#3d6b66",
-            dark: "#2c4f4c",
+            light: "#e5f3f1",
+            DEFAULT: "#4a8f86",
+            dark: "#3d6b66",
+          },
+          slate: {
+            DEFAULT: "#3d5f73",
+            dark: "#2d4a5c",
           },
           navy: {
-            DEFAULT: "#1a2f3d",
-            light: "#2a4455",
+            DEFAULT: "#3d5f73",
+            light: "#5a7d94",
           },
           blue: {
-            light: "#e8eef2",
-            DEFAULT: "#5a7d94",
+            light: "#e8f4f7",
+            DEFAULT: "#7eb8c4",
             dark: "#3d5f73",
           },
         },
@@ -47,9 +57,15 @@ const config: Config = {
         ],
       },
       boxShadow: {
-        soft: "0 2px 8px -2px rgb(28 34 32 / 0.06), 0 8px 24px -8px rgb(28 34 32 / 0.08)",
-        lift: "0 12px 40px -12px rgb(28 34 32 / 0.12)",
-        glow: "0 0 0 1px rgb(232 224 216 / 0.6)",
+        soft: "0 2px 10px -2px rgb(61 107 102 / 0.08), 0 8px 24px -8px rgb(61 107 102 / 0.1)",
+        lift: "0 12px 40px -12px rgb(61 107 102 / 0.16)",
+        glow: "0 0 0 1px rgb(212 232 229 / 0.8), 0 0 24px -4px rgb(126 184 196 / 0.35)",
+        "glow-teal": "0 0 28px -6px rgb(74 143 134 / 0.4)",
+      },
+      backgroundImage: {
+        "brand-gradient": "linear-gradient(135deg, #6eb5a8 0%, #4a8f86 45%, #7eb8c4 100%)",
+        "brand-gradient-soft":
+          "linear-gradient(180deg, #f7fbfb 0%, #eef6f5 50%, #e8f4f7 100%)",
       },
       transitionTimingFunction: {
         editorial: "cubic-bezier(0.22, 1, 0.36, 1)",

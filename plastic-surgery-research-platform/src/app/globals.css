@@ -4,6 +4,12 @@
 
 :root {
   color-scheme: light;
+  --sw-teal: #4a8f86;
+  --sw-teal-dark: #3d6b66;
+  --sw-aqua: #b8e0db;
+  --sw-slate: #3d5f73;
+  --sw-mint: #eef6f5;
+  --sw-surface: #f7fbfb;
 }
 
 html {
@@ -18,13 +24,13 @@ html {
 }
 
 ::selection {
-  background-color: rgba(74, 124, 158, 0.2);
+  background-color: rgba(126, 184, 196, 0.28);
   color: inherit;
 }
 
 @layer base {
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-brand-blue;
+    @apply outline-2 outline-offset-2 outline-brand-teal;
   }
 }
 
@@ -36,119 +42,132 @@ html {
 }
 
 @layer components {
-  .warm-page-bg {
+  .warm-page-bg,
+  .sw-page-bg {
     background: linear-gradient(
       180deg,
-      rgb(255 248 238 / 0.6) 0%,
-      rgb(250 249 246) 12rem,
-      rgb(250 249 246) 100%
+      rgb(247 251 251) 0%,
+      rgb(238 246 245) 10rem,
+      rgb(232 244 247 / 0.35) 100%
     );
   }
 
-  .warm-page {
+  .warm-page,
+  .sw-page {
     position: relative;
   }
 
-  .warm-eyebrow {
+  .warm-eyebrow,
+  .sw-eyebrow {
     font-size: 0.625rem;
     font-weight: 600;
     letter-spacing: 0.28em;
     text-transform: uppercase;
-    color: #3d6b66;
+    color: var(--sw-teal);
   }
 
-  .warm-title {
+  .warm-title,
+  .sw-title {
     font-family: var(--font-display), Georgia, serif;
     font-size: clamp(1.75rem, 4vw, 2.75rem);
     font-weight: 500;
     line-height: 1.12;
     letter-spacing: -0.02em;
-    color: #1c2220;
+    color: var(--sw-slate);
   }
 
-  .warm-panel {
-    border: 1px solid rgb(255 255 255 / 0.75);
+  .warm-panel,
+  .sw-panel {
+    border: 1px solid rgb(212 232 229 / 0.85);
     border-radius: 1.75rem;
     background: linear-gradient(
       155deg,
-      rgb(255 255 255 / 0.94) 0%,
-      rgb(255 252 247 / 0.9) 50%,
-      rgb(244 239 229 / 0.8) 100%
+      rgb(255 255 255 / 0.96) 0%,
+      rgb(247 251 251 / 0.94) 50%,
+      rgb(229 243 241 / 0.88) 100%
     );
     box-shadow:
-      0 0 0 1px rgb(255 255 255 / 0.5),
-      0 16px 40px -24px rgb(61 107 102 / 0.12),
-      0 6px 20px -12px rgb(255 200 150 / 0.18);
+      0 0 0 1px rgb(255 255 255 / 0.6),
+      0 16px 40px -24px rgb(61 107 102 / 0.12);
   }
 
-  .warm-card {
-    border: 1px solid rgb(255 255 255 / 0.8);
+  .warm-card,
+  .sw-card {
+    border: 1px solid rgb(212 232 229 / 0.75);
     border-radius: 1.25rem;
     background: linear-gradient(
       145deg,
       rgb(255 255 255 / 0.98) 0%,
-      rgb(255 250 243 / 0.95) 100%
+      rgb(247 251 251 / 0.96) 100%
     );
-    box-shadow: 0 4px 18px -10px rgb(61 107 102 / 0.15);
+    box-shadow: 0 4px 18px -10px rgb(61 107 102 / 0.12);
     transition:
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
       border-color 0.35s ease;
   }
 
-  .warm-card:hover {
-    border-color: rgb(255 228 190 / 0.8);
-    box-shadow: 0 12px 32px -14px rgb(61 107 102 / 0.2);
+  .warm-card:hover,
+  .sw-card:hover {
+    border-color: rgb(184 224 219 / 0.95);
+    box-shadow: 0 12px 32px -14px rgb(74 143 134 / 0.22), 0 0 20px -8px rgb(126 184 196 / 0.2);
     transform: translateY(-3px);
   }
 
-  .warm-section {
+  .warm-section,
+  .sw-section {
     position: relative;
     overflow: hidden;
-    border-top: 1px solid rgb(229 224 216 / 0.45);
+    border-top: 1px solid rgb(212 232 229 / 0.55);
   }
 
-  .warm-section--explore {
+  .warm-section--explore,
+  .sw-section--explore {
     background: linear-gradient(
       180deg,
-      rgb(250 249 246) 0%,
-      rgb(255 252 247 / 0.9) 50%,
-      rgb(255 248 238 / 0.5) 100%
+      rgb(247 251 251) 0%,
+      rgb(238 246 245) 50%,
+      rgb(232 244 247 / 0.45) 100%
     );
   }
 
-  .warm-section--trust {
+  .warm-section--trust,
+  .sw-section--trust {
     background: linear-gradient(
       180deg,
-      rgb(255 248 238 / 0.45) 0%,
-      rgb(232 242 241 / 0.35) 50%,
-      rgb(250 249 246) 100%
+      rgb(238 246 245) 0%,
+      rgb(229 243 241 / 0.65) 50%,
+      rgb(247 251 251) 100%
     );
   }
 
-  .warm-trust-card {
+  .warm-trust-card,
+  .sw-trust-card {
     display: block;
     height: 100%;
     padding: 1.25rem;
     border-radius: 1.25rem;
-    border: 1px solid rgb(255 255 255 / 0.85);
+    border: 1px solid rgb(212 232 229 / 0.8);
     background: linear-gradient(
       145deg,
       rgb(255 255 255 / 0.98) 0%,
-      rgb(255 248 238 / 0.92) 100%
+      rgb(238 246 245 / 0.95) 100%
     );
-    box-shadow: 0 4px 16px -10px rgb(61 107 102 / 0.14);
+    box-shadow: 0 4px 16px -10px rgb(61 107 102 / 0.1);
     transition:
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
       box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  .warm-trust-card:hover {
-    box-shadow: 0 14px 36px -16px rgb(61 107 102 / 0.22);
+  .warm-trust-card:hover,
+  .sw-trust-card:hover {
+    border-color: rgb(184 224 219);
+    box-shadow: 0 14px 36px -16px rgb(74 143 134 / 0.2), 0 0 24px -10px rgb(126 184 196 / 0.15);
     transform: translateY(-3px);
   }
 
-  .warm-btn-primary {
+  .warm-btn-primary,
+  .sw-btn-primary {
     display: inline-flex;
     min-height: 3rem;
     align-items: center;
@@ -158,128 +177,166 @@ html {
     font-size: 0.875rem;
     font-weight: 600;
     color: white;
-    background: linear-gradient(90deg, #3d6b66 0%, #2c4f4c 100%);
-    box-shadow: 0 4px 14px -6px rgb(44 79 76 / 0.45);
+    background: linear-gradient(90deg, #6eb5a8 0%, #4a8f86 50%, #7eb8c4 100%);
+    box-shadow: 0 4px 16px -6px rgb(61 107 102 / 0.35);
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
   }
 
-  .warm-btn-primary:hover {
-    box-shadow: 0 8px 24px -8px rgb(44 79 76 / 0.5);
+  .warm-btn-primary:hover,
+  .sw-btn-primary:hover {
+    box-shadow: 0 8px 28px -8px rgb(74 143 134 / 0.45), 0 0 24px -6px rgb(126 184 196 / 0.25);
     transform: translateY(-2px);
   }
 
-  .warm-btn-secondary {
+  .warm-btn-secondary,
+  .sw-btn-secondary {
     display: inline-flex;
     min-height: 3rem;
     align-items: center;
     justify-content: center;
     border-radius: 9999px;
-    border: 1px solid rgb(229 224 216 / 0.9);
+    border: 1px solid rgb(212 232 229);
     padding: 0.75rem 1.75rem;
     font-size: 0.875rem;
     font-weight: 600;
-    color: #1c2220;
-    background: rgb(255 255 255 / 0.92);
+    color: var(--sw-teal-dark);
+    background: rgb(255 255 255 / 0.95);
     transition:
       transform 0.3s ease,
       background 0.3s ease,
-      box-shadow 0.3s ease;
+      box-shadow 0.3s ease,
+      border-color 0.3s ease;
   }
 
-  .warm-btn-secondary:hover {
-    background: rgb(255 248 238 / 0.95);
-    box-shadow: 0 6px 18px -10px rgb(61 107 102 / 0.15);
+  .warm-btn-secondary:hover,
+  .sw-btn-secondary:hover {
+    border-color: rgb(184 224 219);
+    background: rgb(238 246 245);
+    box-shadow: 0 6px 18px -10px rgb(61 107 102 / 0.12);
     transform: translateY(-2px);
   }
 
-  .warm-navbar {
-    border-bottom: 1px solid rgb(255 228 190 / 0.45);
-    background: rgb(255 252 247 / 0.92);
-    box-shadow: 0 4px 24px -16px rgb(61 107 102 / 0.12);
+  .warm-navbar,
+  .sw-navbar {
+    border-bottom: 1px solid rgb(212 232 229 / 0.7);
+    background: rgb(255 255 255 / 0.88);
+    box-shadow: 0 4px 24px -16px rgb(61 107 102 / 0.1);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
   }
 
-  .warm-nav-pill {
+  .warm-nav-pill,
+  .sw-nav-pill {
     border-radius: 9999px;
-    transition: background 0.25s ease, color 0.25s ease;
+    color: var(--sw-slate);
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      box-shadow 0.25s ease;
   }
 
-  .warm-nav-pill:hover {
-    background: rgb(255 248 238 / 0.95);
+  .warm-nav-pill:hover,
+  .sw-nav-pill:hover {
+    background: rgb(229 243 241 / 0.9);
+    color: var(--sw-teal-dark);
   }
 
-  .warm-nav-pill--active {
-    background: linear-gradient(
-      135deg,
-      rgb(232 242 241) 0%,
-      rgb(255 248 238) 100%
-    );
-    color: #1c2220;
+  .warm-nav-pill--active,
+  .sw-nav-pill--active {
+    background: linear-gradient(135deg, rgb(229 243 241) 0%, rgb(232 244 247) 100%);
+    color: var(--sw-teal-dark);
     font-weight: 600;
-    box-shadow: inset 0 0 0 1px rgb(61 107 102 / 0.15);
+    box-shadow:
+      inset 0 0 0 1px rgb(74 143 134 / 0.2),
+      0 0 16px -6px rgb(126 184 196 / 0.2);
   }
 
-  .warm-footer {
-    border-top: 1px solid rgb(229 224 216 / 0.55);
+  .warm-footer,
+  .sw-footer {
+    border-top: 1px solid rgb(212 232 229 / 0.65);
     background: linear-gradient(
       180deg,
-      rgb(244 239 229 / 0.5) 0%,
-      rgb(232 242 241 / 0.4) 40%,
-      rgb(61 107 102 / 0.08) 100%
+      rgb(238 246 245) 0%,
+      rgb(232 244 247 / 0.5) 45%,
+      rgb(229 243 241 / 0.35) 100%
     );
-    color: #1c2220;
+    color: var(--sw-slate);
   }
 
-  .warm-footer-panel {
-    border: 1px solid rgb(255 255 255 / 0.7);
+  .warm-footer-panel,
+  .sw-footer-panel {
+    border: 1px solid rgb(212 232 229 / 0.6);
     border-radius: 1rem;
-    background: rgb(255 255 255 / 0.55);
+    background: rgb(255 255 255 / 0.65);
     padding: 1rem;
     font-size: 0.75rem;
     line-height: 1.6;
-    color: #5f6764;
+    color: #5a7180;
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .warm-card:hover,
-    .warm-trust-card:hover,
-    .warm-btn-primary:hover,
-    .warm-btn-secondary:hover {
-      transform: none;
-    }
+  .home-intro-section {
+    background: linear-gradient(
+      180deg,
+      rgb(247 251 251) 0%,
+      rgb(238 246 245) 38%,
+      rgb(232 244 247 / 0.4) 100%
+    );
   }
 
-  .editorial-visual-panel {
+  .home-intro-glow--warm {
+    background: radial-gradient(circle, rgb(184 224 219 / 0.55) 0%, transparent 68%);
+  }
+
+  .home-intro-glow--soft {
+    background: radial-gradient(circle, rgb(232 244 247 / 0.95) 0%, transparent 70%);
+  }
+
+  .home-intro-panel {
+    border: 1px solid rgb(212 232 229 / 0.75);
+    background: linear-gradient(
+      155deg,
+      rgb(255 255 255 / 0.94) 0%,
+      rgb(247 251 251 / 0.92) 45%,
+      rgb(229 243 241 / 0.8) 100%
+    );
     box-shadow:
-      inset 0 0 80px rgb(252 251 247 / 0.55),
-      0 32px 60px -32px rgb(28 34 32 / 0.16);
+      0 0 0 1px rgb(255 255 255 / 0.55),
+      0 20px 50px -28px rgb(61 107 102 / 0.12);
   }
 
-  .editorial-grain::after {
-    content: "";
-    position: absolute;
-    inset: -20%;
-    background-image: radial-gradient(rgb(92 112 126 / 0.07) 0.56px, transparent 0.72px);
-    background-size: 3px 3px;
-    opacity: 0.35;
-    mix-blend-mode: multiply;
-    pointer-events: none;
+  .home-intro-value-pill {
+    border: 1px solid rgb(212 232 229 / 0.7);
+    background: linear-gradient(135deg, rgb(255 255 255 / 0.98) 0%, rgb(238 246 245) 100%);
+    box-shadow: 0 4px 14px -8px rgb(61 107 102 / 0.12);
   }
 
-  .product-chrome {
-    box-shadow:
-      0 0 0 1px rgb(229 224 216 / 0.9),
-      0 24px 48px -28px rgb(28 34 32 / 0.22),
-      0 8px 16px -12px rgb(28 34 32 / 0.08);
+  .home-intro-guidelines {
+    border: 1px solid rgb(184 224 219 / 0.65);
+    background: linear-gradient(
+      135deg,
+      rgb(247 251 251) 0%,
+      rgb(232 244 247 / 0.55) 50%,
+      rgb(229 243 241 / 0.75) 100%
+    );
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.85);
+  }
+
+  .home-intro-closing {
+    border: 1px solid rgb(212 232 229 / 0.65);
+    background: linear-gradient(
+      120deg,
+      rgb(229 243 241 / 0.75) 0%,
+      rgb(247 251 251) 55%,
+      rgb(232 244 247 / 0.65) 100%
+    );
   }
 
   .portal-card {
     box-shadow:
-      0 0 0 1px rgb(255 255 255 / 0.08),
-      0 20px 50px -24px rgb(26 47 61 / 0.45);
+      0 0 0 1px rgb(255 255 255 / 0.12),
+      0 20px 50px -24px rgb(45 74 92 / 0.35);
     transition:
       box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
       transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
@@ -287,71 +344,10 @@ html {
 
   .portal-card:hover {
     box-shadow:
-      0 0 0 1px rgb(255 255 255 / 0.18),
-      0 28px 60px -20px rgb(26 47 61 / 0.5);
+      0 0 0 1px rgb(255 255 255 / 0.22),
+      0 28px 60px -20px rgb(45 74 92 / 0.4),
+      0 0 32px -8px rgb(74 143 134 / 0.25);
     transform: translateY(-4px);
-  }
-
-  .home-intro-section {
-    background: linear-gradient(
-      180deg,
-      rgb(255 248 238 / 0.95) 0%,
-      rgb(250 249 246) 38%,
-      rgb(250 249 246) 100%
-    );
-  }
-
-  .home-intro-glow--warm {
-    background: radial-gradient(circle, rgb(255 214 165 / 0.45) 0%, transparent 68%);
-  }
-
-  .home-intro-glow--soft {
-    background: radial-gradient(circle, rgb(232 242 241 / 0.9) 0%, transparent 70%);
-  }
-
-  .home-intro-panel {
-    border: 1px solid rgb(255 255 255 / 0.75);
-    background: linear-gradient(
-      155deg,
-      rgb(255 255 255 / 0.92) 0%,
-      rgb(255 252 247 / 0.88) 45%,
-      rgb(244 239 229 / 0.75) 100%
-    );
-    box-shadow:
-      0 0 0 1px rgb(255 255 255 / 0.5),
-      0 20px 50px -28px rgb(61 107 102 / 0.14),
-      0 8px 24px -16px rgb(255 200 150 / 0.2);
-  }
-
-  .home-intro-value-pill {
-    border: 1px solid rgb(255 255 255 / 0.85);
-    background: linear-gradient(
-      135deg,
-      rgb(255 255 255 / 0.95) 0%,
-      rgb(255 248 238 / 0.9) 100%
-    );
-    box-shadow: 0 4px 14px -8px rgb(61 107 102 / 0.18);
-  }
-
-  .home-intro-guidelines {
-    border: 1px solid rgb(255 228 190 / 0.65);
-    background: linear-gradient(
-      135deg,
-      rgb(255 251 243 / 0.98) 0%,
-      rgb(255 245 230 / 0.95) 50%,
-      rgb(232 242 241 / 0.5) 100%
-    );
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.8);
-  }
-
-  .home-intro-closing {
-    border: 1px solid rgb(61 107 102 / 0.12);
-    background: linear-gradient(
-      120deg,
-      rgb(232 242 241 / 0.65) 0%,
-      rgb(255 252 247 / 0.95) 55%,
-      rgb(255 248 238 / 0.9) 100%
-    );
   }
 
   .portal-card-media {
@@ -362,63 +358,70 @@ html {
     transition:
       transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
       filter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    filter: contrast(0.9) saturate(0.88) brightness(0.96);
+    filter: contrast(0.92) saturate(0.95) brightness(0.98);
     transform: scale(1.02);
   }
 
   .portal-card:hover .portal-card-image {
-    filter: contrast(1.14) saturate(1.12) brightness(1.04);
+    filter: contrast(1.1) saturate(1.08) brightness(1.03);
     transform: scale(1.08);
   }
 
   .portal-card-overlay {
     transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    opacity: 0.92;
+    opacity: 0.9;
   }
 
   .portal-card-overlay-sheen {
-    opacity: 0.72;
+    opacity: 0.65;
   }
 
   .portal-card:hover .portal-card-overlay {
-    opacity: 0.48;
+    opacity: 0.5;
   }
 
   .portal-card:hover .portal-card-overlay-sheen {
-    opacity: 0.38;
+    opacity: 0.35;
   }
 
   .portal-card-glass {
     margin: 0.75rem;
     border-radius: 1.25rem;
-    border: 1px solid rgb(255 255 255 / 0.22);
-    background: rgb(255 255 255 / 0.12);
+    border: 1px solid rgb(255 255 255 / 0.35);
+    background: linear-gradient(
+      145deg,
+      rgb(255 255 255 / 0.2) 0%,
+      rgb(184 224 219 / 0.12) 100%
+    );
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.15);
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.25);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    .portal-card:hover {
-      transform: none;
-    }
+  .portal-card-plus {
+    border: 1px solid rgb(255 255 255 / 0.55);
+    background: linear-gradient(135deg, rgb(232 244 247 / 0.95) 0%, rgb(184 224 219 / 0.85) 100%);
+    color: var(--sw-teal-dark);
+    box-shadow: 0 4px 14px -6px rgb(61 107 102 / 0.25);
+  }
 
-    .portal-card-image {
-      transform: none;
-      transition: filter 0.2s ease;
-    }
+  .portal-card:hover .portal-card-plus {
+    box-shadow: 0 6px 20px -6px rgb(74 143 134 / 0.4), 0 0 16px -4px rgb(126 184 196 / 0.3);
+  }
 
-    .portal-card:hover .portal-card-image {
-      transform: none;
-    }
+  .sw-notice {
+    border: 1px solid rgb(212 232 229);
+    border-radius: 1rem;
+    background: linear-gradient(90deg, rgb(238 246 245) 0%, rgb(255 255 255) 55%, rgb(232 244 247) 100%);
+    color: #5a7180;
   }
 
   .ecosystem-panel {
     background: linear-gradient(
       165deg,
-      rgb(255 255 255 / 0.96) 0%,
-      rgb(250 249 246 / 0.98) 45%,
-      rgb(244 239 229 / 0.92) 100%
+      rgb(255 255 255 / 0.98) 0%,
+      rgb(247 251 251) 45%,
+      rgb(238 246 245) 100%
     );
   }
 
@@ -436,6 +439,24 @@ html {
   }
 
   @media (prefers-reduced-motion: reduce) {
+    .warm-card:hover,
+    .sw-card:hover,
+    .warm-trust-card:hover,
+    .sw-trust-card:hover,
+    .warm-btn-primary:hover,
+    .sw-btn-primary:hover,
+    .warm-btn-secondary:hover,
+    .sw-btn-secondary:hover,
+    .portal-card:hover {
+      transform: none;
+    }
+
+    .portal-card-image,
+    .portal-card:hover .portal-card-image {
+      transform: none;
+      transition: filter 0.2s ease;
+    }
+
     .activity-marquee {
       animation: none;
     }

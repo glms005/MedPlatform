@@ -88,15 +88,15 @@ export function HomeIntroSection() {
 
       <div className="relative mx-auto max-w-[860px]">
         <Reveal className="text-center">
-          <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-amber-100/90 via-white to-brand-teal-light/80 text-2xl shadow-soft ring-1 ring-white/80">
-            <span aria-hidden>☀️</span>
-          </div>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-teal">
+          <p className="text-sm font-medium tracking-wide text-brand-slate sm:text-base">
+            {t.home.tagline}
+          </p>
+          <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.28em] text-brand-teal">
             {intro.eyebrow}
           </p>
           <h1
             id="welcome-heading"
-            className="mt-4 font-display text-[clamp(1.9rem,4.8vw,3rem)] font-medium leading-[1.1] tracking-tight text-brand-ink"
+            className="mt-4 font-display text-[clamp(1.9rem,4.8vw,3rem)] font-medium leading-[1.1] tracking-tight text-brand-slate"
           >
             {intro.title}
           </h1>
@@ -118,13 +118,13 @@ export function HomeIntroSection() {
         <Reveal delay={0.08} className="mt-8 sm:mt-10">
           <div className="home-intro-panel relative overflow-hidden rounded-[2rem] p-6 sm:p-8 lg:p-10">
             <div
-              className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-amber-200/25 blur-2xl"
+              className="pointer-events-none absolute -right-8 -top-8 h-32 w-32 rounded-full bg-brand-aqua/30 blur-2xl"
               aria-hidden
             />
 
-            <div className="home-intro-lead relative rounded-2xl border border-amber-200/50 bg-gradient-to-br from-amber-50/90 via-white/90 to-brand-champagne/60 px-5 py-5 sm:px-6 sm:py-6">
+            <div className="home-intro-lead relative rounded-2xl border border-brand-outline/70 bg-gradient-to-br from-brand-mint/90 via-white/95 to-brand-aqua-light/40 px-5 py-5 sm:px-6 sm:py-6">
               <span
-                className="absolute -left-1 top-5 bottom-5 w-1 rounded-full bg-gradient-to-b from-amber-300 via-brand-teal to-brand-teal/40"
+                className="absolute -left-1 top-5 bottom-5 w-1 rounded-full bg-gradient-to-b from-brand-aqua via-brand-teal to-brand-teal-dark/50"
                 aria-hidden
               />
               <p className="pl-3 text-base leading-[1.8] text-brand-ink sm:text-lg sm:leading-[1.85]">
@@ -154,7 +154,7 @@ export function HomeIntroSection() {
               >
                 <h2
                   id="welcome-guidelines"
-                  className="flex items-center gap-2.5 text-sm font-semibold text-amber-900/90"
+                  className="flex items-center gap-2.5 text-sm font-semibold text-brand-teal-dark"
                 >
                   <span
                     className="flex h-9 w-9 items-center justify-center rounded-full bg-white/70 text-base shadow-sm"

@@ -13,7 +13,7 @@ export function Badge({
       : tone === "success"
         ? "bg-emerald-50 text-emerald-900 ring-emerald-200"
         : tone === "warning"
-          ? "bg-amber-50 text-amber-950 ring-amber-200"
+          ? "bg-brand-mint text-brand-teal-dark ring-brand-outline"
           : "bg-white text-brand-muted ring-brand-outline";
 
   return (

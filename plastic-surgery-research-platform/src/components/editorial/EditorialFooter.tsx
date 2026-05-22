@@ -23,7 +23,8 @@ export function EditorialFooter() {
         <div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-16">
           <div>
             <BrandLogo name={t.nav.brand} href="/" size="footer" />
-            <p className="mt-4 max-w-md text-sm leading-relaxed text-brand-muted">
+            <p className="mt-2 text-sm font-medium text-brand-teal">{t.home.tagline}</p>
+            <p className="mt-3 max-w-md text-sm leading-relaxed text-brand-muted">
               A trust-first research community for plastic surgery in Georgia. Compare
               surgeons, clinics, procedures, and patient experiences—with moderation and
               clear boundaries.

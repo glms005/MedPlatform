@@ -29,7 +29,7 @@ export function BrandLogo({
   const content = (
     <>
       <span
-        className={`relative shrink-0 overflow-hidden rounded-xl bg-white/60 ring-1 ring-white/80 ${iconSize}`}
+        className={`relative shrink-0 overflow-hidden rounded-xl bg-brand-mint/80 ring-1 ring-brand-outline/50 ${iconSize}`}
       >
         <Image
           src={ICON_SRC}
@@ -42,7 +42,7 @@ export function BrandLogo({
         />
       </span>
       <span
-        className={`font-display font-semibold tracking-tight text-[#3d5f73] ${textClass}`}
+        className={`font-display font-semibold tracking-tight text-brand-slate ${textClass}`}
       >
         {name}
       </span>

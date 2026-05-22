@@ -60,7 +60,7 @@ export default async function ClinicProfilePage({ params }: Props) {
               href={clinic.googleMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-md bg-brand-ink px-4 py-2 text-sm font-semibold text-white hover:bg-brand-accent"
+              className="warm-btn-primary rounded-md px-4 py-2 text-sm"
             >
               Open in Google Maps
             </a>

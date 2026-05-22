@@ -25,7 +25,7 @@ export function ProductHero() {
   return (
     <header
       id="introduction"
-      className="relative overflow-hidden border-b border-brand-outline/50 bg-gradient-to-b from-brand-champagne via-brand-ivory to-brand-sand pt-[3.25rem] sm:pt-14"
+      className="relative overflow-hidden border-b border-brand-outline/50 bg-gradient-to-b from-brand-mint via-brand-ivory to-brand-aqua-light pt-[3.25rem] sm:pt-14"
     >
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_55%_at_75%_-5%,rgba(61,107,102,0.12),transparent_58%)]"
@@ -57,7 +57,7 @@ export function ProductHero() {
                 transition={{ duration: 1.05, ease: easeEditorial, delay: 0.18 }}
               >
                 <ProductChrome
-                  title="medplatform.ge/community"
+                  title="sharewell.app/community"
                   badge="Live preview"
                   className="relative z-20"
                 >
@@ -67,14 +67,14 @@ export function ProductHero() {
                 <div className="grid gap-4 sm:grid-cols-2 sm:pl-6 lg:pl-10">
                   {heroSurgeon ? (
                     <ProductChrome
-                      title="medplatform.ge/surgeons/profile"
+                      title="sharewell.app/surgeons/profile"
                       className="sm:-mt-6"
                     >
                       <SurgeonSnippet surgeon={heroSurgeon} />
                     </ProductChrome>
                   ) : null}
                   {latestReview ? (
-                    <ProductChrome title="medplatform.ge/reviews" badge="Moderated">
+                    <ProductChrome title="sharewell.app/reviews" badge="Moderated">
                       <div className="space-y-2">
                         <p className="text-xs font-semibold text-brand-ink">
                           {latestReview.authorDisplay}
@@ -91,7 +91,7 @@ export function ProductHero() {
                 </div>
               </motion.div>
             ) : (
-              <ProductChrome title="medplatform.ge" badge="Preview">
+              <ProductChrome title="sharewell.app" badge="Preview">
                 <MiniThreadPreview thread={heroThread} comments={threadComments} />
               </ProductChrome>
             )}

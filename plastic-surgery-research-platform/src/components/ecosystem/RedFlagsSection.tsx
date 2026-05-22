@@ -14,7 +14,7 @@ export function RedFlagsSection() {
       <StaggerReveal className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {redFlags.map((flag) => (
           <StaggerItem key={flag.title}>
-            <article className="h-full rounded-xl border border-amber-200/60 bg-white p-5 shadow-sm">
+            <article className="h-full rounded-xl border border-brand-outline/80 bg-white p-5 shadow-soft">
               <span className="text-lg" aria-hidden>
                 ⚠
               </span>

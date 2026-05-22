@@ -116,7 +116,7 @@ export default async function SurgeonProfilePage({ params }: Props) {
                   {surgeon.redFlags.map((r) => (
                     <li
                       key={r}
-                      className="rounded-xl bg-amber-50/90 p-3 text-sm text-amber-950 ring-1 ring-amber-100"
+                      className="sw-notice p-3 text-sm"
                     >
                       {r}
                     </li>

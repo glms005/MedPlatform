@@ -1,7 +1,7 @@
 import type { ReviewStatus } from "@/types/domain";
 
 const styles: Record<ReviewStatus, string> = {
-  pending: "bg-amber-50 text-amber-900 ring-amber-100",
+  pending: "bg-brand-mint text-brand-teal-dark ring-brand-outline",
   approved: "bg-emerald-50 text-emerald-900 ring-emerald-100",
   rejected: "bg-slate-100 text-slate-700 ring-slate-200",
   flagged: "bg-red-50 text-red-900 ring-red-100",

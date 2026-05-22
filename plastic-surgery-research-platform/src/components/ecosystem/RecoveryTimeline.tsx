@@ -28,7 +28,7 @@ export function RecoveryTimeline() {
       eyebrow="Recovery tracker"
       title="Track Real Recovery Journeys"
       description="Example diary entries at each stage—swelling, bruising, pain, breathing, confidence, and satisfaction. Anecdotal only, not clinical guidance."
-      className="bg-gradient-to-b from-brand-champagne/50 to-brand-ivory"
+      className="bg-gradient-to-b from-brand-mint/60 to-brand-ivory"
       headerAction={
         <Link
           href="/forum"
@@ -38,7 +38,7 @@ export function RecoveryTimeline() {
         </Link>
       }
     >
-      <ProductChrome title="medplatform.ge/recovery" badge="Prototype">
+      <ProductChrome title="sharewell.app/recovery" badge="Prototype">
         <div className="grid gap-6 lg:grid-cols-[minmax(0,11rem)_1fr]">
           <div className="flex gap-2 overflow-x-auto pb-1 snap-x lg:flex-col lg:overflow-visible">
             {recoveryJourneyStages.map((s, i) => (
@@ -103,7 +103,7 @@ function StageDetail({ stage }: { stage: (typeof recoveryJourneyStages)[number] 
           </div>
         ))}
       </dl>
-      <p className="mt-5 rounded-lg bg-amber-50/90 px-3 py-2 text-[11px] leading-relaxed text-amber-950 ring-1 ring-amber-100">
+      <p className="sw-notice mt-5 px-3 py-2 text-[11px] leading-relaxed">
         Individual recovery varies widely. Always follow your treating clinician&apos;s guidance.
       </p>
     </>
