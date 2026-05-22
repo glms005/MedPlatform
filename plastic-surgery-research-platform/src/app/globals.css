@@ -23,16 +23,6 @@ body {
   overflow-x: hidden;
 }
 
-.site-main-offset {
-  padding-top: 5.75rem;
-}
-
-@media (min-width: 768px) {
-  .site-main-offset {
-    padding-top: 3.5rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

@@ -73,7 +73,7 @@ export default function RootLayout({
           <AuthProvider>
             <Navbar />
             {/* Fixed navbar offset — see Navbar.tsx */}
-            <div className="site-main-offset">{children}</div>
+            <div className="pt-14">{children}</div>
           </AuthProvider>
         </LocaleProvider>
       </body>
